@@ -10,8 +10,9 @@
 						<div class="col-md-4">
 							<h3 class="section-title">Direccion</h3>
 							<ul class="contact-info">
-								<li style="color: white;"><i class="fas fa-map-marker-alt"></i>Lima - Peru</li>
-								<li style="color: white;"><i class="fas fa-phone"></i>+ 1235 2355 98</li>
+								<li style="color: white;"><i class="fas fa-map-marker-alt"></i>Cayrucachi 334 Maranga 5ta etapa San Miguel 
+Altura de la cuadra 5 de la Av. Precursores</li>
+								<li style="color: white;"><i class="fas fa-phone"></i>+51 974990998</li>
 								<li style="color: white;"><i class="far fa-envelope"></i>info@joel.pe</li>
 								<li style="color: white;"><i class="fas fa-globe-americas"></i>www.joel.pe</li>
 							</ul>

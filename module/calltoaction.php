@@ -1,5 +1,5 @@
 		<!-- call to action-->
-		<div class="fh5co-parallax" style="background-image: url(images/home-image-2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="fh5co-parallax" style="background-image: url(img/big-header-3.jpeg);background-repeat: no-repeat; background-size: cover;" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">

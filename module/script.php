@@ -1,8 +1,4 @@
-	<!-- jQuery -->
-
-
-
-
+<!-- Lbernal.com.ve -->
 <!-- jQuery Easing -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -20,46 +16,45 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
-
-<!-- <script type="text/javascript" src="owl/jquery.min.js"></script> -->
-<script type="text/javascript" src="owl/owl.carousel.js"></script>
-<script type="text/javascript">
-		$('.servicios').owlCarousel({
- 		loop:false,
-	    margin:30,
-	    loop:false,
-	    autoplayTimeout:2000,
-    	autoplay:false,
-	    nav:false,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    }
-	})
-	$('.owl-carousel').owlCarousel({
-	    loop:false,
-	    margin:10,
-	    loop:false,
-	    autoplayTimeout:1000,
-    	autoplay:false,
-	    nav:false,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:3
-	        },
-	        1000:{
-	            items:5
-	        }
-	    }
-	})
-</script> 
+	<!-- <script type="text/javascript" src="owl/jquery.min.js"></script> -->
+	<script type="text/javascript" src="owl/owl.carousel.js"></script>
+	<script type="text/javascript">
+			$('.servicios').owlCarousel({
+	 		loop:false,
+		    margin:30,
+		    loop:false,
+		    autoplayTimeout:2000,
+	    	autoplay:false,
+		    nav:false,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:2
+		        },
+		        1000:{
+		            items:3
+		        }
+		    }
+		})
+		$('.owl-carousel').owlCarousel({
+		    loop:false,
+		    margin:10,
+		    loop:false,
+		    autoplayTimeout:1000,
+	    	autoplay:false,
+		    nav:false,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:3
+		        },
+		        1000:{
+		            items:5
+		        }
+		    }
+		})
+	</script> 

@@ -18,7 +18,7 @@
 		?>
 
 		<!-- brumcs-->
-		<div class="container-flud" style="background-color: #cccccc;">
+		<div class="container-flud" style="background-color: #00b1e8;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-4"><br>
@@ -37,8 +37,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="text-center ">
-							<h2 class="h2_title_black">Loren Ipsum</h2>
-							<p class="text_p">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+							<h2 class="h2_title_black">Jopa Coachin</h2>
+							<p class="text_p">Presentamos a continuación nuestra propuesta de servicios profesionales de coaching con la finalidad de darles a conocer nuestra organización y cómo desde ella podemos agregar valor sostenible a sus resultados deseados.</p>
 						</div>
 					</div>
 				</div>
@@ -50,40 +50,40 @@
 
 							    <div class="item">
 							    	<div class="program ">
-										<img class="" src="http://via.placeholder.com/500x300" alt="">
-										<h3 style="margin: 0px;">Servicio #1</h3>
+										<img class="" src="img/servicio_1.jpeg" alt="">
+										<h3 style="margin: 0px;">Coaching para Gerentes</h3>
 										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
 										<span><a href="#" class="btn btn-default">Mas info.</a></span>
 									</div>
 							    </div>
 							    <div class="item">
 							    	<div class="program ">
-										<img class="" src="http://via.placeholder.com/500x300" alt="">
-										<h3 style="margin: 0px;">Servicio #1</h3>
+										<img class="" src="img/servicio_2.jpeg" alt="">
+										<h3 style="margin: 0px;">Coaching para Equipos</h3>
 										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
 										<span><a href="#" class="btn btn-default">Mas info.</a></span>
 									</div>
 							    </div>
 							    <div class="item">
 							    	<div class="program ">
-										<img class="" src="http://via.placeholder.com/500x300" alt="">
-										<h3 style="margin: 0px;">Servicio #1</h3>
+										<img class="" src="img/servicio_3.jpeg" alt="">
+										<h3 style="margin: 0px;">Coaching Administrativo</h3>
 										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
 										<span><a href="#" class="btn btn-default">Mas info.</a></span>
 									</div>
 							    </div>
 							    <div class="item">
 							    	<div class="program ">
-										<img class="" src="http://via.placeholder.com/500x300" alt="">
-										<h3 style="margin: 0px;">Servicio #1</h3>
+										<img class="" src="img/servicio_4.jpeg" alt="">
+										<h3 style="margin: 0px;">Coaching para Ventas</h3>
 										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
 										<span><a href="#" class="btn btn-default">Mas info.</a></span>
 									</div>
 							    </div>
 							    <div class="item">
 							    	<div class="program ">
-										<img class="" src="http://via.placeholder.com/500x300" alt="">
-										<h3 style="margin: 0px;">Servicio #1</h3>
+										<img class="" src="img/servicio_5.jpeg" alt="">
+										<h3 style="margin: 0px;">Coaching de Vida</h3>
 										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
 										<span><a href="#" class="btn btn-default">Mas info.</a></span>
 									</div>
@@ -97,20 +97,58 @@
 		<!-- Servicios -->
 
 		<!--Parlareto-->
-		<div class="fh5co-parallax" style="background-image: url(images/home-image-3.jpg);" data-stellar-background-ratio="0.5">
+		<div class="fh5co-parallax" style="background-image: url(img/parla.jpeg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 						<div class="fh5co-intro fh5co-table-cell ">
-							<h2 class="h2_title">Loren Ipsum</h2>
-							<p class="text_p">Moment morat reljax is text <a href="#">.lbernal</a></p>
+							<h2 class="h2_title">¿Quién es JopaCoaching?</h2>
+							<p class="text_p">Somos una organización conformada por un equipo de coaches certificados que facilitamos procesos de desarrollo,transformación personal y organizacional elevando los niveles de liderazgo, desempeño, motivación, trabajo en equipo y cambio.<br>
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!--Parlareto-->
+
+
+		<!-- Seccion Undefine-->
+		<div id="fh5co-programs-section" style="background-color: #f9f9f9;">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 col-sm-12">
+						<h1>¿QUÉ METODOLOGÍA UTILIZAMOS?</h1>
+						 <p style="text-align: justify;">Nuestro enfoque es integral, Combinamos diferentes estilos y herramientas: el aprendizaje
+							experiencial, PNL(Programación Neurolingüística), Gestalt, Inteligencia Emocional,
+							Análisis Transaccional y Aprendizaje para adultos(andragogía) y Modelo de Coaching,
+							modelo Meta Learning Dr. Losada. Nos Apoyamos en herramientas como el DISC,
+							Myer Briggs, Liderazgo Situacional, Herramientas de Covey, entre otras.</p>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<h1>¿QUÉ ORGANIZACIONES NOS RESPALDAN?</h1>
+						 <p style="text-align: justify;">Contamos con una alianza estratégica con GROWING COACHING COMMUNITY que es una
+							organización internacional de coaches con 7 años de experiencia en el desarrollo profesional
+							del coaching en el Perú a nivel nacional. Quien complementa y respalda el profesionalismo de
+							nuestra organización y sus servicios al mercado.</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- Seccion Undefine-->
+		<!-- Seccion Undefine-->
+				<div id="fh5co-programs-section" style="background-color: #000;">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+		<!-- Seccion Undefine-->
+
 
 		<!--Clientes-->
 		<div id="fh5co-schedule-section" class="fh5co-lightgray-section">
@@ -192,7 +230,6 @@
 									<h3><a href=""#>Loren Ipsum Moment Morat Relax text.</a></h3>
 									<span class="posted_by">Posted by: Admin</span>
 									<p class="text_calen">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-									<a href="#" class="btn btn-default">Leer Mas +</a>
 								</div> 
 							</div>
 						</div>
@@ -205,7 +242,6 @@
 									<h3><a href=""#>Loren Ipsum Moment Morat Relax text.</a></h3>
 									<span class="posted_by">Posted by: Admin</span>
 									<p class="text_calen">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-									<a href="#" class="btn btn-default">Leer Mas +</a>
 								</div> 
 							</div>
 						</div>
