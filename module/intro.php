@@ -35,8 +35,8 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-7">
-								<h1 class="title_principal">Loren &amp; Ipsum is a <b>Moment</b></h1>
-								<p><span>Loren <i class="fas fa-heart"></i> Ipsum <a href="update.pe" class="fh5co-site-name">creado por Update.pe</a></span></p>
+								<h1 class="title_principal"><b>Bienvenido un Gusto en conocerte</b></h1>
+								<!--<p><span>Loren <i class="fas fa-heart"></i> Ipsum <a href="update.pe" class="fh5co-site-name">creado por Update.pe</a></span></p>-->
 								<span><a class="btn btn-primary" href="#">Mas Info</a></span>
 							</div>
 						</div>

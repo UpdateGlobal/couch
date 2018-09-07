@@ -37,57 +37,75 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="text-center ">
-							<h2 class="h2_title_black">Jopa Coachin</h2>
+							<h2 class="h2_title_black">Jopa Coaching</h2>
 							<p class="text_p">Presentamos a continuación nuestra propuesta de servicios profesionales de coaching con la finalidad de darles a conocer nuestra organización y cómo desde ella podemos agregar valor sostenible a sus resultados deseados.</p>
 						</div>
 					</div>
 				</div>
-				<div class="row text-center">
-					<div class="col-md-12">
+				<div class="row col-md-12 text-center">
+					<div class="row col-md-12">
 
 						<div class="row">
 							<div class="owl-carousel owl-theme servicios">
+									
+										
+								    		<div class="item">
+								    			<div class="program">
+													<img class="img-responsive" src="img/servicio_1.jpeg" alt="">
+													<h3 style="margin: 0px;">Coaching para Gerentes</h3>
+													<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. 		</p>
+													<span><a href="#" class="btn btn-default">Mas info.</a></span>
+												</div>
+											</div>
+								    	
 
-							    <div class="item">
-							    	<div class="program ">
-										<img class="" src="img/servicio_1.jpeg" alt="">
-										<h3 style="margin: 0px;">Coaching para Gerentes</h3>
-										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-										<span><a href="#" class="btn btn-default">Mas info.</a></span>
-									</div>
-							    </div>
-							    <div class="item">
-							    	<div class="program ">
-										<img class="" src="img/servicio_2.jpeg" alt="">
-										<h3 style="margin: 0px;">Coaching para Equipos</h3>
-										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-										<span><a href="#" class="btn btn-default">Mas info.</a></span>
-									</div>
-							    </div>
-							    <div class="item">
-							    	<div class="program ">
-										<img class="" src="img/servicio_3.jpeg" alt="">
-										<h3 style="margin: 0px;">Coaching Administrativo</h3>
-										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-										<span><a href="#" class="btn btn-default">Mas info.</a></span>
-									</div>
-							    </div>
-							    <div class="item">
-							    	<div class="program ">
-										<img class="" src="img/servicio_4.jpeg" alt="">
-										<h3 style="margin: 0px;">Coaching para Ventas</h3>
-										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-										<span><a href="#" class="btn btn-default">Mas info.</a></span>
-									</div>
-							    </div>
-							    <div class="item">
-							    	<div class="program ">
-										<img class="" src="img/servicio_5.jpeg" alt="">
-										<h3 style="margin: 0px;">Coaching de Vida</h3>
-										<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-										<span><a href="#" class="btn btn-default">Mas info.</a></span>
-									</div>
-							    </div>
+								    	
+								    		<div class="item">
+								    			<div class="program">
+													<img class="img-responsive" src="img/servicio_2.jpeg" alt="">
+													<h3 style="margin: 0px;">Coaching para Equipos</h3>
+													<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. 		</p>
+													<span><a href="#" class="btn btn-default">Mas info.</a></span>
+												</div>
+								    		</div>
+								    	
+
+								    	
+								    		<div class="item">
+								    			<div class="program">
+													<img class="img-responsive" src="img/servicio_3.jpeg" alt="">
+													<h3 style="margin: 0px;">Coaching Administrativo</h3>
+													<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. 		</p>
+													<span><a href="#" class="btn btn-default">Mas info.</a></span>
+												</div>
+								    		</div>
+								    	
+							    	
+
+									
+											
+											    <div class="item">
+											    	<div class="program">
+														<img class="img-responsive" src="img/servicio_4.jpeg" alt="">
+														<h3 style="margin: 0px;">Coaching para Ventas</h3>
+														<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
+														<span><a href="#" class="btn btn-default">Mas info.</a></span>
+													</div>
+											    </div>
+											
+
+											
+											    <div class="item">
+											    	<div class="program">
+														<img class="img-responsive" src="img/servicio_5.jpeg" alt="">
+														<h3 style="margin: 0px;">Coaching de Vida</h3>
+														<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
+														<span><a href="#" class="btn btn-default">Mas info.</a></span>
+													</div>
+											    </div>
+											
+
+									
 							</div>
 						</div>
 					</div>
@@ -151,6 +169,7 @@
 
 
 		<!--Clientes-->
+		<!--
 		<div id="fh5co-schedule-section" class="fh5co-lightgray-section">
 			<div class="container">
 				<div class="row" align="center">
@@ -174,6 +193,7 @@
 				</div>
 			</div>	
 		</div>
+		-->
 		<!--Clientes-->
 
 		<?php include ('module/calltoaction.php')?>

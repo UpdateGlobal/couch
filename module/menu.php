@@ -12,11 +12,11 @@
 								<li>
 									<a href="#">Servicios <i class="fas fa-angle-down"> </i> </a>
 									 <ul class="fh5co-sub-menu">
-										<li><a href="Servicios.php">Coach de Vida</a></li>
-										<li><a href="Servicios.php">Coach  de Equipos</a></li>
-										<li><a href="Servicios.php"> Coach Ejecutivo</a></li>
-										<li><a href="Servicios.php"> Coach Familiar</a></li>
-										<li><a href="Servicios.php"> Coaching Deportivo</a></li>
+										<li><a href="Servicio1.php">Coach de Vida</a></li>
+										<li><a href="Servicio2.php">Coach  de Equipos</a></li>
+										<li><a href="Servicio3.php"> Coach Ejecutivo</a></li>
+										<li><a href="Servicio4.php"> Coach Familiar</a></li>
+										<li><a href="Servicio5.php"> Coaching Deportivo</a></li>
 									</ul>
 								</li>
 								<li><a href="blog.php">Blog</a></li>

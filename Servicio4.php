@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
  <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title>JopaCoaching | Servicios</title>
@@ -71,7 +71,7 @@
 					<div class="col-md-8 offset-md-4"><br>
 						<ul class="breadcrumb">
 						  <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-						   <li><a href="#"> Nombre del Servicio</a></li>
+						   <li><a href="#"> COACH FAMILIAR</a></li>
 						</ul>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="text-center ">
-							<h2 class="h2_title_black">Titulo del Servicio</h2>
+							<h2 class="h2_title_black">COACH EJECUTIVO</h2>
 							
 						</div>
 					</div>
@@ -97,13 +97,19 @@
 							<div class="col-md-4 ">
 								<div class="card_Servi">
 									<img class="img_servi" src="img/servicio_1.jpeg" alt="">
-									<h3 class="title_serv"> Servicio #1</h3>
-									<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
+									<h3 class="title_serv"> Servicio #4</h3>
+									<p class="card_Serv">COACH EJECUTIVO </p>
 									<span><a href="#" class="btn btn-default btn_servi">Mas info.</a></span>
 								</div>
 							</div>
 							<div class="col-md-4">
-								<p class="text_descri_servi"> <b>Descripcion del Servicio</b>  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.</p>
+								<p class="text_descri_servi"> <b>Descripcion del Servicio</b>  Trabajamos sobre el "desaprender para aprender de forma diferente, a cuestionarnos como padres y madres, como pareja, como hijos e hijas, revisar nuestra biografía emocional y preguntarnos qué tenemos para ofrecer a los demás, y animamos a iniciar este "entrenamiento cotidiano", que ayudará a cualquier modelo de familia. 
+								“Es, en definitiva, una nueva forma de ser, estar y actuar".
+
+								Está dirigido a familias en busca de mejoras interpersonales y logros de metas y objetivos pudiendo ser hechas con sesiones grupales o personales.
+
+
+								</p>
 							</div>
 							<div class="col-md-4" align="left" >
 								<p class="title_item_serv"><strong> A quién se dirige?</strong></p>
