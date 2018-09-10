@@ -7,6 +7,17 @@
 			include ('module/head.php')
 		?> 
 	</head>
+
+	<style>
+		p, ul, ol {
+    		margin-bottom: 1.5em;
+    		font-size: 18px !important;
+    		color: #4c4c4c;
+    		font-family: helvetica !important;
+    		list-style: none;
+    		padding: 0;
+		}
+	</style>
 	<body>
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">

@@ -8,6 +8,28 @@
 		?> 
 
 	</head>
+
+	<style>
+		.text_blog {
+   	 		margin-bottom: 1.5em;
+    		font-size: 17px !important;
+    		color: #4c4c4c;
+    		font-family: helvetica !important;
+    		list-style: none;
+    		text-align: justify !important;
+    		padding: 0;
+		}
+
+		a {
+			margin-bottom: 1.5em;
+			font-size: 20px !important;
+			color: #4c4c4c;
+			font-family: helvetica !important;
+			list-style: none;
+    		padding: 0;
+		}
+
+	</style>
 	<body>
 <div id="fh5co-wrapper">
 <div id="fh5co-page">

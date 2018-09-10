@@ -65,6 +65,7 @@
 		<!-- servicioshead -->
 
 		<!-- brumcs-->
+		<!--
 		<div class="container-flud" style="background-color: #00b1e8;">
 			<div class="container">
 				<div class="row">
@@ -76,7 +77,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<!-- brumcs-->
 
 
@@ -99,7 +100,7 @@
 									<img class="img_servi" src="img/servicio_1.jpeg" alt="">
 									<h3 class="title_serv"> Servicio #1</h3>
 									<p class="card_Serv">COACH DE VIDA </p>
-									<span><a href="#" class="btn btn-default btn_servi">Mas info.</a></span>
+									<!--<span><a href="#" class="btn btn-default btn_servi">Mas info.</a></span>-->
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -120,12 +121,12 @@
 				</div>
 				<hr>
 				<div class="row">
-					<div class="col-md-6">
-						<p class="title_item_serv"><strong> Aplicaciones</strong></p>
+					<!-<div class="col-md-6">
+						<!--<p class="title_item_serv"><strong> Aplicaciones</strong></p>
 						<blockquote>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.</p>
 						</blockquote>
-					</div>
+					</div>-->
 					<div class="col-md-6">
 						<p class="title_item_serv"><strong>Beneficios</strong></p>
 						<blockquote>

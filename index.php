@@ -8,6 +8,45 @@
 			include ('module/head.php')
 		?> 
 	</head>
+
+	<style>
+		
+		.text_p {
+			margin-bottom: 1.5em;
+    		font-size: 18px !important;
+			font-family: helvetica !important;
+		}
+
+		.card_Serv {
+    		margin: 0.5em;
+    		font-size: 16px;
+    		color: #000;
+    		font-family: helvetica !important;
+		}
+
+		.h2_title {
+    		color: #fff;
+    		font-family: helvetica !important;
+    		font-weight: 200;
+    		margin: 0;
+    		font-size: 52px;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			
+    		font-family: helvetica !important;
+    		font-weight: 50;
+
+		}
+
+		p, ul, ol {
+    		font-size: 15px !important;
+    		color: #4c4c4c;
+    		font-family: helvetica !important;
+    		list-style: none;
+    		padding: 0;
+		}
+	</style>
 	<body>
 <div id="fh5co-wrapper">
 <div id="fh5co-page">
@@ -37,7 +76,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="text-center ">
-							<h2 class="h2_title_black">Jopa Coaching</h2>
+							<h2 class="h2_title_black">JopaCoaching</h2>
 							<p class="text_p">Presentamos a continuación nuestra propuesta de servicios profesionales de coaching con la finalidad de darles a conocer nuestra organización y cómo desde ella podemos agregar valor sostenible a sus resultados deseados.</p>
 						</div>
 					</div>

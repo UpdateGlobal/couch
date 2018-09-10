@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta name="author" content="LuisBernal" />
+	<meta name="author" content="" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
