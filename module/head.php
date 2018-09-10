@@ -41,4 +41,4 @@
 	<link rel="stylesheet" type="text/css" href="owl/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="owl/owl.theme.default.css">
 
-
+	<link rel="stylesheet" href="css/custom_r.css">

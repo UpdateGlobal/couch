@@ -7,8 +7,8 @@
 						<div class="fh5co-intro fh5co-table-cell box-area">
 							<div class="">
 								<h2 class="h2_title">Loren Ipsum</h2>
-								<p>loren ipsum 25% loren </p>
-								<a href="contacto.php" class="btn btn-primary">Contactame.</a>
+								<p>loren ipsum 25% loren</p>
+								<a href="contacto.php" class="btn btn-primary">Contactame</a>
 							</div>
 						</div>
 					</div>

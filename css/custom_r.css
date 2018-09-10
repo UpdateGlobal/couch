@@ -1,0 +1,19 @@
+.title_principal {
+    margin-bottom: 25px;
+}
+
+.fh5co-parallax .fh5co-intro.box-area {
+    background-image: none;
+}
+
+.fh5co-parallax .fh5co-intro.box-area:hover {
+    background-image: none;
+}
+
+.h2_title_black{
+	font-size: 52px;
+}
+
+.btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
+    border-color: aliceblue;
+}
