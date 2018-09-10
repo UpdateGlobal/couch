@@ -204,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text_descri_servi{
+  font-size: 18px !important;
   text-align: justify;
   margin: 0px 20px;
 }
