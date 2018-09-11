@@ -10,8 +10,8 @@
 								<li class="active"><a href="index.php">Inicio</a></li>
 								<li><a href="joel.php">joel</a></li>
 								<li>
-									<a href="#">Servicios <i class="fas fa-angle-down"> </i> </a>
-									 <ul class="fh5co-sub-menu">
+									<a href="#">Servicios <i class="fas fa-angle-down"></i></a>
+									<ul class="fh5co-sub-menu">
 										<li><a href="Servicio1.php">Coach de Vida</a></li>
 										<li><a href="Servicio2.php">Coach  de Equipos</a></li>
 										<li><a href="Servicio3.php"> Coach Ejecutivo</a></li>
@@ -21,7 +21,7 @@
 								</li>
 								<li><a href="blog.php">Blog</a></li>
 								<li><a href="galeria.php">Galeria</a></li>
-								<li><a href="galeria.php#video">Videos</a></li>
+								<li><a href="videos.php">Videos</a></li>
 								<li><a href="contacto.php">Contacto</a></li>
 							</ul>
 						</nav>
@@ -29,8 +29,7 @@
 				</div>
 				</nav>
 			</header>		
-		</div> 
-
+		</div>
 	<!-- <div id="fh5co-header">
 			<header id="fh5co-header-section">
 				<div class="container">
