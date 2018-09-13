@@ -1,33 +1,12 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
 	<head>
 		<title>JopaCoaching | Blog</title>
 		<?php include('module/head.php'); ?> 
+
 	</head>
-	<style>
-		.text_blog {
-		margin-bottom: 1.5em;
-		font-size: 17px !important;
-		color: #4c4c4c;
-		font-family: helvetica !important;
-		list-style: none;
-		text-align: justify !important;
-		padding: 0;
-		}
-		a {
-		margin-bottom: 1.5em;
-		font-size: 20px !important;
-		color: #4c4c4c;
-		font-family: helvetica !important;
-		list-style: none;
-		padding: 0;
-		}
-		h1, h2, h3, h4, h5, h6 {
-		font-family: helvetica !important;
-		font-weight: 50;
-		}
-	</style>
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
@@ -35,21 +14,6 @@
 				<style type="text/css">
 					.back_intro{
 					background-image: url(img/big-header-2.jpeg);
-					}
-					@media screen and (max-width: 1250px) {
-					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
-					}
-					}
-					@media screen and (max-width: 992px) {
-					.back_intro{
-					background-image: url(img/big-header-3.jpeg);
-					}
-					}
-					@media screen and (max-width: 450px) {
-					.back_intro{
-					background-image: url(img/big-header-1.jpeg);
-					}
 					}
 				</style>
 				<!-- blogheader -->
@@ -68,11 +32,10 @@
 				</div>
 				<!-- blogheader -->
 				<!-- brumcs-->
-				<div class="container-flud" style="background-color: #00b1e8;">
+				<div style="background-color: #00b1e8;">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
-								<br>
 								<ul class="breadcrumb">
 									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / Blog</li>
 								</ul>
@@ -99,7 +62,7 @@
 										</div>
 										<div class="desc">
 											<h3><a href="noticia.php">La resistencia al cambio</a></h3>
-											<span class="posted_by">Posted by: Joel Enrique Pérez Berlanga</span>
+											<span class="posted_by">Por: Joel Enrique Pérez Berlanga</span>
 											<p class="text_blog">Es esto algo normal en el ser humano? Es muy probable encontrar respuestas distintas, pero desde mi experiencia...</p>
 										</div>
 									</div>
@@ -113,7 +76,7 @@
 										</div>
 										<div class="desc">
 											<h3><a href="noticia.php">El desafio del amor</a></h3>
-											<span class="posted_by">Posted by: Joel Enrique Pérez Berlanga</span>
+											<span class="posted_by">Por: Joel Enrique Pérez Berlanga</span>
 											<p class="text_blog">A prueba de fuego. Es el título de una película que hizo cambiar mi visión en mi relación de pareja con mi esposa...</p>
 										</div>
 									</div>
@@ -127,7 +90,7 @@
 										</div>
 										<div class="desc">
 											<h3><a href="noticia.php">La Felicidad</a></h3>
-											<span class="posted_by">Posted by: Joel Enrique Pérez Berlanga</span>
+											<span class="posted_by">Por: Joel Enrique Pérez Berlanga</span>
 											<p class="text_blog">Quiero empezar con esta pregunta: Eres feliz? Pregunta muchas veces difícil de responder, pues nos confronta...</p>
 										</div>
 									</div>
@@ -141,7 +104,7 @@
 										</div>
 										<div class="desc">
 											<h3><a href="noticia.php">Loren Ipsum Moment Morat Relax text.</a></h3>
-											<span class="posted_by">Posted by: Admin</span>
+											<span class="posted_by">Por: Admin</span>
 											<p class="text_blog">simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting...</p>
 										</div>
 									</div>
@@ -155,7 +118,7 @@
 										</div>
 										<div class="desc">
 											<h3><a href="noticia.php">Loren Ipsum Moment Morat Relax text.</a></h3>
-											<span class="posted_by">Posted by: Admin</span>
+											<span class="posted_by">Por: Admin</span>
 											<p class="text_blog">simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting...</p>
 										</div>
 									</div>

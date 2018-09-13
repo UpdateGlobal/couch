@@ -1,3 +1,4 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -13,22 +14,7 @@
 					.back_intro{
 					background-image: url(img/big-header-2.jpeg);
 					}
-					@media screen and (max-width: 1250px) {
-					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
-					}
-					}
-					@media screen and (max-width: 992px) {
-					.back_intro{
-					background-image: url(img/big-header-3.jpeg);
-					}
-					}
-					@media screen and (max-width: 450px) {
-					.back_intro{
-					background-image: url(img/big-header-1.jpeg);
-					}
-					}
-					.text_descri_servi {
+					/* .text_descri_servi {
 					text-align: justify;
 					margin: 0px 20px;
 					font-size: 18px;
@@ -37,7 +23,7 @@
 					text-align: justify;
 					margin: 0 0 10px;
 					font-size: 18px;
-					}
+					}*/
 				</style>
 				<!-- servicioshead -->
 				<div class="fh5co-parallax back_intro" data-stellar-background-ratio="0.5" style="background-position: -400px 0px !important;">
@@ -53,23 +39,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- servicioshead -->
-				<!-- brumcs-->
-				<!--
-					<div class="container-flud" style="background-color: #00b1e8;">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-8 offset-md-4"><br>
-									<ul class="breadcrumb">
-									  <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-									   <li><a href="#"> Nombre del Servicio</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>-->
-				<!-- brumcs-->
-				<!-- Servicios -->
 				<div id="fh5co-programs-section" style="background-color: #f9f9f9;">
 					<div class="container">
 						<div class="row">
@@ -84,30 +53,24 @@
 							<div class="row">
 								<div class="col-md-6 ">
 									<div class="card_Servi">
-										<img class="img_servi" src="img/servicio_1.jpeg" alt="">
+										<img class="img_servi" src="assets/img/servicios/<?php echo $imagen; ?>" alt="">
 									</div>
 								</div>
 								<div class="col-md-6">
-									<p class="text_descri_servi">Te acompaño en tu proceso de mejora personal y profesional, te observo desde una perspectiva integral, hasta que descubras ¿Quién verdaderamente eres?, ¿Cómo funcionas?, ¿Cuáles son los recursos que realmente tienes? Para ponerlos en Acción y tú mismo puedas crear y generar una mejor realidad de tu vida y la mejor versión Neurolinguística, Inteligencia emocional, mental training, comunicación interna y lenguaje, desarrollo humano, entre otras.</p>
+									<div class="text_descri_servi"><?php echo $descripcion; ?></div>
 								</div>
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-md-6">
-								<p class="title_item_serv"><strong> A quién se dirige?</strong></p>
-								<ul class="list_serv">
-									<li>Directores</li>
-									<li>Líderes</li>
-									<li>Gerentes Generales</li>
-									<li>Mandos Medios</li>
-									<li>Gerentes de RRHH</li>
-								</ul>
+								<p class="title_item_serv"><strong>&iquest;A qui&eacute;n se dirige?</strong></p>
+								<?php echo $dirige; ?>
 							</div>
 							<div class="col-md-6">
 								<p class="title_item_serv"><strong>Beneficios</strong></p>
 								<blockquote>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.</p>
+									<?php echo $beneficios; ?>
 								</blockquote>
 							</div>
 						</div>

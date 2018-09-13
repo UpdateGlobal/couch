@@ -62,86 +62,86 @@
 							<div class="grid">
 							  <div class="element-item categoria-1" data-category="categoria-1">
 							     <a class="jackbox" data-group="video" href="https://www.youtube.com/watch?v=w8mmu8ETDqc">
-							  	    <img src="img/servicio_1.jpeg" />
+							  	    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							     </a>
 							  </div>
 							  <div class="element-item categoria-2" data-category="categoria-2">
 							  	<a class="jackbox" data-group="categoria-2" href="img/servicio_1.jpeg">
-							    	<img src="img/servicio_1.jpeg" />
+							    	<img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    </a>
 							  </div>
 							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Bismuth 3 </h3>
 							  </div>
 							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Lead 4 </h3>
 							  </div>
 							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Gold 5 </h3>
 							  </div>
 							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Potassium 6 </h3>
 							  </div>
 							  <div class="element-item categoria-2" data-category="categoria-2">
 							    <a class="jackbox" data-group="categoria-2" href="img/servicio_1.jpeg">
-							    	<img src="img/servicio_1.jpeg" />
+							    	<img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    </a>
 							    <h3 class="name">Sodium 7 </h3>
 							  </div>
 							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Cadmium 8 </h3>
 							  </div>
 							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Calcium 9 </h3>
 							  </div>
 							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Rhenium 10 </h3>
 							  </div>
 							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Thallium 11 </h3>
 							  </div>
 							  <div class="element-item categoria-2" data-category="categoria-2">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Antimony 12 </h3>
 							  </div>
 							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Cobalt 13 </h3>
 							  </div>
 							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Ytterbium 14 </h3>
 							  </div>
 							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Argon 15 </h3>
 							  </div>
 							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Nitrogen 16 </h3>
 							  </div>
 							  <div class="element-item categoria-2" data-category="categoria-2">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Uranium 17 </h3>
 							  </div>
 							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Plutonium 18 </h3>
 							  </div>
 							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Plutonium 19 </h3>
 							  </div>
 							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" />
+							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
 							    <h3 class="name">Plutonium 20 </h3>
 							  </div>
 							</div>

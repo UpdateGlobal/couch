@@ -1,8 +1,15 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <!--https://freehtml5.co/preview/?item=fitness-free-website-template-using-bootstrap-3-->
 <html class="no-js">
 	<head>
-		<title>JopaCoaching | Inicio</title>
+		<?php
+			$consultarMet = 'SELECT * FROM metatags';
+	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	        $filaMet = mysqli_fetch_array($resultadoMet);
+	            $xTitulo = $filaMet['titulo'];
+    	?>
+		<title><?php echo $xTitulo; ?> | Inicio</title>
 		<?php include('module/head.php'); ?>
 		<style>
 			.text_p {
@@ -57,46 +64,28 @@
 						<div class="row text-center">
 							<div class="col-md-12">
 								<div class="owl-carousel owl-theme servicios">
+									<?php
+				                        $consultarservicio = "SELECT * FROM servicios WHERE estado='1' ORDER BY orden";
+				                        $resultadoservicio = mysqli_query($enlaces,$consultarservicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
+				                        while($filaBan = mysqli_fetch_array($resultadoservicio)){
+				                         	$xCodigo    = $filaBan['cod_servicio'];
+				                         	$xImagen    = $filaBan['imagen'];
+				                         	$xTitulo    = $filaBan['titulo'];
+				                         	$xOrden     = $filaBan['orden'];
+				                         	$xEstado    = $filaBan['estado'];
+				                    ?>
 									<div class="item">
 										<div class="program">
 											<img class="img-responsive" src="img/servicio_1.jpeg" alt="">
-											<h3 style="margin: 0px;">Coaching para Gerentes</h3>
+											<h3 style="margin: 0px;"><?php echo $xTitulo; ?></h3>
 											<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-											<span><a href="servicio.php" class="btn btn-default">Mas info.</a></span>
+											<span><a href="servicio.php?cod_servicio=<?php echo $xCodigo; ?>" class="btn btn-default">Mas info.</a></span>
 										</div>
 									</div>
-									<div class="item">
-										<div class="program">
-											<img class="img-responsive" src="img/servicio_2.jpeg" alt="">
-											<h3 style="margin: 0px;">Coaching para Equipos</h3>
-											<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-											<span><a href="servicio.php" class="btn btn-default">Mas info.</a></span>
-										</div>
-									</div>
-									<div class="item">
-										<div class="program">
-											<img class="img-responsive" src="img/servicio_3.jpeg" alt="">
-											<h3 style="margin: 0px;">Coaching Administrativo</h3>
-											<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-											<span><a href="servicio.php" class="btn btn-default">Mas info.</a></span>
-										</div>
-									</div>
-									<div class="item">
-										<div class="program">
-											<img class="img-responsive" src="img/servicio_4.jpeg" alt="">
-											<h3 style="margin: 0px;">Coaching para Ventas</h3>
-											<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-											<span><a href="servicio.php" class="btn btn-default">Mas info.</a></span>
-										</div>
-									</div>
-									<div class="item">
-										<div class="program">
-											<img class="img-responsive" src="img/servicio_5.jpeg" alt="">
-											<h3 style="margin: 0px;">Coaching de Vida</h3>
-											<p class="card_Serv">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </p>
-											<span><a href="servicio.php" class="btn btn-default">Mas info.</a></span>
-										</div>
-									</div>
+									<?php
+										}
+										mysqli_free_result($resultadoservicio);
+									?>
 								</div>
 							</div>
 						</div>
@@ -135,7 +124,7 @@
 					</div>
 				</div>
 				<!-- Seccion Undefine-->
-				<?php include ('module/calltoaction.php')?>
+				<?php include('module/calltoaction.php'); ?>
 				<!--bLog and Eventos -->
 				<div id="fh5co-blog-section">
 					<div class="container">
@@ -147,79 +136,50 @@
 							</div>
 						</div>
 						<div class="row">
+							<?php 
+	                            $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' ORDER BY fecha,cod_noticia ASC LIMIT 2";
+	                            $resultadoNoticias = mysqli_query($enlaces,$consultarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	                            while($filaNot = mysqli_fetch_array($resultadoNoticias)){
+	                            	$xCodigo        = $filaNot['cod_noticia'];
+	                                $xTitulo        = $filaNot['titulo'];
+	                                $xSlug          = $filaNot['slug'];
+	                                $xImagen        = $filaNot['imagen'];
+	                                $xDescripcion   = $filaNot['noticia'];
+	                                $xAutor   		= $filaNot['autor'];
+	                                $xFecha         = $filaNot['fecha'];
+	                        ?>
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="fh5co-blog">
 									<div class="inner-post">
-										<a href="noticia.php"><img class="img-responsive" src="images/blog-1.jpg" alt=""></a>
+										<a href="noticia.php?cod_noticia=<?php echo $xCodigo; ?>"><img class="img-responsive" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" alt=""></a>
 									</div>
 									<div class="desc">
-										<h3><a href="noticia.php">Loren Ipsum Moment Morat Relax text.</a></h3>
-										<span class="posted_by">Posted by: Admin</span>
-										<p class="text_blog">simply dummy text of the printing and typesetting industry.</p>
-										<a href="#" class="btn btn-default">Leer Mas +</a>
+										<h3><a href="noticia.php?cod_noticia=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></h3>
+										<span class="posted_by">Por: <?php echo $xAutor; ?></span>
+										<?php 
+                                            $xResumen_m = strip_tags($xDescripcion);
+                                            $strCut = substr($xResumen_m,0,100);
+                                            $xResumen_m = $strCut.'...';
+                                        ?>
+										<p class="text_blog"><?php echo $xResumen_m; ?></p>
+										<a href="noticia.php?cod_noticia=<?php echo $xCodigo; ?>" class="btn btn-default">Leer Mas +</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<div class="fh5co-blog">
-									<div class="inner-post">
-										<a href="noticia.php"><img class="img-responsive" src="images/blog-1.jpg" alt=""></a>
-									</div>
-									<div class="desc">
-										<h3><a href="noticia.php">Loren Ipsum Moment Morat Relax text.</a></h3>
-										<span class="posted_by">Posted by: Admin</span>
-										<p class="text_blog">simply dummy text of the printing and typesetting industry.</p>
-										<a href="#" class="btn btn-default">Leer Mas +</a>
-									</div>
-								</div>
-							</div>
+							<?php
+								}
+								mysqli_free_result($resultadoNoticias);
+	                        ?>
 						</div>
 					</div>
-							<!-- <div class="col-md-6">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="heading-section ">
-											<h2 class="h2_title_black">Proximos Eventos</h2>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="fh5co-blog ">
-											<div class="meta-date text-center">
-												<p><span class="date">14</span><span>June</span><span>2018</span></p>
-											</div>
-											<div class="desc desc2">
-												<h3><a href=""#>Loren Ipsum Moment Morat Relax text.</a></h3>
-												<span class="posted_by">Posted by: Admin</span>
-												<p class="text_calen">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="fh5co-blog">
-											<div class="meta-date text-center">
-												<p><span class="date">13</span><span>June</span><span>2018</span></p>
-											</div>
-											<div class="desc desc2">
-												<h3><a href=""#>Loren Ipsum Moment Morat Relax text.</a></h3>
-												<span class="posted_by">Posted by: Admin</span>
-												<p class="text_calen">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
-					</div>
 				</div>
-				<!--bLog and Eventos -->
-				<?php 
-					include ('module/footer.php');
-					include ('module/script.php');
-				?>
 			</div>
-			<!-- END fh5co-page -->
+			<!--bLog and Eventos -->
+			<?php 
+				include ('module/footer.php');
+				include ('module/script.php');
+			?>
 		</div>
-		<!-- END fh5co-wrapper -->
+		<!-- END fh5co-page -->
 	</body>
 </html>

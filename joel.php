@@ -1,8 +1,9 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<head>
 		<title>JopaCoaching | Joel Henrique Perez</title>
-		<?php include('module/head.php'); ?> 
+		<?php include('module/head.php'); ?>
 		<style>
 			p, ul, ol {
 			margin-bottom: 1.5em;

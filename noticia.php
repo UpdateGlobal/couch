@@ -1,3 +1,4 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->

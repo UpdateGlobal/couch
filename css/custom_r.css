@@ -11,7 +11,9 @@
 }
 
 .h2_title_black {
-	font-size: 52px;
+    font-size: 52px;
+    font-family: helvetica !important;
+    font-weight: 50;
 }
 
 .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
@@ -47,6 +49,7 @@
     color: #fff;
     border: none;
     padding: 5px 15px;
+    margin-bottom: 10px;
 }
 
 #filters .button:hover {
@@ -62,6 +65,7 @@
 
 .element-item img {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .fh5co-blog {
@@ -75,6 +79,18 @@
 .video-titulo {
     margin-top: 16px;
     margin-bottom: 14px;
+}
+
+.text_calen {
+    max-height: 56px;
+}
+
+#fh5co-logo a:after {
+    background: none;
+}
+
+.sf-menu ul {
+    right: inherit;
 }
 
 @media screen and (max-width: 1199px) {
