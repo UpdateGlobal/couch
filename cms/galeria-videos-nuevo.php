@@ -9,13 +9,12 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   $imagen       = $_POST['imagen'];
   $video        = mysqli_real_escape_string($enlaces, $_POST['video']);
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
 
-  $insertarVideo = "INSERT INTO videos(titulo, descripcion, imagen, video, orden, estado)VALUE('$titulo', '$descripcion', '$imagen', '$video', '$orden', '$estado')";
+  $insertarVideo = "INSERT INTO videos(titulo, imagen, video, orden, estado)VALUE('$titulo', '$imagen', '$video', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarVideo);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -91,16 +90,6 @@ if($proceso == "Registrar"){
                 <div class="col-8 col-lg-10">
                   <input class="form-control" name="titulo" type="text" id="titulo" required />
                   <div class="invalid-feedback"></div>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="descripcion">Descripci&oacute;n</label>
-                </div>
-                <div class="col-8 col-lg-10">
-                  <?php if($xVisitante=="1"){ ?><p><?php echo $contenido; ?></p><?php } ?>
-                  <textarea name="descripcion" data-provide="summernote" data-toolbar="full" data-min-height="150" <?php if($xVisitante=="1"){ ?> style="display:none;" <?php }else{ ?> <?php } ?> ></textarea>
                 </div>
               </div>
 

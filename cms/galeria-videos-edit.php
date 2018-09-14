@@ -13,7 +13,6 @@ if($proceso == ""){
   $filaVid    = mysqli_fetch_array($ejecutarVideos);
   $cod_video    = $filaVid['cod_video'];
   $titulo       = htmlspecialchars($filaVid['titulo']);
-  $descripcion  = htmlspecialchars($filaVid['descripcion']);
   $imagen       = $filaVid['imagen'];
   $video        = $filaVid['video'];
   $orden        = $filaVid['orden'];
@@ -23,12 +22,11 @@ if($proceso == ""){
 if($proceso=="Actualizar"){ 
   $cod_video      = $_POST['cod_video'];
   $titulo         = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $descripcion    = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   $imagen         = $_POST['imagen'];
   $video          = $_POST['video'];
   $orden          = $_POST['orden'];
   $estado         = $_POST['estado'];
-  $actualizarVideos = "UPDATE videos SET cod_video='$cod_video', titulo='$titulo', descripcion='$descripcion', imagen='$imagen', video='$video', orden='$orden', estado='$estado' WHERE cod_video='$cod_video'";
+  $actualizarVideos = "UPDATE videos SET cod_video='$cod_video', titulo='$titulo', imagen='$imagen', video='$video', orden='$orden', estado='$estado' WHERE cod_video='$cod_video'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarVideos) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:galeria-videos.php");
 }
@@ -104,16 +102,6 @@ if($proceso=="Actualizar"){
                 <div class="col-8 col-lg-10">
                   <input class="form-control" name="titulo" type="text" id="titulo" value="<?php echo $titulo; ?>" required />
                   <div class="invalid-feedback"></div>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="descripcion">Descripci&oacute;n</label>
-                </div>
-                <div class="col-8 col-lg-10">
-                  <?php if($xVisitante=="1"){ ?><p><?php echo $descripcion; ?></p><?php } ?>
-                  <textarea name="descripcion" data-provide="summernote" data-min-height="150" <?php if($xVisitante=="1"){ ?> style="display:none;" <?php }else{ ?> <?php } ?> ><?php echo $descripcion; ?></textarea>
                 </div>
               </div>
 

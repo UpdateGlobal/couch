@@ -1,5 +1,5 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_servicio   = $_REQUEST['cod_servicio']; ?>
+<?php $cod_categoria   = $_REQUEST['cod_categoria']; ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -23,6 +23,12 @@
 					background-image: url(img/big-header-2.jpeg);
 					}
 				</style>
+				<?php
+		            $consultarCategoria = "SELECT * FROM noticias_categorias WHERE estado='1' AND cod_categoria='$cod_categoria' ORDER BY orden";
+		            $resultadoCategoria = mysqli_query($enlaces,$consultarCategoria) or die('Consulta fallida: ' . mysqli_error($enlaces));
+		            $filaCat = mysqli_fetch_array($resultadoCategoria);
+		                $xCategoria = $filaCat['categoria'];
+		        ?>
 				<!-- blogheader -->
 				<div class="fh5co-parallax back_intro" data-stellar-background-ratio="0.5" style="background-position: -400px 0px !important;">
 					<div class="overlay"></div>
@@ -31,7 +37,7 @@
 							<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 								<div class="fh5co-intro fh5co-table-cell animate-box">
 									<h1 class="text-center">Mi Blog</h1>
-									<p class="text_p">Blog de noticias </p>
+									<p class="text_p">Categor&iacute;a: <?php echo $xCategoria; ?></p>
 								</div>
 							</div>
 						</div>
@@ -44,7 +50,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / Blog</li>
+									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="blog.php">Blog</a> / <?php echo $xCategoria; ?></li>
 								</ul>
 							</div>
 						</div>
@@ -62,7 +68,7 @@
 									</div>
 								</div>
 								<?php
-			                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1'";
+			                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' AND cod_categoria='$cod_categoria'";
 			                        $resultadoNoticias = mysqli_query($enlaces, $consultarNoticias);
 			                        $total_registros = mysqli_num_rows($resultadoNoticias);
 			                        if($total_registros==0){ 
@@ -84,7 +90,7 @@
 			                        $posicion = ($pagina-1)*$registros_por_paginas;
 			                        $limite = "LIMIT $posicion, $registros_por_paginas";
 
-			                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' ORDER BY fecha ASC $limite";
+			                        $consultarNoticias = "SELECT * FROM noticias WHERE estado='1' AND cod_categoria='$cod_categoria' ORDER BY fecha ASC $limite";
 			                        $resultadoNoticias = mysqli_query($enlaces,$consultarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
 			                        while($filaNot = mysqli_fetch_array($resultadoNoticias)){
 			                            $xCodigo        = $filaNot['cod_noticia'];

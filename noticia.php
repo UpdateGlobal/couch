@@ -1,5 +1,5 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php ?>
+<?php $cod_noticia   = $_REQUEST['cod_noticia']; ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -8,10 +8,23 @@
 			$consultarMet = 'SELECT * FROM metatags';
 	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
 	        $filaMet = mysqli_fetch_array($resultadoMet);
-	            $xTitulo = $filaMet['titulo'];
+	            $xTitulo 	= $filaMet['titulo'];
+	            $xSlogan    = $filaMet['slogan'];
+    	        $xDes       = $filaMet['description'];
+    	        $xFace1     = $filaMet['face1'];
+    	        $xFace2     = $filaMet['face2'];
     	?>
 		<title><?php echo $xTitulo; ?> | Blog</title>
-		<?php include('module/head.php'); ?> 
+		<?php include('module/head.php'); ?>
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content="<?php echo $xTitulo; ?>" />
+		<meta property="og:image" content="cms/assets/img/meta/<?php echo $xFace1; ?>" />
+		<meta property="og:image" content="cms/assets/img/meta/<?php echo $xFace2; ?>" />
+		<meta property="og:description" content="<?php echo $xDes; ?>" />
+		<meta name="twitter:title" content="<?php echo $xTitulo; ?>" />
+		<meta name="twitter:image" content="cms/assets/img/meta/<?php echo $xFace1; ?>" />
+		<meta name="twitter:image" content="cms/assets/img/meta/<?php echo $xFace2; ?>" />
+		<meta name="twitter:descripcion" content="<?php echo $xDes; ?>" />
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
@@ -19,13 +32,24 @@
 				<?php include ('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
+						background-image: url(img/big-header-2.jpeg);
 					}
 					h1, h2, h3, h4, h5, h6 {
-					font-family: helvetica !important;
-					font-weight: 50;
+						font-family: helvetica !important;
+						font-weight: 50;
 					}
 				</style>
+				<?php 
+					$consultarNoticias = "SELECT * FROM noticias WHERE cod_noticia='$cod_noticia'";
+			        $resultadoNoticias = mysqli_query($enlaces,$consultarNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			        $filaNot = mysqli_fetch_array($resultadoNoticias);
+						$cod_noticia = $filaNot['cod_noticia'];
+						$cod_categoria = $filaNot['cod_categoria'];
+						$xImagen       = $filaNot['imagen'];
+						$xTitulo       = $filaNot['titulo'];
+						$xDescripcion  = $filaNot['noticia'];
+						$xAutor        = $filaNot['autor'];
+				?>
 				<!-- blogheader -->
 				<div class="fh5co-parallax back_intro" data-stellar-background-ratio="0.5" style="background-position: -400px 0px !important;">
 					<div class="overlay"></div>
@@ -33,7 +57,7 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 								<div class="fh5co-intro fh5co-table-cell animate-box">
-									<h1 class="text-center">Titulo de Noticia</h1>
+									<h1 class="text-center"><?php echo $xTitulo; ?></h1>
 									<p class="text_p">Descripcion corta de la noticia</p>
 								</div>
 							</div>
@@ -46,9 +70,8 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
-								<br>
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="blog.php">Blog</a> / Noticia</li>
+									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="blog.php">Blog</a> / <?php echo $xTitulo; ?></li>
 								</ul>
 							</div>
 						</div>
@@ -67,12 +90,15 @@
 								</div>
 								<!--ietmblog-->
 								<div class="col-md-12">
-									<a href="#"><img class="img-responsive" style="width: 100%;" src="img/noticia.jpeg" alt=""></a>
-									<div class="desc" style="padding: 20px;">
-										<h3>Loren Ipsum Moment Morat Relax text.</h3>
-										<span class="posted_by">Posted by: Admin</span>
-										<p class="text_blog">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									<img class="img-responsive" style="width: 100%;" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" alt="" />
+									<div class="desc" style="padding-top:20px;">
+										<h3><?php echo $xTitulo; ?></h3>
+										<span class="posted_by">Publicado por: <?php echo $xAutor; ?></span>
+										<div class="text_contenido">
+											<?php echo $xDescripcion; ?>
+										</div>
 									</div>
+									<a class="btn btn-primary" href="blog.php">&lt; Volver</a>
 								</div>
 								<!--ietmblog-->
 							</div>

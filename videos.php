@@ -1,3 +1,4 @@
+<?php include("cms/module/conexion.php"); ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -58,24 +59,24 @@
 							</div>
 						</div>
 						<div class="row">
+							<?php
+		                        $consultarVideos = "SELECT * FROM videos WHERE estado='1' ORDER BY orden";
+		                        $resultadoVideos = mysqli_query($enlaces,$consultarVideos) or die('Consulta fallida: ' . mysqli_error($enlaces));
+		                        while($filaVid = mysqli_fetch_array($resultadoVideos)){
+		                        	$xTitulo    = $filaVid['titulo'];
+		                        	$xVideo   	= $filaVid['video'];
+		                        	$xImagen    = $filaVid['imagen'];
+		                    ?>
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center video-gal">
-								<a class="jackbox" data-group="video" href="https://www.youtube.com/watch?v=w8mmu8ETDqc">
-							  		<img src="img/servicio_1.jpeg" />
+								<a class="jackbox" data-group="video" href="<?php echo $xVideo; ?>">
+							  		<img src="cms/assets/img/videos/<?php echo $xImagen; ?>" />
 							    </a>
-								<h4 class="video-titulo">T&iacute;tulo V&iacute;deo</h4>
+								<h4 class="video-titulo"><?php echo $xTitulo; ?></h4>
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center video-gal">
-								<a class="jackbox" data-group="video" href="https://www.youtube.com/watch?v=w8mmu8ETDqc">
-							  		<img src="img/servicio_1.jpeg" />
-							    </a>
-								<h4 class="video-titulo">T&iacute;tulo V&iacute;deo</h4>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center video-gal">
-								<a class="jackbox" data-group="video" href="https://www.youtube.com/watch?v=w8mmu8ETDqc">
-							  		<img src="img/servicio_1.jpeg" />
-							    </a>
-								<h4 class="video-titulo">T&iacute;tulo V&iacute;deo</h4>
-							</div>
+							<?php
+								}
+								mysqli_free_result($resultadoVideos);
+							?>
 						</div>
 					</div>
 				</div>
