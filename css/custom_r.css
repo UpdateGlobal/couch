@@ -93,6 +93,35 @@
     right: inherit;
 }
 
+.cat-lista{
+    margin: 0px;
+}
+
+.cat-lista li a{
+    color: #000;
+}
+
+.cat-lista li a:hover {
+    color: #00b1e8;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    background-color: #00b1e8;
+    border-color: #00b1e8;
+}
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+    color: #00b1e8;
+}
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+    color: #00b1e8;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #00b1e8;
+}
+
 @media screen and (max-width: 1199px) {
 	.element-item {
 	    max-width: 48%;

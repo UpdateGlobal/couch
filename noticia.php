@@ -1,9 +1,16 @@
 <?php include("cms/module/conexion.php"); ?>
+<?php ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
 	<head>
-		<title>JopaCoaching | Blog</title>
+		<?php
+			$consultarMet = 'SELECT * FROM metatags';
+	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	        $filaMet = mysqli_fetch_array($resultadoMet);
+	            $xTitulo = $filaMet['titulo'];
+    	?>
+		<title><?php echo $xTitulo; ?> | Blog</title>
 		<?php include('module/head.php'); ?> 
 	</head>
 	<body>
@@ -17,21 +24,6 @@
 					h1, h2, h3, h4, h5, h6 {
 					font-family: helvetica !important;
 					font-weight: 50;
-					}
-					@media screen and (max-width: 1250px) {
-					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
-					}
-					}
-					@media screen and (max-width: 992px) {
-					.back_intro{
-					background-image: url(img/big-header-3.jpeg);
-					}
-					}
-					@media screen and (max-width: 450px) {
-					.back_intro{
-					background-image: url(img/big-header-1.jpeg);
-					}
 					}
 				</style>
 				<!-- blogheader -->

@@ -3,7 +3,13 @@
 <html class="no-js">
 	<!--<![endif]-->
 	<head>
-		<title>JopaCoaching | Joel Henrique Perez</title>
+		<?php
+			$consultarMet = 'SELECT * FROM metatags';
+	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	        $filaMet = mysqli_fetch_array($resultadoMet);
+	            $xTitulo = $filaMet['titulo'];
+    	?>
+		<title><?php echo $xTitulo; ?> | Joel Henrique Perez</title>
 		<?php include('module/head.php'); ?>
 	</head>
 	<body>
@@ -48,12 +54,23 @@
 					<div class="row">
 						<div class="col-md-6 animate-box">
 							<h3 class="section-title">Nuestra Direcci&oacute;n</h3>
+							<?php
+			                 	$consultarCot = 'SELECT * FROM contacto';
+			                 	$resultadoCot = mysqli_query($enlaces,$consultarCot) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			                 	$filaCot  = mysqli_fetch_array($resultadoCot);
+				                    $xDirection   = $filaCot['direction'];
+				                    $xPhone       = $filaCot['phone'];
+			    	                $xMobile      = $filaCot['mobile'];
+			        	            $xEmail       = $filaCot['email'];
+			            	        $xMap         = $filaCot['map'];
+			                	    $xFormem      = $filaCot['form_mail'];
+		                	?>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 							<ul class="contact-info">
-								<li><i class="fas fa-map-marker-alt"></i> Cayrucachi 334 Maranga 5ta etapa San Miguel. Altura de la cuadra 5 de la Av. Precursores</li>
-								<li><i class="fas fa-phone"></i> +51 974990998</li>
-								<li><i class="fab fa-whatsapp"></i> +51 974990998</li>
-								<li><i class="far fa-envelope"></i> info@joel.pe</li>
+								<li><i class="fas fa-map-marker-alt"></i> <?php echo $xDirection; ?></li>
+								<li><i class="fas fa-phone"></i> <?php echo $xPhone; ?></li>
+								<li><i class="fab fa-whatsapp"></i> <?php echo $xMobile; ?></li>
+								<li><i class="far fa-envelope"></i> <?php echo $xEmail; ?></li>
 							</ul>
 						</div>
 						<div class="col-md-6 animate-box">
@@ -84,7 +101,8 @@
 				</form>
 			</div>
 		</div>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6127886724034!2d-77.09590628518716!3d-12.070141091451713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c96659f83ee9%3A0x5f8d162a7d84b223!2sParroquia+San+Miguel+Arc%C3%A1ngel!5e0!3m2!1ses-419!2spe!4v1533748870615" frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen></iframe>
+		<?php echo $xMap; ?>
+		
 		<?php 
 			include('module/footer.php');
 			include('module/script.php');

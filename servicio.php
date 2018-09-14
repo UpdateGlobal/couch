@@ -70,7 +70,7 @@
 							<div class="row">
 								<div class="col-md-6 ">
 									<div class="card_Servi">
-										<img class="img_servi" src="assets/img/servicios/<?php echo $imagen; ?>" alt="">
+										<img class="img_servi" src="cms/assets/img/servicios/<?php echo $imagen; ?>" alt="">
 									</div>
 								</div>
 								<div class="col-md-6">

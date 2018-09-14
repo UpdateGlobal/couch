@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2018 a las 00:29:41
+-- Tiempo de generación: 14-09-2018 a las 22:35:41
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -77,7 +77,7 @@ CREATE TABLE `contacto` (
 --
 
 INSERT INTO `contacto` (`cod_contact`, `direction`, `phone`, `mobile`, `email`, `diaa`, `horarioa`, `diab`, `horariob`, `diac`, `horarioc`, `map`, `face`, `form_mail`, `cart_mail`) VALUES
-(1, 'Av. Arenales 2201, Centro Comercial Risso, Lince - Lima', '333 8804', '965 488 089', 'info@quemono.com.pe', 'Lunes a Viernes ', '11:00 - 21:00', 'Sábado', '11:00 - 21:00', 'Domingo', '00:00 - 19:00', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.3444411369518!2d-77.03594817080054!3d-12.086270688087836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA1JzEwLjYiUyA3N8KwMDInMDcuNCJX!5e0!3m2!1ses-419!2spe!4v1526592619857\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', '<div id=\"fb-root\"></div>\r\n<script>(function(d, s, id) {\r\n  var js, fjs = d.getElementsByTagName(s)[0];\r\n  if (d.getElementById(id)) return;\r\n  js = d.createElement(s); js.id = id;\r\n  js.src = \'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.0&appId=2056293721256037\';\r\n  fjs.parentNode.insertBefore(js, fjs);\r\n}(document, \'script\', \'facebook-jssdk\'));</script>\r\n<div class=\"fb-page\" data-href=\"https://www.facebook.com/pg/quemonoperu/\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/pg/quemonoperu/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/pg/quemonoperu/\">Quemono</a></blockquote></div>', 'raulupdate@gmail.com', 'raulupdate@gmail.com');
+(1, 'Cayrucachi 334 Maranga 5ta etapa San Miguel Altura de la cuadra 5 de la Av. Precursores', '+51 974990998', '+51 974990998', 'info@joel.pe', 'Lunes a Viernes ', '11:00 - 21:00', 'Sábado', '11:00 - 21:00', 'Domingo', '00:00 - 19:00', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6127886724034!2d-77.09590628518716!3d-12.070141091451713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c96659f83ee9%3A0x5f8d162a7d84b223!2sParroquia+San+Miguel+Arc%C3%A1ngel!5e0!3m2!1ses-419!2spe!4v1533748870615\" frameborder=\"0\" style=\"border:0; width: 100%; height: 400px;\" allowfullscreen></iframe>', '<div id=\"fb-root\"></div>\r\n<script>(function(d, s, id) {\r\n  var js, fjs = d.getElementsByTagName(s)[0];\r\n  if (d.getElementById(id)) return;\r\n  js = d.createElement(s); js.id = id;\r\n  js.src = \'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.0&appId=2056293721256037\';\r\n  fjs.parentNode.insertBefore(js, fjs);\r\n}(document, \'script\', \'facebook-jssdk\'));</script>\r\n<div class=\"fb-page\" data-href=\"https://www.facebook.com/pg/quemonoperu/\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/pg/quemonoperu/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/pg/quemonoperu/\">Quemono</a></blockquote></div>', 'raulupdate@gmail.com', 'raulupdate@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -124,6 +124,53 @@ CREATE TABLE `formulario` (
 
 INSERT INTO `formulario` (`cod_contacto`, `nombres`, `email`, `telefono`, `fecha_ingreso`, `mensaje`) VALUES
 (1, 'Luiz Enrique Haro Tineo', 'raulmartiarena89@gmail.com', '923766570', '2018-01-23', 'xcvsx');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galerias`
+--
+
+CREATE TABLE `galerias` (
+  `cod_galeria` int(11) NOT NULL,
+  `titulo` varchar(250) DEFAULT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  `orden` int(11) DEFAULT NULL,
+  `estado` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `galerias`
+--
+
+INSERT INTO `galerias` (`cod_galeria`, `titulo`, `imagen`, `orden`, `estado`) VALUES
+(1, 'Galería de Imageñes', 'galeria1.jpg', 0, 1),
+(2, 'Galería de Imágenes 1', 'galeria2.jpg', 1, 1),
+(3, 'Galería de Imágenes 2', 'galeria3.jpg', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galerias_fotos`
+--
+
+CREATE TABLE `galerias_fotos` (
+  `cod_foto` int(11) NOT NULL,
+  `cod_galeria` int(11) DEFAULT NULL,
+  `imagen` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `galerias_fotos`
+--
+
+INSERT INTO `galerias_fotos` (`cod_foto`, `cod_galeria`, `imagen`) VALUES
+(1, 1, 'foto1.jpg'),
+(2, 1, 'foto2.jpg'),
+(3, 1, 'foto3.jpg'),
+(5, 2, 'foto4.jpg'),
+(6, 2, 'foto5.jpg'),
+(7, 3, 'foto6.jpg');
 
 -- --------------------------------------------------------
 
@@ -176,7 +223,9 @@ CREATE TABLE `noticias` (
 INSERT INTO `noticias` (`cod_noticia`, `cod_categoria`, `slug`, `titulo`, `imagen`, `noticia`, `autor`, `fecha`, `estado`) VALUES
 (1, 1, 'la-resistencia-al-cambio', 'La resistencia al cambio', 'noticia.jpg', '<p>Es esto algo normal en el ser humano? Es muy probable encontrar respuestas distintas, pero desde mi experiencia me pasÃ³ algo particular, vivÃ­ lo que es estar dentro de la resistencia a cambiar y esto me dio muchos aprendizajes significativos.Â </p><p>Les cuento quÃ© me detenÃ­a a cambiar?...serÃ© sincero al contÃ¡rselo Tener MIEDO...miedo a lo que no conozco, no domino y a lo nuevo por hacer y esto me paralizÃ³, me detuvo, me hizo huir, escapÃ©.Â </p><p>La resistencia al cambio es algo normal en casi todos y da lugar a inseguridades, miedos, mayores necesidades, incertidumbre y otras actitudes, sin embargo el cambio se convierte en muchas ocasiones necesario para el buen funcionamiento y descubrir un nuevo accionar. A nivel organizacional pasa a menudo, tambiÃ©n hay resistencia al cambio y veamos porque.Â </p><p>Una pequeÃ±a lista:Â </p><ul><li>Se sienten amenazados cuando hay que hacer cambios radicales.Â </li><li>La percepciÃ³n como ven las metas y estrategias de su organizaciÃ³n hacen que se sientan cÃ³modos y no entienden porque se necesita un cambio o meta nueva.Â </li><li>Miedo a no poder aprender las nuevas destrezas o conocimientos que se requierenÂ </li><li>Miedo al fracasoÂ </li><li>Mayores responsabilidadesÂ </li><li>Baja confianzaÂ </li><li>Amenaza del puesto de trabajo, sueldo u otros beneficiosÂ </li><li>Amenaza a tu forma de vidaÂ </li><li>Falta de conocimiento de por quÃ© cambiarÂ </li><li>Miedo a lo desconocidoÂ </li></ul><p>QuÃ© nos pasa cuando nos resistimos a cambiar? Dejamos de aprender, experimentar y conocer nuevos retos, desafÃ­os y logros.Â </p><p>Ahora bien en nuestro diario andar cambiamos de un estado a otro y hasta lo planificamos, es tan natural que lo asumimos sin darnos cuenta muchas veces, otras no. Por ejemplo: Cambio de ropa Cambio de zapatos Cambio menÃº Cambio de peatÃ³n a tener carro Cambio de soltero a casado De no ser padre a serlo De casa de mis padres a mi casa propia.Â </p><p>Decidimos y cambiamos con miedos muchas veces, pero igual lo hacemos. Entonces...cuÃ¡l deberÃ­a ser nuestra actitud al cambio?Â </p><p>Hay que comprender que muchas veces los cambios son buenos, que son una variable permanente en la empresa y en la vida, y hacerlo puede darnos un conocimiento nuevo y eso nos harÃ¡ crecer.Â </p><p>El Cambio es Bueno, pero no en todo ok? Que tus valores te indiquen en quÃ© no debemos de cambiar. </p><p>El Cambio es bueno...puedes huir de Ã©l o aprender, tu decides.</p>', 'Webmaster', '2018-09-13', 1),
 (2, 1, 'el-desafio-del-amor', 'El desafio del amor', 'noticia.jpg', '<p>Es el tÃ­tulo de una pelÃ­cula que hizo cambiar mi visiÃ³n en mi relaciÃ³n de pareja con mi esposa. Si damos una mirada al mundo actual encontramos muchos matrimonios que se encuentran rotos, de pronto ya divorciados y algunos listos por serlo, esto lleva encontrar muchos hogares disfuncionales. Esto trae a mi memoria parte importante de esta pelÃ­cula y es cuando manifiestan el tema de nuestros votos al casarnos, nosotros manifestamos que estaremos siempre en las buenas y en las malas, pero pareciera que decimos que permaneceremos en las buenas, pues cuando algo estÃ¡ mal dejamos de luchar por cambiar y dar lo mejor a nuestro cÃ³nyuge. En esta pelÃ­cula muestran una figura que redondea este sentir, pegan dos botellas de vidrio pequeÃ±as, una de sal y la otra de pimienta y cuando el esposo en problemas quiso romperla el amigo le manifiesta que no lo haga pues al hacerlo una de las botellas se romperÃ­a. Que hermosa forma de manifestar la condiciÃ³n que se queda en una ruptura matrimonial. Que hermosa es la parte en que el padre del esposo le regala a su hijo un manual de 40 dÃ­as y le indica que trabajara dÃ­a a dÃ­a sin parar para salvar su matrimonio y estÃ¡ parte me hizo reflexionar que cada vez que humanamente ponemos nuestro esfuerzo por mÃ¡s que lo intentemos muchas veces fallamos, al llegar al dÃ­a 20 y ver que no lograba nada y llamando a su padre este decide ir a verlo y en esa conversaciÃ³n me marcÃ³ esta parte. El hijo renegaba por lo que estaba pasando con tanto esfuerzo y decÃ­a algo asÃ­: Estoy cansado de darle tanto, de preocuparme por ella y solo ver que me da la espalda y es indiferente a todo lo que hago. En ese momento su padre estaba recostado a una cruz escuchÃ¡ndolo atento. Cuando su hijo lanzÃ³ esta pregunta: CÃ³mo puedo demostrarle amor a alguien que siempre me rechaza? Su padre le responde: Muy buena pregunta y seguÃ­a recostado a una cruz.Â </p><p>Tremendo aprendizaje que tuve, fue para mi un momento de quiebre al darme cuenta que el hombre muchas veces vive de la misma manera a tan grande amor que nos da nuestro SeÃ±or Jesucristo...somos indiferentes y hacemos de nuestra vida lo que queremos.Â </p><p>El hijo entendiÃ³ que primero tenÃ­a que recibir del amor de Dios para que con ese amor vaya a la conquista de su esposa. EntendiÃ³ lo que su padre le dijo: Nadie puede dar lo que no tiene. Y rindiÃ³ su vida ante Dios y con su amor decidiÃ³ ir por su esposa.Â </p><p>Bueno no quiero contarte lo quÃ© pasÃ³ en la pelÃ­cula, es muy probable que lo imagines, pero te animo a que la veas, bÃºscala, cÃ³mprala, y mÃ­rala con tu cÃ³nyuge. Descubre tu aprendizaje.Â </p><p>Quiero terminar este compartir con este mensaje de la pelÃ­cula. Este joven era un bombero y dijo: â€œNunca abandones a tu pareja y menos en un incendioâ€Â </p><p>No sÃ© cÃ³mo estÃ¡ tu matrimonio, de pronto estÃ¡ en un incendio o estÃ¡ a punto de incendiarse, aprendÃ­ que nunca debemos abandonar a nuestra pareja. Luchemos por apagar el incendio pero con amor pero ese amor que es el verdadero...el amor de Dios.</p>', 'Webmaster', '2018-09-13', 1),
-(3, 1, 'la-felicidad', 'La Felicidad', 'noticia.jpg', '<p>Quiero empezar con esta pregunta: Eres feliz? Pregunta muchas veces difÃ­cil de responder, pues nos confronta. Sea cualquiera tu respuesta, te hago estas preguntas Eres feliz en tu matrimonio? EstÃ¡s feliz en tu trabajo? EstÃ¡s feliz con tu sueldo? Si estas preguntas te pusieron en zona incÃ³moda o en modo mmmmmmm buena pregunta, de pronto deberÃ­amos ponernos a pensar que es el momento de empezar a serlo o quedarme igual como estoy.&nbsp;</p><p>Si estas preguntas hacen en tu vida tomar una decisiÃ³n, permÃ­teme felicitarte, re incomodÃ© y lo mÃ¡s probable es que salgas de esa zona cÃ³moda e intentes moverte para la busca de tu felicidad plena.&nbsp;</p><p>Te quiero hacer algunas preguntas mÃ¡s que de pronto sus respuestas hacen que te muevas hacer algo diferente. Recuerda esta frase: â€œSi sigues haciendo lo mismo, obtendrÃ¡s siempre lo mismoâ€ EstÃ¡s content@ con tus resultados. Tu respuesta definirÃ¡ tu accionar.&nbsp;</p><p>PermÃ­teme hacerte algunas preguntas y si es tu deseo tener una sesiÃ³n conmigo y charlar sobre tu deseo de lograr cambios significativos, encantado de ayudarte.&nbsp;</p><p>Si lo que tienes ahora no te gusta, cÃ³mo crees que deberÃ­a ser? CÃ³mo te imaginabas que iba a ser tu vida QuÃ© te gustarÃ­a que pasara hoy que no estÃ© pasando? Si tuvieras una varita mÃ¡gica que harÃ­as posible?&nbsp;</p><p>Te dejo estas preguntas esperando te ayude a moverte.&nbsp;</p><p>ContÃ¡ctame conmigo y gustoso en acompaÃ±arte en tu proceso.</p>', 'Webmaster', '2018-09-13', 1);
+(3, 1, 'la-felicidad', 'La Felicidad', 'noticia.jpg', '<p>Quiero empezar con esta pregunta: Eres feliz? Pregunta muchas veces difÃ­cil de responder, pues nos confronta. Sea cualquiera tu respuesta, te hago estas preguntas Eres feliz en tu matrimonio? EstÃ¡s feliz en tu trabajo? EstÃ¡s feliz con tu sueldo? Si estas preguntas te pusieron en zona incÃ³moda o en modo mmmmmmm buena pregunta, de pronto deberÃ­amos ponernos a pensar que es el momento de empezar a serlo o quedarme igual como estoy.&nbsp;</p><p>Si estas preguntas hacen en tu vida tomar una decisiÃ³n, permÃ­teme felicitarte, re incomodÃ© y lo mÃ¡s probable es que salgas de esa zona cÃ³moda e intentes moverte para la busca de tu felicidad plena.&nbsp;</p><p>Te quiero hacer algunas preguntas mÃ¡s que de pronto sus respuestas hacen que te muevas hacer algo diferente. Recuerda esta frase: â€œSi sigues haciendo lo mismo, obtendrÃ¡s siempre lo mismoâ€ EstÃ¡s content@ con tus resultados. Tu respuesta definirÃ¡ tu accionar.&nbsp;</p><p>PermÃ­teme hacerte algunas preguntas y si es tu deseo tener una sesiÃ³n conmigo y charlar sobre tu deseo de lograr cambios significativos, encantado de ayudarte.&nbsp;</p><p>Si lo que tienes ahora no te gusta, cÃ³mo crees que deberÃ­a ser? CÃ³mo te imaginabas que iba a ser tu vida QuÃ© te gustarÃ­a que pasara hoy que no estÃ© pasando? Si tuvieras una varita mÃ¡gica que harÃ­as posible?&nbsp;</p><p>Te dejo estas preguntas esperando te ayude a moverte.&nbsp;</p><p>ContÃ¡ctame conmigo y gustoso en acompaÃ±arte en tu proceso.</p>', 'Webmaster', '2018-09-13', 1),
+(4, 1, 'sed-lobortis-semper-auctor', 'Sed lobortis semper auctor', 'noticia.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl tellus, scelerisque ut fermentum a, scelerisque in dui. Nunc vel sapien vitae orci vehicula lobortis a id mi. Maecenas commodo, risus a eleifend bibendum, dolor lacus tincidunt nulla, quis tristique enim nibh vel urna. Vivamus auctor magna ac nisi venenatis suscipit. Nullam pulvinar condimentum erat, ac rutrum magna. Morbi pellentesque consectetur odio et suscipit. Suspendisse vel ante malesuada, vestibulum mi sit amet, rutrum erat. Curabitur quis venenatis justo. Sed convallis iaculis ultricies. Vivamus et sapien risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vel rhoncus sapien. Aliquam erat volutpat. Nunc varius odio quis mauris feugiat, a malesuada tellus tincidunt. Donec mollis vehicula auctor.</p><p>Maecenas molestie, diam at viverra suscipit, orci arcu tristique neque, non porttitor orci eros sed arcu. Maecenas ut lorem non lorem convallis accumsan sed id arcu. Nunc varius eros libero, at sollicitudin mauris tincidunt gravida. Ut id elit sapien. Duis at arcu nisl. Pellentesque molestie tristique tellus ut volutpat. Sed vel lacus mattis, viverra ipsum et, suscipit magna. Curabitur at luctus arcu, semper ultrices ex. Maecenas gravida nulla eget mollis pharetra. Fusce accumsan nec nisl a fringilla. Etiam dictum felis consequat ipsum aliquam pellentesque. Etiam tempor sapien tortor. Suspendisse consectetur condimentum felis vitae bibendum. Nulla rutrum rutrum mauris, semper egestas magna vehicula eget.</p><p>Aliquam porta tempus nisi, ac aliquet metus finibus consectetur. In blandit, nulla vitae malesuada vestibulum, odio metus laoreet justo, ac bibendum ipsum nulla sed lacus. Nulla tristique consequat est lacinia tincidunt. Etiam vulputate nisl in felis sagittis, a pretium ante pharetra. Donec eu libero volutpat, tincidunt sem sed, mollis lacus. Nunc imperdiet eu turpis rutrum tincidunt. Ut id augue sem. Donec pretium dignissim mauris a semper.</p><p>Maecenas et lacus in dui tincidunt malesuada fringilla eu dolor. Donec consectetur enim tempus sodales bibendum. Duis accumsan tristique nisi in dignissim. Duis vestibulum ipsum vel nunc vestibulum, et scelerisque lectus fermentum. Curabitur at augue sit amet ante porta iaculis. Nullam vitae luctus leo, a vehicula diam. Pellentesque venenatis metus nec eros mollis, et congue sapien faucibus. Aenean iaculis, nulla quis placerat interdum, magna nibh interdum est, nec pellentesque tellus mauris vitae odio. Ut in ultricies ante. Donec suscipit pellentesque ipsum vel congue. Proin velit augue, rutrum a tincidunt nec, scelerisque ac turpis. Curabitur tempor, velit sit amet faucibus fermentum, risus nibh tempus ante, sed lobortis urna elit vitae sem. Duis faucibus turpis efficitur justo auctor, eu fringilla nibh faucibus. In leo lacus, posuere vitae tincidunt ac, maximus at dui.</p><p>Vestibulum lobortis orci in massa vestibulum pharetra. Aliquam semper purus metus, nec vulputate nunc ornare vel. Mauris felis libero, accumsan ac dui eu, scelerisque malesuada justo. In ut elementum lectus. Nullam pulvinar arcu enim, pretium volutpat libero ultrices non. Aliquam cursus ultricies diam, in sollicitudin lorem bibendum a. In vehicula at nulla a cursus. Aenean suscipit, purus a scelerisque porta, orci magna facilisis ante, et rutrum massa arcu ut libero. Suspendisse auctor pharetra lorem vitae laoreet. Vivamus suscipit quam placerat ante gravida interdum.</p>', 'Webmaster', '2018-09-14', 1),
+(5, 2, 'aliquam-porta-tempus-nisi', 'Aliquam porta tempus nisi', 'noticia.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl tellus, scelerisque ut fermentum a, scelerisque in dui. Nunc vel sapien vitae orci vehicula lobortis a id mi. Maecenas commodo, risus a eleifend bibendum, dolor lacus tincidunt nulla, quis tristique enim nibh vel urna. Vivamus auctor magna ac nisi venenatis suscipit. Nullam pulvinar condimentum erat, ac rutrum magna. Morbi pellentesque consectetur odio et suscipit. Suspendisse vel ante malesuada, vestibulum mi sit amet, rutrum erat. Curabitur quis venenatis justo. Sed convallis iaculis ultricies. Vivamus et sapien risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vel rhoncus sapien. Aliquam erat volutpat. Nunc varius odio quis mauris feugiat, a malesuada tellus tincidunt. Donec mollis vehicula auctor.</p><p>Maecenas molestie, diam at viverra suscipit, orci arcu tristique neque, non porttitor orci eros sed arcu. Maecenas ut lorem non lorem convallis accumsan sed id arcu. Nunc varius eros libero, at sollicitudin mauris tincidunt gravida. Ut id elit sapien. Duis at arcu nisl. Pellentesque molestie tristique tellus ut volutpat. Sed vel lacus mattis, viverra ipsum et, suscipit magna. Curabitur at luctus arcu, semper ultrices ex. Maecenas gravida nulla eget mollis pharetra. Fusce accumsan nec nisl a fringilla. Etiam dictum felis consequat ipsum aliquam pellentesque. Etiam tempor sapien tortor. Suspendisse consectetur condimentum felis vitae bibendum. Nulla rutrum rutrum mauris, semper egestas magna vehicula eget.</p><p>Ac aliquet metus finibus consectetur. In blandit, nulla vitae malesuada vestibulum, odio metus laoreet justo, ac bibendum ipsum nulla sed lacus. Nulla tristique consequat est lacinia tincidunt. Etiam vulputate nisl in felis sagittis, a pretium ante pharetra. Donec eu libero volutpat, tincidunt sem sed, mollis lacus. Nunc imperdiet eu turpis rutrum tincidunt. Ut id augue sem. Donec pretium dignissim mauris a semper.</p><p>Maecenas et lacus in dui tincidunt malesuada fringilla eu dolor. Donec consectetur enim tempus sodales bibendum. Duis accumsan tristique nisi in dignissim. Duis vestibulum ipsum vel nunc vestibulum, et scelerisque lectus fermentum. Curabitur at augue sit amet ante porta iaculis. Nullam vitae luctus leo, a vehicula diam. Pellentesque venenatis metus nec eros mollis, et congue sapien faucibus. Aenean iaculis, nulla quis placerat interdum, magna nibh interdum est, nec pellentesque tellus mauris vitae odio. Ut in ultricies ante. Donec suscipit pellentesque ipsum vel congue. Proin velit augue, rutrum a tincidunt nec, scelerisque ac turpis. Curabitur tempor, velit sit amet faucibus fermentum, risus nibh tempus ante, sed lobortis urna elit vitae sem. Duis faucibus turpis efficitur justo auctor, eu fringilla nibh faucibus. In leo lacus, posuere vitae tincidunt ac, maximus at dui.</p><p>Sed lobortis semper auctor. Vestibulum lobortis orci in massa vestibulum pharetra. Aliquam semper purus metus, nec vulputate nunc ornare vel. Mauris felis libero, accumsan ac dui eu, scelerisque malesuada justo. In ut elementum lectus. Nullam pulvinar arcu enim, pretium volutpat libero ultrices non. Aliquam cursus ultricies diam, in sollicitudin lorem bibendum a. In vehicula at nulla a cursus. Aenean suscipit, purus a scelerisque porta, orci magna facilisis ante, et rutrum massa arcu ut libero. Suspendisse auctor pharetra lorem vitae laoreet. Vivamus suscipit quam placerat ante gravida interdum.</p>', 'Webmaster', '2018-09-14', 1);
 
 -- --------------------------------------------------------
 
@@ -329,6 +378,7 @@ INSERT INTO `productos_principal` (`cod_principal`, `slug`, `principal`, `menu`,
 
 CREATE TABLE `servicios` (
   `cod_servicio` int(11) NOT NULL,
+  `slug` varchar(250) DEFAULT NULL,
   `titulo` varchar(250) DEFAULT NULL,
   `imagen` varchar(250) DEFAULT NULL,
   `descripcion` longtext,
@@ -342,8 +392,12 @@ CREATE TABLE `servicios` (
 -- Volcado de datos para la tabla `servicios`
 --
 
-INSERT INTO `servicios` (`cod_servicio`, `titulo`, `imagen`, `descripcion`, `dirige`, `beneficios`, `orden`, `estado`) VALUES
-(1, 'Coach de vida', 'servicio_1.jpg', '<div>Te acompaÃ±o en tu proceso de mejora personal y profesional, te observo desde una perspectiva integral, hasta que descubras Â¿QuiÃ©n verdaderamente eres?, Â¿CÃ³mo funcionas?, Â¿CuÃ¡les son los recursos que realmente tienes? Para ponerlos en AcciÃ³n y tÃº mismo puedas crear y generar una mejor realidad de tu vida y la mejor versiÃ³n NeurolinguÃ­stica, Inteligencia emocional, mental training, comunicaciÃ³n interna y lenguaje, desarrollo humano, entre otras.</div>\r\n', '<ul><li>Directores</li><li>LÃ­deres</li><li>Gerentes Generales</li><li>Mandos Medios</li><li>Gerentes de RRHH</li></ul>', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.<br></p>', 0, 1);
+INSERT INTO `servicios` (`cod_servicio`, `slug`, `titulo`, `imagen`, `descripcion`, `dirige`, `beneficios`, `orden`, `estado`) VALUES
+(1, NULL, 'Coach de vida', 'servicio_1.jpg', '<div>Te acompaÃ±o en tu proceso de mejora personal y profesional, te observo desde una perspectiva integral, hasta que descubras Â¿QuiÃ©n verdaderamente eres?, Â¿CÃ³mo funcionas?, Â¿CuÃ¡les son los recursos que realmente tienes? Para ponerlos en AcciÃ³n y tÃº mismo puedas crear y generar una mejor realidad de tu vida y la mejor versiÃ³n NeurolinguÃ­stica, Inteligencia emocional, mental training, comunicaciÃ³n interna y lenguaje, desarrollo humano, entre otras.</div>\r\n', '<ul><li>Directores</li><li>LÃ­deres</li><li>Gerentes Generales</li><li>Mandos Medios</li><li>Gerentes de RRHH</li></ul>', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.<br></p>', 0, 1),
+(2, NULL, 'Coach de equipos', 'servicio_1.jpg', '<p>DescripciÃ³n del Servicio Esto de hacer que el equipo funcione mejor, quizÃ¡s serÃ­a una responsabilidad que recaerÃ­a sobre el lÃ­der del equipo y sobre cada individuo en sÃ­ mismo. El coach de equipos trata de poner un espejo delante del equipo para que Ã©ste se vea reflejado, el coach ayuda al equipo a tomar conciencia:</p><ul><li>De quienes son como equipoÂ </li><li>De quÃ© tipo de interrelaciones existen entre los miembros del equipoÂ </li><li>De quÃ© aspectos mejoran sus resultados como equipo y cuales los empeoranÂ </li><li>De quÃ© tipo de roles informales existen en el equipo</li><li>De la toxicidad o salud que existe en el equipo</li><li>De cÃ³mo el equipo gestiona el cambio y las situaciones crÃ­ticas</li></ul><p>Y Â¿QuÃ© hace el equipo con esta nueva conciencia o informaciÃ³n de la que ahora dispone? Tomar decisiones y acciones para su futuro. EstÃ¡ dirigido a todo equipo que busca lograr, alcanzar, obtener resultados significativos, en toda Ã¡rea en que se desarrollan.</p>', '<ul><li>Directores\r\n</li><li>LÃ­deres\r\n</li><li>Gerentes Generales\r\n</li><li>Mandos Medios\r\n</li><li>Gerentes de RRHH</li></ul>', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.<br></p>', 1, 1),
+(3, NULL, 'Coach de ejecutivos', 'servicio_1.jpg', '<p>Te ofrecemos sesiones individualizadas y de colaboraciÃ³n, con el objetivo de conseguir un cambio sostenido en tu comportamiento y transformar su calidad de vida personal y profesionalâ€&nbsp;</p><p>Â¿A quiÃ©n estÃ¡ dirigido? (el servicio de Coach Ejecutivo) Es un proceso confidencial e independiente que va dirigido a personas que tienen bajo su responsabilidad a equipos de trabajo, autÃ³nomos, emprendedores, directivos, propietarios de empresas y a cualquier persona que quiera aumentar tanto el potencial de su equipo como el de ellos mismos.&nbsp;</p><p>EstÃ¡ dirigido a gerentes, directores, lÃ­deres, administrativos en busca de la mejora individual en relaciÃ³n a sus procesos directivos y mejora gerencial y directriz.</p>', '<ul><li>Directores</li><li>LÃ­deres</li><li>Gerentes Generales</li><li>Mandos Medios</li><li>Gerentes de RRHH</li></ul>', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.', 2, 1),
+(4, NULL, 'Coach Ejecutivo', 'servicio_1.jpg', '<p>Trabajamos sobre el \"desaprender para aprender de forma diferente, a cuestionarnos como padres y madres, como pareja, como hijos e hijas, revisar nuestra biografÃ­a emocional y preguntarnos quÃ© tenemos para ofrecer a los demÃ¡s, y animamos a iniciar este \"entrenamiento cotidiano\", que ayudarÃ¡ a cualquier modelo de familia. â€œEs, en definitiva, una nueva forma de ser, estar y actuar\". </p><p>EstÃ¡ dirigido a familias en busca de mejoras interpersonales y logros de metas y objetivos pudiendo ser hechas con sesiones grupales o personales.</p>', '<ul><li>Directores</li><li>LÃ­deres</li><li>Gerentes Generales</li><li>Mandos Medios</li><li>Gerentes de RRHH</li></ul>', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.<br></p>', 3, 1),
+(5, NULL, 'Coaching deportivo', 'servicio_1.jpg', '<p>Ofrecemos trabajar juntos en un proceso de entrenamiento y aprendizaje para hacer emerger sus habilidades y capacidades, traduciÃ©ndolas en Ã©xitos deportivos. Para lograr los objetivos trabajamos desde la motivaciÃ³n hasta el compromiso con sus propios objetivos a lograr.</p>\r\n<p>Dirigido a todo deportista que busca la mejora de resultados individuales y de grupo.</p>', '<ul><li>Directores</li><li>LÃ­deres</li><li>Gerentes Generales</li><li>Mandos Medios</li><li>Gerentes de RRHH</li></ul>', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960.<br></p>', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -365,9 +419,9 @@ CREATE TABLE `social` (
 --
 
 INSERT INTO `social` (`cod_social`, `type`, `links`, `valor`, `orden`, `estado`) VALUES
-(1, 'fa-facebook', '#', 'icon-facebook', 0, 1),
-(2, 'fa-twitter', '#', 'icon-twitter', 1, 1),
-(3, 'fa-youtube', '#', 'icon-email', 2, 1);
+(1, 'fa-facebook-square', '#', 'icon-facebook', 0, 1),
+(2, 'fa-twitter-square', '#', 'icon-twitter', 1, 1),
+(3, 'fa-youtube-play', '#', 'icon-email', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -396,6 +450,30 @@ INSERT INTO `usuarios` (`cod_usuario`, `nombres`, `email`, `imagen`, `usuario`, 
 (5, 'raul', 'raulmartiarena89@gmail.com', 'logo_update.png', 'raul', '$2y$10$muGNp8GcdL650DmKwURPi.JB74ao.P774krIWaI0yo3xalFNAvH3q', 0, 1),
 (6, 'Jorge Torres Barreto', 'jorgeupdateglobal@gmail.com', '', 'jtorres', '$2y$10$1.GQzSKag9tc4Yw37mhu3u.gaRnUgoSpOyGKlyf0iYOOeJAQPORKK', 0, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `videos`
+--
+
+CREATE TABLE `videos` (
+  `cod_video` int(11) NOT NULL,
+  `titulo` varchar(250) DEFAULT NULL,
+  `descripcion` text,
+  `imagen` varchar(250) DEFAULT NULL,
+  `video` varchar(250) DEFAULT NULL,
+  `orden` int(11) DEFAULT NULL,
+  `estado` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `videos`
+--
+
+INSERT INTO `videos` (`cod_video`, `titulo`, `descripcion`, `imagen`, `video`, `orden`, `estado`) VALUES
+(1, 'VÃ­deo de Prueba 1', 'PraeseÃ±t at purus ut ex iaculis consequat. Proin nisl lectus, semper iaculis blandit vel, vulputate et eros. Suspendisse in dui at elit hendrerit dapibus. Nulla et lorem eget massa facilisis eleifend. Sed faucibus a augue at consectetur. Sed condimentum dui vitae facilisis malesuada. Nam ac nulla vitae libero dapibus venenatis et in odio. Maecenas id libero non sapien malesuada efficitur. Suspendisse placerat sollicitudin volutpat.', 'v1.jpg', 'https://www.youtube.com/watch?v=OicH761BfGE', 0, 1),
+(2, 'VÃ­deo de  Prueba 2', '<p style=\"text-align: justify; \">Etiam vel ipsum pulvinar risus molestie efficitur. Vestibulum eu convallis orci. Vestibulum mi eros, dictum quis vestibulum at, tincidunt quis nisl. Aliquam ut nulla eget arcu lobortis placerat. Etiam purus nisl, dignissim vel risus non, molestie suscipit elit. Nullam congue a mi in maximus. Aenean mattis enim sit amet nulla ullamcorper vulputate. Praesent porttitor lacus id neque consectetur, nec vulputate nisl tempus. Fusce non purus vitae tortor maximus dignissim sed non erat. Nam pulvinar congue vestibulum. Donec placerat posuere magna ac ornare. Praesent nec massa vel nisl lobortis fermentum ut a mi. Duis posuere turpis sed felis pellentesque, id blandit eros faucibus.<br></p>', 'v2.jpg', 'https://www.youtube.com/watch?v=m1TnzCiUSI0', 1, 1);
+
 --
 -- Índices para tablas volcadas
 --
@@ -423,6 +501,18 @@ ALTER TABLE `contenidos`
 --
 ALTER TABLE `formulario`
   ADD PRIMARY KEY (`cod_contacto`);
+
+--
+-- Indices de la tabla `galerias`
+--
+ALTER TABLE `galerias`
+  ADD PRIMARY KEY (`cod_galeria`);
+
+--
+-- Indices de la tabla `galerias_fotos`
+--
+ALTER TABLE `galerias_fotos`
+  ADD PRIMARY KEY (`cod_foto`);
 
 --
 -- Indices de la tabla `metatags`
@@ -490,6 +580,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`cod_usuario`);
 
 --
+-- Indices de la tabla `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`cod_video`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -518,6 +614,18 @@ ALTER TABLE `formulario`
   MODIFY `cod_contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `galerias`
+--
+ALTER TABLE `galerias`
+  MODIFY `cod_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `galerias_fotos`
+--
+ALTER TABLE `galerias_fotos`
+  MODIFY `cod_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT de la tabla `metatags`
 --
 ALTER TABLE `metatags`
@@ -527,7 +635,7 @@ ALTER TABLE `metatags`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `cod_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cod_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias_categorias`
@@ -563,7 +671,7 @@ ALTER TABLE `productos_principal`
 -- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `cod_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `social`
@@ -576,6 +684,12 @@ ALTER TABLE `social`
 --
 ALTER TABLE `usuarios`
   MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `cod_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

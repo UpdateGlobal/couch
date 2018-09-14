@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html class="no-js">
 	<head>
-		<title>JopaCoaching | Joel Henrique Perez</title>
+		<?php
+			$consultarMet = 'SELECT * FROM metatags';
+	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	        $filaMet = mysqli_fetch_array($resultadoMet);
+	            $xTitulo = $filaMet['titulo'];
+    	?>
+		<title><?php echo $xTitulo; ?> | Joel Henrique Perez</title>
 		<?php include('module/head.php'); ?>
 		<style>
 			p, ul, ol {

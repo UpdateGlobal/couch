@@ -1,4 +1,5 @@
 <?php include("cms/module/conexion.php"); ?>
+<?php $cod_servicio   = $_REQUEST['cod_servicio']; ?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->

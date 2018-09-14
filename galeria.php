@@ -2,7 +2,13 @@
 <html class="no-js">
 	<!--<![endif]-->
 	<head>
-		<title>JopaCoaching | Servicios</title>
+		<?php
+			$consultarMet = 'SELECT * FROM metatags';
+	        $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	        $filaMet = mysqli_fetch_array($resultadoMet);
+	            $xTitulo = $filaMet['titulo'];
+    	?>
+		<title><?php echo $xTitulo; ?> | Servicios</title>
 		<?php include('module/head.php'); ?>
 		<link href="jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
 		<link href="jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />

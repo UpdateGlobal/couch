@@ -4,7 +4,17 @@
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.php"><img src="img/logoindex.png" width="150"></a></h1>
+						<h1 id="fh5co-logo">
+							<?php
+								$consultarMet = 'SELECT * FROM metatags';
+						    	$resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
+						    	$filaMet = mysqli_fetch_array($resultadoMet);
+						    		$xLogo = $filaMet['logo'];
+					    	?>
+							<a href="index.php">
+								<img src="cms/assets/img/meta/<?php echo $xLogo; ?>" width="150">
+							</a>
+						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
 								<li class="active"><a href="index.php">Inicio</a></li>
@@ -12,11 +22,19 @@
 								<li>
 									<a href="#">Servicios <i class="fas fa-angle-down"></i></a>
 									<ul class="fh5co-sub-menu">
-										<li><a href="Servicio1.php">Coach de Vida</a></li>
-										<li><a href="Servicio2.php">Coach  de Equipos</a></li>
-										<li><a href="Servicio3.php">Coach Ejecutivo</a></li>
-										<li><a href="Servicio4.php">Coach Familiar</a></li>
-										<li><a href="Servicio5.php">Coaching Deportivo</a></li>
+										<?php
+	                                        $consultarservicio = "SELECT * FROM servicios WHERE estado='1' ORDER BY orden";
+	                                        $resultadoservicio = mysqli_query($enlaces,$consultarservicio) or die('Consulta fallida: ' . mysqli_error($enlaces));
+	                                        while($filaSer = mysqli_fetch_array($resultadoservicio)){
+	                                            $xCodigo = $filaSer['cod_servicio'];
+	                                            $xTitulo = $filaSer['titulo'];
+	                                            $xSlug   = $filaSer['slug'];
+	                                    ?>
+	                                	<li><a href="servicio.php?cod_servicio=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></li>
+		                                <?php
+		                                    }
+		                                    mysqli_free_result($resultadoservicio);
+		                                ?>
 									</ul>
 								</li>
 								<li><a href="blog.php">Blog</a></li>
