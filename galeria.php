@@ -60,97 +60,41 @@
 							<br>
 							<div id="filters" class="button-group">
 							  <button class="button is-checked" data-filter="*">Todos</button>
-							  <button class="button" data-filter=".categoria-1">Categor&iacute;a 1</button>
-							  <button class="button" data-filter=".categoria-2">Categor&iacute;a 2</button>
-							  <button class="button" data-filter=".categoria-3">Categor&iacute;a 3</button>
-							  <button class="button" data-filter=".categoria-4">Categor&iacute;a 4</button>
-							  <button class="button" data-filter=".categoria-5">Categor&iacute;a 5</button>
+							  <?php
+			                   	$consultarCategoria = "SELECT * FROM galerias_categorias WHERE estado='1' ORDER BY orden";
+			                    $resultadoCategoria = mysqli_query($enlaces,$consultarCategoria) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			                    while($filaCat = mysqli_fetch_array($resultadoCategoria)){
+			                    	$xCategoria = $filaCat['categoria'];
+			                        $xSlug 		= $filaCat['slug'];
+			                  ?>
+							  <button class="button" data-filter=".<?php echo $xSlug; ?>"><?php echo $xCategoria; ?></button>
+							  <?php
+							  	}
+							  	mysqli_free_result($resultadoCategoria); 
+							  ?>
 							</div>
 							<div class="grid">
-							  <div class="element-item categoria-1" data-category="categoria-1">
-							     <a class="jackbox" data-group="video" href="https://www.youtube.com/watch?v=w8mmu8ETDqc">
-							  	    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							     </a>
-							  </div>
-							  <div class="element-item categoria-2" data-category="categoria-2">
-							  	<a class="jackbox" data-group="categoria-2" href="img/servicio_1.jpeg">
-							    	<img src="img/servicio_1.jpeg" class="img-thumbnail" />
+							  <?php
+					            $consultarGal = "SELECT gc.cod_categoria, gc.categoria, gc.slug, g.* FROM galerias_categorias as gc, galerias as g WHERE g.cod_categoria=gc.cod_categoria AND g.estado='1' ORDER BY orden ASC";
+					            $resultadoGal = mysqli_query($enlaces,$consultarGal) or die('Consulta fallida: ' . mysqli_error($enlaces));
+					            while($filaGal = mysqli_fetch_array($resultadoGal)){
+					              $xCodigo        = $filaGal['cod_galeria'];
+					              $xCategoria     = utf8_encode($filaGal['categoria']);
+					              $xSlug          = $filaGal['slug'];
+					              $xNomGal        = utf8_encode($filaGal['titulo']);
+					              $xCategoria     = $filaGal['categoria'];
+					              $xImagen        = $filaGal['imagen'];
+					          ?>
+							  <div class="element-item <?php echo $xSlug; ?>" data-category="<?php echo $xSlug; ?>">
+							  	<a class="jackbox" data-group="img<?php echo $xCodigo; ?>" href="cms/assets/img/galerias/<?php echo $xImagen; ?>">
+							    	<img src="cms/assets/img/galerias/<?php echo $xImagen; ?>" class="img-thumbnail" />
 							    </a>
+							    <h3 class="name"><?php echo $xNomGal; ?></h3>
 							  </div>
-							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Bismuth 3 </h3>
-							  </div>
-							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Lead 4 </h3>
-							  </div>
-							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Gold 5 </h3>
-							  </div>
-							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Potassium 6 </h3>
-							  </div>
-							  <div class="element-item categoria-2" data-category="categoria-2">
-							    <a class="jackbox" data-group="categoria-2" href="img/servicio_1.jpeg">
-							    	<img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    </a>
-							    <h3 class="name">Sodium 7 </h3>
-							  </div>
-							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Cadmium 8 </h3>
-							  </div>
-							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Calcium 9 </h3>
-							  </div>
-							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Rhenium 10 </h3>
-							  </div>
-							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Thallium 11 </h3>
-							  </div>
-							  <div class="element-item categoria-2" data-category="categoria-2">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Antimony 12 </h3>
-							  </div>
-							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Cobalt 13 </h3>
-							  </div>
-							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Ytterbium 14 </h3>
-							  </div>
-							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Argon 15 </h3>
-							  </div>
-							  <div class="element-item categoria-1" data-category="categoria-1">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Nitrogen 16 </h3>
-							  </div>
-							  <div class="element-item categoria-2" data-category="categoria-2">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Uranium 17 </h3>
-							  </div>
-							  <div class="element-item categoria-3" data-category="categoria-3">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Plutonium 18 </h3>
-							  </div>
-							  <div class="element-item categoria-4" data-category="categoria-4">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Plutonium 19 </h3>
-							  </div>
-							  <div class="element-item categoria-5" data-category="categoria-5">
-							    <img src="img/servicio_1.jpeg" class="img-thumbnail" />
-							    <h3 class="name">Plutonium 20 </h3>
-							  </div>
+							  <?php
+							  	}
+							  	mysqli_free_result($resultadoGal);
+							  ?>
 							</div>
 						</div>
 					</div>
@@ -166,7 +110,6 @@
 					$('#myModal').on('shown.bs.modal', function () {
 					  $('#myInput').focus()
 					})
-
 
 					// external js: isotope.pkgd.js
 					// init Isotope

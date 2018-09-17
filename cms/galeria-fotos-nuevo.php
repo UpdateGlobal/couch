@@ -64,7 +64,7 @@ if($proceso == "Registrar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
@@ -84,7 +84,7 @@ if($proceso == "Registrar"){
             <div class="card-body">
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="logo">Portafolio:</label>
+                  <label class="col-form-label" for="logo">Album:</label>
                 </div>
                 <div class="col-8 col-lg-10">
                   <?php
@@ -94,14 +94,13 @@ if($proceso == "Registrar"){
                   <strong><?php echo $titulo; ?></strong>
                   <?php
                     }
-                    
                   ?>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="imagen">A&ntilde;adir Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(800px x 600px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <?php if($xVisitante=="1"){ ?><p></p><?php } ?>

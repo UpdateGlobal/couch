@@ -75,7 +75,7 @@ if($proceso=="Actualizar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>

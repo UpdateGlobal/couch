@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php header ('Content-type: text/html; charset=utf-8'); include("module/head.php"); ?>
+    <?php include("module/head.php"); ?>
     <style>
       @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
         td:nth-of-type(1):before { content: "Album"; }
@@ -23,7 +23,7 @@
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
@@ -58,7 +58,7 @@
                         $resultadoGal = mysqli_query($enlaces,$consultarGal) or die('Consulta fallida: ' . mysqli_error($enlaces));
                         while($filaGal = mysqli_fetch_array($resultadoGal)){
                           $xCodigo    = $filaGal['cod_galeria'];
-                          $xNomGal    = utf8_encode($filaGal['titulo']);
+                          $xNomGal    = $filaGal['titulo'];
                           $xImagen    = $filaGal['imagen'];
                           $xOrden     = $filaGal['orden'];
                           $xEstado    = $filaGal['estado'];

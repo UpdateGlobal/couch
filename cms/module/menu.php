@@ -62,7 +62,7 @@
           </li>
 
           <li class="menu-item <?php echo ($menu == "galerias" ? "active" : "")?>">
-            <a class="menu-link" href="#" >
+            <a class="menu-link <?php echo ($menu == "galerias" ? "open" : "") ?>" href="#">
               <span class="icon fa fa-map-o"></span>
               <span class="title">Galer&iacute;as</span>
               <span class="arrow"></span>

@@ -16,21 +16,11 @@ if (isset($_POST['proceso'])) {
 if($proceso == "Registrar"){
   $cod_categoria  = $_POST['cod_categoria'];
   $titulo       = $_POST['titulo'];
-  $slug         = $titulo;
-  $slug         = preg_replace('~[^\pL\d]+~u', '-', $slug);
-  $slug         = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
-  $slug         = preg_replace('~[^-\w]+~', '', $slug);
-  $slug         = trim($slug, '-');
-  $slug         = preg_replace('~-+~', '-', $slug);
-  $slug         = strtolower($slug);
-  if (empty($slug)){
-    return 'n-a';
-  }
   $imagen       = $_POST['imagen'];
   $orden        = $_POST['orden'];
   $estado       = $_POST['estado'];
   
-  $insertarGalerias = "INSERT INTO galerias(cod_categoria, titulo, slug, imagen, orden, estado)VALUE('$cod_categoria', '$titulo', '$slug', '$imagen', '$orden', '$estado')";
+  $insertarGalerias = "INSERT INTO galerias(cod_categoria, titulo, imagen, orden, estado)VALUE('$cod_categoria', '$titulo', '$imagen', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarGalerias) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $mensaje = "<div class='alert alert-success' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>

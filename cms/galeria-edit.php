@@ -21,27 +21,16 @@ if($proceso == ""){
 if($proceso == "Actualizar"){
   $cod_galeria    = $_POST['cod_galeria'];
   $cod_categoria  = $_POST['cod_categoria'];
-  $titulo         = mysqli_real_escape_string($enlaces, utf8_decode($_POST['titulo']));
-  $slug           = $titulo;
-  $slug           = preg_replace('~[^\pL\d]+~u', '-', $slug);
-  $slug           = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
-  $slug           = preg_replace('~[^-\w]+~', '', $slug);
-  $slug           = trim($slug, '-');
-  $slug           = preg_replace('~-+~', '-', $slug);
-  $slug           = strtolower($slug);
-  if (empty($slug)){
-    return 'n-a';
-  }
+  $titulo         = $_POST['titulo'];
   $imagen         = $_POST['imagen'];
   $orden          = $_POST['orden'];
   $estado         = $_POST['estado'];
   
   //Validar si el registro existe
-  $actualizarGalerias = "UPDATE galerias SET
+  $actualizarGalerias = "UPDATE galerias SET 
     cod_galeria='$cod_galeria', 
     cod_categoria='$cod_categoria', 
     titulo='$titulo', 
-    slug='$slug', 
     imagen='$imagen', 
     orden='$orden', 
     estado='$estado' 
