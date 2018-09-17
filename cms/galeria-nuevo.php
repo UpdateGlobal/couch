@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 <?php include("module/conexion.php"); ?>
 <?php include("module/verificar.php"); ?>
 <?php
@@ -10,20 +14,27 @@ if (isset($_POST['proceso'])) {
 }
 
 if($proceso == "Registrar"){
-  $titulo       = mysqli_real_escape_string($enlaces, utf8_decode($_POST['titulo']));
+  $cod_categoria  = $_POST['cod_categoria'];
+  $titulo       = $_POST['titulo'];
+  $slug         = $titulo;
+  $slug         = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug         = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug         = preg_replace('~[^-\w]+~', '', $slug);
+  $slug         = trim($slug, '-');
+  $slug         = preg_replace('~-+~', '-', $slug);
+  $slug         = strtolower($slug);
+  if (empty($slug)){
+    return 'n-a';
+  }
   $imagen       = $_POST['imagen'];
   $orden        = $_POST['orden'];
   $estado       = $_POST['estado'];
   
-  $validarGalerias = "SELECT * FROM galerias WHERE titulo='$titulo'";
-  $ejecutarValidar = mysqli_query($enlaces,$validarGalerias) or die('Consulta fallida: ' . mysqli_error($enlaces));
-  $numreg = mysqli_num_rows($ejecutarValidar);
-  
-  $insertarGalerias = "INSERT INTO galerias (titulo, imagen, orden, estado) VALUE ('$titulo', '$imagen', '$orden', '$estado')";
+  $insertarGalerias = "INSERT INTO galerias(cod_categoria, titulo, slug, imagen, orden, estado)VALUE('$cod_categoria', '$titulo', '$slug', '$imagen', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarGalerias) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $mensaje = "<div class='alert alert-success' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-            <strong>Nota:</strong> El trabajo se registr&oacute; con exitosamente. <a href='galeria.php'>Ir a Albums</a>
+            <strong>Nota:</strong> La imágen se registr&oacute; exitosamente. <a href='galeria.php'>Ir a Galería</a>
           </div>";
 }
 ?>
@@ -67,14 +78,14 @@ if($proceso == "Registrar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Galería</strong>
+            <strong>Galer&iacute;a</strong>
             <small></small>
           </h1>
         </div>
@@ -88,6 +99,25 @@ if($proceso == "Registrar"){
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
+                  <label class="col-form-label required" for="categoria">Categor&iacute;as:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <select class="form-control" id="categoria" name="cod_categoria">
+                    <?php
+                      $consultaCat = "SELECT * FROM galerias_categorias ORDER BY categoria ASC";
+                      $resultadoCat = mysqli_query($enlaces, $consultaCat);
+                      while($filaCat = mysqli_fetch_array($resultadoCat)){
+                        $xCodcate   = $filaCat['cod_categoria'];
+                        $xCategoria = $filaCat['categoria'];
+                    ?>
+                    <option value="<?php echo $xCodcate; ?>"><?php echo $xCategoria; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="titulo">T&iacute;tulo Album:</label>
                 </div>
                 <div class="col-8 col-lg-10">
@@ -98,7 +128,7 @@ if($proceso == "Registrar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="imagen">Imagen Principal:</label><br>
+                  <label class="col-form-label require" for="imagen">Imagen:</label><br>
                   <small>(-px x -px)</small>
                 </div>
                 <div class="col-4 col-lg-8">

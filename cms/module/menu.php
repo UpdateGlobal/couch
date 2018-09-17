@@ -61,14 +61,21 @@
 
           </li>
 
-          <li class="menu-item <?php echo ($menu == "galeria" ? "active" : "")?>">
+          <li class="menu-item <?php echo ($menu == "galerias" ? "active" : "")?>">
             <a class="menu-link" href="#" >
               <span class="icon fa fa-map-o"></span>
-              <span class="title">Galer&iacute;a</span>
+              <span class="title">Galer&iacute;as</span>
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu" <?php echo ($menu == "galeria" ? "style='display:block;'" : "")?>>
+            <ul class="menu-submenu" <?php echo ($menu == "galerias" ? "style='display:block;'" : "")?>>
+              <li class="menu-item">
+                <a class="menu-link" href="galeria-categorias.php">
+                  <span class="dot"></span>
+                  <span class="title">Categor&iacute;as</span>
+                </a>
+              </li>
+
               <li class="menu-item">
                 <a class="menu-link" href="galeria.php">
                   <span class="dot"></span>

@@ -75,14 +75,14 @@ if ($eliminar == "true") {
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Galería</strong>
+            <strong>Galer&iacute;a</strong>
             <small></small>
           </h1>
         </div>
@@ -100,10 +100,11 @@ if ($eliminar == "true") {
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="30%" scope="col">Albums
+                        <th width="15%" scope="col">Albums
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
                         </th>
+                        <th width="15%" scope="col">Categor&iacute;a</th>
                         <th width="35%" scope="col">Imagen</th>
                         <th width="10%" scope="col">Orden</th>
                         <th width="10%" scope="col">Estado</th>
@@ -114,17 +115,19 @@ if ($eliminar == "true") {
                     </thead>
                     <tbody>
                       <?php
-                        $consultarGal = "SELECT * FROM galerias ORDER BY orden";
+                        $consultarGal = "SELECT gc.cod_categoria, gc.categoria, g.* FROM galerias_categorias as gc, galerias as g WHERE g.cod_categoria=gc.cod_categoria ORDER BY orden ASC";
                         $resultadoGal = mysqli_query($enlaces,$consultarGal) or die('Consulta fallida: ' . mysqli_error($enlaces));
                         while($filaGal = mysqli_fetch_array($resultadoGal)){
                           $xCodigo    = $filaGal['cod_galeria'];
-                          $xNomGal    = utf8_encode($filaGal['titulo']);
+                          $xNomGal    = $filaGal['titulo'];
+                          $xCategoria = $filaGal['categoria'];
                           $xImagen    = $filaGal['imagen'];
                           $xOrden     = $filaGal['orden'];
                           $xEstado    = $filaGal['estado'];
                       ?>
                       <tr>
                         <td><?php echo $xNomGal; ?></td>
+                        <td><?php echo $xCategoria; ?></td>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/galerias/<?php echo $xImagen; ?>" ></td>
                         <td><?php echo $xOrden; ?></td>
                         <td><strong><?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?></strong></td>

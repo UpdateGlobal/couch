@@ -8,26 +8,40 @@ if (isset($_REQUEST['proceso'])) {
   $proceso  = "";
 }
 if($proceso == ""){
-  $consultaGal="SELECT * FROM galerias WHERE cod_galeria='$cod_galeria'";
-  $resultadoGal=mysqli_query($enlaces,$consultaGal);
+  $consultaGal = "SELECT * FROM galerias WHERE cod_galeria='$cod_galeria'";
+  $resultadoGal = mysqli_query($enlaces,$consultaGal);
   $filaGal = mysqli_fetch_array($resultadoGal);
   $cod_galeria    = $filaGal['cod_galeria'];
-  $titulo       = htmlspecialchars(utf8_encode($filaGal['titulo']));
-  $imagen       = $filaGal['imagen'];
-  $orden        = $filaGal['orden'];
-  $estado       = $filaGal['estado'];
+  $cod_categoria  = $filaGal['cod_categoria'];
+  $titulo         = $filaGal['titulo'];
+  $imagen         = $filaGal['imagen'];
+  $orden          = $filaGal['orden'];
+  $estado         = $filaGal['estado'];
 }
 if($proceso == "Actualizar"){
   $cod_galeria    = $_POST['cod_galeria'];
-  $titulo       = mysqli_real_escape_string($enlaces, utf8_decode($_POST['titulo']));
-  $imagen       = $_POST['imagen'];
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  $cod_categoria  = $_POST['cod_categoria'];
+  $titulo         = mysqli_real_escape_string($enlaces, utf8_decode($_POST['titulo']));
+  $slug           = $titulo;
+  $slug           = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug           = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug           = preg_replace('~[^-\w]+~', '', $slug);
+  $slug           = trim($slug, '-');
+  $slug           = preg_replace('~-+~', '-', $slug);
+  $slug           = strtolower($slug);
+  if (empty($slug)){
+    return 'n-a';
+  }
+  $imagen         = $_POST['imagen'];
+  $orden          = $_POST['orden'];
+  $estado         = $_POST['estado'];
   
   //Validar si el registro existe
   $actualizarGalerias = "UPDATE galerias SET
     cod_galeria='$cod_galeria', 
+    cod_categoria='$cod_categoria', 
     titulo='$titulo', 
+    slug='$slug', 
     imagen='$imagen', 
     orden='$orden', 
     estado='$estado' 
@@ -78,7 +92,7 @@ if($proceso == "Actualizar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galeria"; include("module/menu.php"); ?>
+    <?php $menu="galerias"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
@@ -99,6 +113,34 @@ if($proceso == "Actualizar"){
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="categoria">Categor&iacute;as:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <select class="form-control" id="categoria" name="cod_categoria">
+                    <?php
+                      $consultaCat = "SELECT * FROM galerias_categorias WHERE cod_categoria='$cod_categoria'";
+                      $resultadoCat = mysqli_query($enlaces, $consultaCat);
+                      while($filaCat = mysqli_fetch_array($resultadoCat)){
+                        $xCodcate = $filaCat['cod_categoria'];
+                        $xCategoria = $filaCat['categoria'];
+                      ?>
+                      <option value="<?php echo $xCodcate; ?>"><?php echo $xCategoria; ?> (Actual)</option>
+                      <?php } ?>
+                      <?php
+                        $consultaCat = "SELECT * FROM galerias_categorias WHERE cod_categoria!='$cod_categoria'";
+                        $resultadoCat = mysqli_query($enlaces, $consultaCat);
+                        while($filaCat = mysqli_fetch_array($resultadoCat)){
+                          $xCodcate = $filaCat['cod_categoria'];
+                          $xCategoria = $filaCat['categoria'];
+                      ?>
+                      <option value="<?php echo $xCodcate; ?>"><?php echo $xCategoria; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="titulo">T&iacute;tulo Album:</label>
                 </div>
                 <div class="col-8 col-lg-10">
@@ -109,7 +151,7 @@ if($proceso == "Actualizar"){
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="imagen">Imagen Principal:</label><br>
+                  <label class="col-form-label require" for="imagen">Imagen:</label><br>
                   <small>(-px x -px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
