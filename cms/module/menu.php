@@ -15,16 +15,41 @@
           <li class="menu-category">Sitio web</li>
 
           <li class="menu-item <?php echo ($menu == "inicio" ? "active" : "")?>">
-            <a class="menu-link" href="index.php">
+            <a class="menu-link <?php echo ($menu == "inicio" ? "open" : "") ?>" href="#">
               <span class="icon fa fa-home"></span>
               <span class="title">Inicio</span>
+              <span class="arrow"></span>
             </a>
+
+            <ul class="menu-submenu" <?php echo ($menu == "inicio" ? "style='display:block;'" : "")?>>
+              <li class="menu-item">
+                <a class="menu-link" href="metatags.php">
+                  <span class="dot"></span>
+                  <span class="title">Inicio</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a class="menu-link" href="contenidos.php">
+                  <span class="dot"></span>
+                  <span class="title">Contenidos</span>
+                </a>
+              </li>
+            </ul>
+
           </li>
 
           <li class="menu-item <?php echo ($menu == "nosotros" ? "active" : "")?>">
             <a class="menu-link" href="nosotros.php">
               <span class="icon fa fa-info"></span>
               <span class="title">Nosotros</span>
+            </a>
+          </li>
+
+          <li class="menu-item <?php echo ($menu == "experiencia" ? "active" : "")?>">
+            <a class="menu-link" href="experiencia.php">
+              <span class="icon fa fa-home"></span>
+              <span class="title">Experiencia</span>
             </a>
           </li>
 
@@ -36,7 +61,7 @@
           </li>
 
           <li class="menu-item <?php echo ($menu == "noticias" ? "active" : "")?>">
-            <a class="menu-link" href="#">
+            <a class="menu-link <?php echo ($menu == "noticias" ? "open" : "") ?>" href="#">
               <span class="icon fa fa-newspaper-o"></span>
               <span class="title">Noticias</span>
               <span class="arrow"></span>

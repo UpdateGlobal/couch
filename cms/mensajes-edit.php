@@ -8,9 +8,7 @@ $resultadoCon=mysqli_query($enlaces,$consultaCon);
 $filaCon = mysqli_fetch_array($resultadoCon);
 $xCodigo          = $filaCon['cod_contacto'];
 $xNombres         = $filaCon['nombres'];
-$xDireccion       = $filaCon['direccion'];
 $xEmail           = $filaCon['email'];
-$xTelefono        = $filaCon['telefono'];
 $xFecha           = $filaCon['fecha_ingreso'];
 $xMensaje         = $filaCon['mensaje'];
 
@@ -62,14 +60,6 @@ $xMensaje         = $filaCon['mensaje'];
                     <tr>
                       <td><strong>Fecha:</strong></td>
                       <td><?php echo $xFecha; ?></td>
-                    </tr>
-                    <tr>
-                      <td><strong>Direcci&oacute;n:</strong></td>
-                      <td><?php echo $xDireccion; ?></td>
-                    </tr>
-                    <tr>
-                      <td><strong>Tel&eacute;fono:</strong></td>
-                      <td><?php echo $xTelefono; ?></td>
                     </tr>
                     <tr>
                       <td><strong>Mensaje:</strong></td>

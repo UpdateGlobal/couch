@@ -25,6 +25,7 @@
             <small>Metatags son los nombres, descripci&oacute;n y palabras clave con las que apareceran su web para los buscadores y redes sociales</small>
           </h1>
         </div>
+        <?php $page="metatags"; include("module/menu-inicio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">

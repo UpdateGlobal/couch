@@ -72,7 +72,7 @@ $filSer = mysqli_fetch_array($resServicios);
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row text-center">
 							<div class="row">
 								<div class="col-md-6 ">
 									<div class="card_Servi">
@@ -80,7 +80,7 @@ $filSer = mysqli_fetch_array($resServicios);
 									</div>
 								</div>
 								<div class="col-md-6">
-									<div class="texto_contenido"><?php echo $descripcion; ?></div>
+									<div class="text_descri_servi"><?php echo $descripcion; ?></div>
 								</div>
 							</div>
 						</div>
@@ -88,13 +88,11 @@ $filSer = mysqli_fetch_array($resServicios);
 						<div class="row">
 							<div class="col-md-6">
 								<p class="title_item_serv"><strong>&iquest;A qui&eacute;n se dirige?</strong></p>
-								<div class="texto_contenido">
-									<?php echo $dirige; ?>
-								</div>
+								<?php echo $dirige; ?>
 							</div>
 							<div class="col-md-6">
 								<p class="title_item_serv"><strong>Beneficios</strong></p>
-								<blockquote class="texto_contenido">
+								<blockquote>
 									<?php echo $beneficios; ?>
 								</blockquote>
 							</div>

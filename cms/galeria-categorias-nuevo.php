@@ -78,9 +78,9 @@ if($proceso == "Registrar"){
         <?php $page="galeria-categorias"; include("module/menu-galeria.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Nueva Categor&iacute;a</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Nueva Categor&iacute;a</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
 
@@ -120,8 +120,8 @@ if($proceso == "Registrar"){
               <input type="hidden" name="proceso">
             </footer>
 
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

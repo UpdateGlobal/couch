@@ -140,6 +140,48 @@
     margin-bottom: 10px;
 }
 
+.contenido-tab p{
+    font-family: helvetica;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #848484;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+.texto_contenido ul {
+    font-size: inherit;
+    list-style-type: inherit;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.texto_contenido p {
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+}
+
+a.active.sf-with-ul {
+    color: #fff;
+}
+
+.card_Serv{
+    height: 81px;
+}
+
+.fh5co-blog .desc {
+    padding-left: 15px;
+}
+
+.jackbox-top-icons {
+    right: 10px !important;
+}
+
+#fh5co-header {
+    z-index: 99;
+}
+
 @media screen and (max-width: 1199px) {
 	.element-item {
 	    max-width: 48%;
@@ -149,6 +191,9 @@
 	.title_principal {
         text-align: center;
         font-size: 44px;
+    }
+    .fh5co-blog .desc h3 {
+        margin-top: 10px;
     }
     .fh5co-table, .fh5co-table-cell, .fh5co-parallax {
         height: 210px;

@@ -89,12 +89,11 @@ if($proceso=="Actualizar"){
         <?php $page="videos"; include("module/menu-galeria.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Editar V&iacute;deo</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Editar V&iacute;deo</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
-
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="titulo">T&iacute;tulo</label>
@@ -108,7 +107,7 @@ if($proceso=="Actualizar"){
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="imagen">Imagen</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(450px x 270px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text" value="<?php echo $imagen; ?>" required />
@@ -170,8 +169,8 @@ if($proceso=="Actualizar"){
               <input type="hidden" name="cod_video" value="<?php echo $cod_video; ?>">
             </footer>
 
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
       <script type="text/javascript" src="assets/jackbox/js/libs/jquery.address-1.5.min.js"></script>

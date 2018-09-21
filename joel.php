@@ -13,9 +13,9 @@
 		<style>
 			p, ul, ol {
 			margin-bottom: 1.5em;
-			font-size: 18px !important;
+			font-size: 18px;
 			color: #4c4c4c;
-			font-family: helvetica !important;
+			font-family: helvetica;
 			list-style: none;
 			padding: 0;
 			}
@@ -24,10 +24,10 @@
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
-				<?php include ('module/menu.php'); ?>
+				<?php $menu="nosotros"; include ('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
+					background-image: url(/img/big-header-2.jpeg);
 					}
 				</style>
 				<!-- titleJoel -->
@@ -36,10 +36,20 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+								<?php
+				                	$consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='5'";
+				                	$resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+				                	$filaCon = mysqli_fetch_array($resultadoCon);
+				                    	$xTitulo      = $filaCon['titulo_contenido'];
+				                    	$xContenido_1 = $filaCon['contenido_1'];
+				                ?>
 								<div class="fh5co-intro fh5co-table-cell">
-									<h1 class="text-center">Joel Henrique Perez</h1>
-									<p class="text_p">Couching Profesional</p>
+									<h1 class="text-center"><?php echo $xTitulo; ?></h1>
+									<p class="text_p"><?php echo $xContenido_1; ?></p>
 								</div>
+								<?php
+				                 	mysqli_free_result($resultadoCon);
+				                ?>
 							</div>
 						</div>
 					</div>
@@ -51,7 +61,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / Sobre M&iacute;</li>
+									<li><a href="/index.php"><i class="fas fa-home"></i> Inicio</a> / Sobre M&iacute;</li>
 								</ul>
 							</div>
 						</div>
@@ -63,23 +73,65 @@
 					<div class="container">
 						<div class="row animate-box">
 							<div class="col-md-6">
-								<div class="team-section-grid animate-box" style="background-image: url(img/big-header-1.jpeg);">
+								<?php
+				                	$consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='5'";
+				                	$resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+				                	$filaCon = mysqli_fetch_array($resultadoCon);
+				                    	$xTitulo      = $filaCon['titulo_contenido'];
+				                    	$xContenido_1 = $filaCon['contenido_1'];
+				                    	$xContenido_2 = $filaCon['contenido_2'];
+					                    $xImagen      = $filaCon['img_contenido'];
+					            ?>
+								<div class="team-section-grid animate-box" style="background-image: url(/cms/assets/img/nosotros/<?php echo $xImagen; ?>);">
 									<div class="overlay-section">
 										<div class="desc">
-											<h3>JOEL HENRIQUE PEREZ</h3>
-											<span>Coach Trainer</span>
-											<p>Amo lo que hago pero sobre todo lo que soy</p>
+											<h3><?php echo $xTitulo; ?></h3>
+											<span><?php echo $xContenido_1; ?></span>
+											<p><?php echo $xContenido_2; ?></p>
 											<p class="fh5co-social-icons">
-												<a href="#"><i class="fab fa-twitter-square"></i></a>
-												<a href="#"><i class="fab fa-instagram"></i></a>
-												<a href="#"><i class="fab fa-facebook-square"></i></a>
+											<?php
+						                        $consultarSol = "SELECT * FROM social WHERE estado='1' ORDER BY orden LIMIT 4";
+						                        $resultadoSol = mysqli_query($enlaces,$consultarSol) or die('Consulta fallida: ' . mysqli_error($enlaces));
+						                        while($filaSol = mysqli_fetch_array($resultadoSol)){
+						                         	$xType      = $filaSol['type'];
+						                         	$xLinks     = $filaSol['links'];
+						                         	if($xType=="fa-facebook-square"){ $xValor = "fa-facebook-f"; }
+							                        if($xType=="fa-twitter-square"){ $xValor = "fa-twitter"; }
+							                        if($xType=="fa-google-plus-official"){ $xValor = "fa-google-plus-g"; }
+							                        if($xType=="fa-linkedin"){ $xValor = "fa-linkedin-in"; }
+							                        if($xType=="fa-behance"){ $xValor = "fa-behance"; }
+							                        if($xType=="fa-youtube-play"){ $xValor = "fa-youtube"; }
+							                        if($xType=="fa-vimeo"){ $xValor = "fa-vimeo-v"; }
+							                        if($xType=="fa-wordpress"){ $xValor = "fa-wordpress"; }
+							                        if($xType=="fa-tumblr-square"){ $xValor = "fa-tumblr"; }
+							                        if($xType=="fa-pinterest"){ $xValor = "fa-pinterest-p"; }
+							                        if($xType=="fa-instagram"){ $xValor = "fa-instagram"; }
+							                        if($xType=="fa-flickr"){ $xValor = "fa-flickr"; }
+						                    ?>
+			                    			<a href="<?php echo $xLinks; ?>"><i class="fab <?php echo $xValor; ?>"></i></a>
+											<?php
+												}
+												mysqli_free_result($resultadoSol);
+											?>
 											</p>
 										</div>
 									</div>
 								</div>
+								<?php
+				                 	mysqli_free_result($resultadoCon);
+				                ?>
 							</div>
 							<div class="col-md-6">
-								<p>Sobre mi Soy una persona alegre, lleno de ilusiones y sueños, me encanta los desafíos y los asumo con miedo pero los asumo, me encanta hacer amigos y soy romántico, soy una persona dispuesta, colaboradora y d servir. Me encanta trabajar con personas y ver al final de un proceso una sonrisa de satisfacción.</p>
+								<?php
+				                	$consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='5'";
+				                	$resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+				                	$filaCon = mysqli_fetch_array($resultadoCon);
+				                        $xContenido_3 = $filaCon['contenido_3'];
+					            ?>
+								<?php echo $xContenido_3; ?>
+								<?php
+				                 	mysqli_free_result($resultadoCon);
+				                ?>
 							</div>
 						</div>
 					</div>
@@ -91,102 +143,88 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="heading-section text-center animate-box">
-								<h2>Estudios & Experiencias</h2>
-								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<?php
+			                    $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='6'";
+			                    $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			                    $filaCon = mysqli_fetch_array($resultadoCon);
+			                        $xCodigo      = $filaCon['cod_contenido'];
+			                        $xTitulo      = $filaCon['titulo_contenido'];
+			                        $xContenido_1 = $filaCon['contenido_1'];
+			                        $xEstado      = $filaCon['estado'];
+			                ?>
+								<h2><?php echo $xTitulo; ?></h2>
+								<p><?php echo $xContenido_1; ?></p>
+							<?php
+		                    	mysqli_free_result($resultadoCon);
+		                    ?>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<?php
+			                    	$consultarExperiencia = "SELECT * FROM experiencia WHERE estado='1' AND tipo='0' ORDER BY orden";
+			                        $resultadoExperiencia = mysqli_query($enlaces,$consultarExperiencia) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			                        while($filaExp = mysqli_fetch_array($resultadoExperiencia)){
+			                        	$xCodigo    = $filaExp['cod_experiencia'];
+			                        	$xTitulo    = $filaExp['titulo'];
+			                        	$xContenido = $filaExp['contenido'];
+			                        	$xTipo   	= $filaExp['tipo'];
+			                    ?>
 								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingOne">
+									<div class="panel-heading" role="tab" id="heading<?php echo $xCodigo; ?>">
 										<h4 class="panel-title">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-												<i class="fas fa-graduation-cap"></i> Estudio Realizado <i class="fas fa-plus-circle" style="float: right;"></i>
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $xCodigo; ?>" aria-expanded="true" aria-controls="collapse<?php echo $xCodigo; ?>">
+												<i class="fas fa-graduation-cap"></i> <?php echo $xTitulo; ?> <i class="fas fa-plus-circle" style="float: right;"></i>
 											</a>
 										</h4>
 									</div>
-									<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div id="collapse<?php echo $xCodigo; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $xCodigo; ?>">
 										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											<div class="contenido-tab">
+												<?php echo $xContenido; ?>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
-											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-												<i class="fas fa-graduation-cap"></i> Estudio Realizado <i class="fas fa-plus-circle" style="float: right;"></i>
-											</a>
-										</h4>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-												<i class="fas fa-graduation-cap"></i> Estudio Realizado <i class="fas fa-plus-circle" style="float: right;"></i>
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
+								<?php 
+									}
+									mysqli_free_result($resultadoExperiencia);
+								?>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-12">
 							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<?php
+			                    	$consultarExperiencia = "SELECT * FROM experiencia WHERE estado='1' AND tipo='1' ORDER BY orden";
+			                        $resultadoExperiencia = mysqli_query($enlaces,$consultarExperiencia) or die('Consulta fallida: ' . mysqli_error($enlaces));
+			                        while($filaExp = mysqli_fetch_array($resultadoExperiencia)){
+			                        	$xCodigo    = $filaExp['cod_experiencia'];
+			                        	$xTitulo    = $filaExp['titulo'];
+			                        	$xContenido = $filaExp['contenido'];
+			                        	$xTipo   	= $filaExp['tipo'];
+			                    ?>
 								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingOne">
+									<div class="panel-heading" role="tab" id="heading<?php echo $xCodigo; ?>">
 										<h4 class="panel-title">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-											<i class="fas fa-briefcase"></i> Experiencias Obtenidas <i class="fas fa-plus-circle" style="float: right;"></i>
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $xCodigo; ?>" aria-expanded="true" aria-controls="collapse<?php echo $xCodigo; ?>">
+												<i class="fas fa-briefcase"></i> <?php echo $xTitulo; ?> <i class="fas fa-plus-circle" style="float: right;"></i>
 											</a>
 										</h4>
 									</div>
-									<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div id="collapse<?php echo $xCodigo; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $xCodigo; ?>">
 										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											<div class="contenido-tab">
+												<?php echo $xContenido; ?>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
-											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-											<i class="fas fa-briefcase"></i> Experiencias Obtenidas <i class="fas fa-plus-circle" style="float: right;"></i>
-											</a>
-										</h4>
-									</div>
-									<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading" role="tab" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-											<i class="fas fa-briefcase"></i> Experiencias Obtenidas <i class="fas fa-plus-circle" style="float: right;"></i>
-											</a>
-										</h4>
-									</div>
-									<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
+								<?php 
+									}
+									mysqli_free_result($resultadoExperiencia);
+								?>
 							</div>
 						</div>
 					</div>

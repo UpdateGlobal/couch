@@ -97,11 +97,10 @@ if($proceso == "Actualizar"){
         <?php $page="metatags"; include("module/menu-inicio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Editar Metatags</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Editar Metatags</strong></h4>
             <div class="card-body">
-
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="titulo">T&iacute;tulo de la web</label>
@@ -127,7 +126,7 @@ if($proceso == "Actualizar"){
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="logo">Logotipo:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(250px x 96px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $xLogo; ?></p><?php } ?>
@@ -166,7 +165,7 @@ if($proceso == "Actualizar"){
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="url">Url</label><br>
-                  <small>(ejem: www.susitio.com)</small>
+                  <small>(ejem: https://www.susitio.com)</small>
                 </div>
                 <div class="col-8 col-lg-10">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $xUrl; ?></p><?php } ?>
@@ -223,8 +222,8 @@ if($proceso == "Actualizar"){
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_meta" value="<?php echo $xCodigo; ?>">
             </footer>
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

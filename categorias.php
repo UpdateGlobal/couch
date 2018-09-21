@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_categoria   = $_REQUEST['cod_categoria']; ?>
+<?php $slug = $_REQUEST["slug"]; ?>
+<?php 
+$conCategoria = "SELECT * FROM noticias_categorias WHERE slug='$slug' ORDER BY orden";
+$resCategoria = mysqli_query($enlaces,$conCategoria) or die('Consulta fallida: ' . mysqli_error($enlaces));
+$filCat = mysqli_fetch_array($resCategoria);
+    $cod_categoria = $filCat['cod_categoria'];
+?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -11,16 +17,15 @@
 	            $xTitulo = $filaMet['titulo'];
     	?>
 		<title><?php echo $xTitulo; ?> | Blog</title>
-		<?php include('module/head.php'); ?> 
-
+		<?php include('module/head.php'); ?>
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
-				<?php include ('module/menu.php'); ?>
+				<?php $menu="blog"; include ('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
+					background-image: url(/img/big-header-2.jpeg);
 					}
 				</style>
 				<?php
@@ -50,7 +55,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="blog.php">Blog</a> / <?php echo $xCategoria; ?></li>
+									<li><a href="/index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="/blog.php">Blog</a> / <?php echo $xCategoria; ?></li>
 								</ul>
 							</div>
 						</div>
@@ -102,19 +107,20 @@
 			                    ?>
 								<!--ietmblog-->
 								<div class="col-md-12">
-									<div class="fh5co-blog ">
-										<div class="inner-post">
-											<a href="noticia.php?cod_noticia=<?php echo $xCodigo; ?>"><img class="img-responsive" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" alt=""></a>
+									<div class="row fh5co-blog">
+										<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+											<a href="/blog/<?php echo $xSlug; ?>"><img class="img-responsive" src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" alt=""></a>
 										</div>
-										<div class="desc">
-											<h3><a href="noticia.php?cod_noticia=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></h3>
+										<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 desc">
+											<h3><a href="/blog/<?php echo $xSlug; ?>"><?php echo $xTitulo; ?></a></h3>
 											<span class="posted_by">Por: <?php echo $xAutor; ?></span>
 											<?php 
-		                                        $xDescripcion_r = strip_tags($xDescripcion);
-		                                        $strCut = substr($xDescripcion_r,0,150);
-		                                        $xDescripcion_r = substr($strCut,0,strrpos($strCut, ' ')).'...';
-		                                    ?>
-											<p class="text_blog"><?php echo strip_tags($xDescripcion_r); ?></p>
+	                                            $xResumen_m = strip_tags($xDescripcion);
+	                                            $strCut = substr($xResumen_m,0,80);
+	                                            $xResumen_m = $strCut.'...';
+	                                        ?>
+											<p class="text_blog"><?php echo $xResumen_m; ?></p>
+											<a href="/blog/<?php echo $xSlug; ?>" class="btn btn-default">Leer M&aacute;s +</a>
 										</div>
 									</div>
 								</div>
@@ -131,20 +137,20 @@
 			                                <div class='col-lg-12'>
 			                                    <ul class='pagination'>";
 			                            if($pagina>1){
-			                                echo "<li><a href='?p=".($pagina-1)."'>&laquo;</a></li>";
+			                                echo "<li><a href='/categorias/".$slug."&p=".($pagina-1)."'>&laquo;</a></li>";
 			                            }
 			                            for($i=$pagina; $i<=$total_paginas && $i<=($pagina+$paginas_mostrar); $i++){
 			                                if($i==$pagina){
 			                                    echo "<li class='active'><a><strong>$i</strong></a></li>";
 			                                }else{
-			                                    echo "<li><a href='?p=$i'>$i</a></li>";
+			                                    echo "<li><a href='/categorias/".$slug."&p=$i'>$i</a></li>";
 			                                }
 			                            }
 			                            if(($pagina+$paginas_mostrar)<$total_paginas){
 			                                echo "<li>...</li>";
 			                            }
 			                            if($pagina<$total_paginas){
-			                                echo "  <li><a href='?p=".($pagina+1)."'>&raquo;</a></li>";
+			                                echo "  <li><a href='/categorias/".$slug."&p=".($pagina+1)."'>&raquo;</a></li>";
 			                            }
 			                            echo "  </ul>
 			                                </div>

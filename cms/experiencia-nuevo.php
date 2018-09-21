@@ -9,16 +9,15 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
-  $imagen       = $_POST['imagen'];
-  $video        = mysqli_real_escape_string($enlaces, $_POST['video']);
+  $contenido    = mysqli_real_escape_string($enlaces, $_POST['contenido']);
+  $tipo         = $_POST['tipo'];
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
-
-  $insertarVideo = "INSERT INTO videos(titulo, imagen, video, orden, estado)VALUE('$titulo', '$imagen', '$video', '$orden', '$estado')";
-  $resultadoInsertar = mysqli_query($enlaces,$insertarVideo);
+  $insertarExperiencia = "INSERT INTO experiencia(titulo, contenido, tipo, orden, estado)VALUE('$titulo', '$contenido', '$tipo', '$orden', '$estado')";
+  $resultadoInsertar = mysqli_query($enlaces,$insertarExperiencia);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-          <strong>Nota:</strong> El video se registr&oacute; con exitosamente. <a href='galeria-videos.php'>Ir a videos</a>
+          <strong>Nota:</strong> El texto se registr&oacute; con exitosamente. <a href='experiencia.php'>Ir a Experiencia y Estudios</a>
         </div>";
 }
 ?>
@@ -31,27 +30,19 @@ if($proceso == "Registrar"){
       function Validar(){
         if(document.fcms.titulo.value==""){
           alert("Debe escribir un título");
-          document.fcms.titulo.focus();
           return;
         }
-        if(document.fcms.imagen.value==""){
-          alert("Debe subir una imagen para la miniatura del vídeo");
-          document.fcms.imagen.focus();
-          return;
-        }
-        if(document.fcms.video.value==""){
-          alert("Debe escribir un enlace para el vídeo");
-          document.fcms.video.focus();
-          return;
-        }
-
-        document.fcms.action = "galeria-videos-nuevo.php";
+        document.fcms.action = "experiencia-nuevo.php";
         document.fcms.proceso.value="Registrar";
         document.fcms.submit();
       }
       function Imagen(codigo){
         url = "agregar-foto.php?id=" + codigo;
         AbrirCentro(url,'Agregar', 475, 180, 'no', 'no');
+      }
+      function soloNumeros(e){
+        var key = window.Event ? e.which : e.keyCode 
+        return ((key >= 48 && key <= 57) || (key==8)) 
       }
     </script>
   </head>
@@ -64,57 +55,61 @@ if($proceso == "Registrar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="galerias"; include("module/menu.php"); ?>
+    <?php $menu="experiencia"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Galer&iacute;a</strong>
+            <strong>Experiencia y Estudios</strong>
             <small></small>
           </h1>
         </div>
-        <?php $page="videos"; include("module/menu-galeria.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
           <div class="card">
-            <h4 class="card-title"><strong>Nuevo V&iacute;deo</strong></h4>
+            <h4 class="card-title"><strong>Registrar experiencia y estudio nuevo</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
+
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="titulo">T&iacute;tulo</label>
+                  <label class="col-form-label require" for="titulo">T&iacute;tulo:</label>
                 </div>
                 <div class="col-8 col-lg-10">
                   <input class="form-control" name="titulo" type="text" id="titulo" required />
-                  <div class="invalid-feedback"></div>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="imagen">Imagen</label><br>
-                  <small>(450px x 270px)</small>
-                </div>
-                <div class="col-4 col-lg-8">
-                  <input class="form-control" id="imagen" name="imagen" type="text" required />
-                  <div class="invalid-feedback"></div>
-                </div>
-                <div class="col-4 col-lg-2">
-                  <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('IV');" /><i class="fa fa-save"></i> Examinar</button>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="video">V&iacute;deos</label><br>
-                  <small>(enlace)</small>
+                  <label class="col-form-label" for="contenido">Texto:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <input class="form-control" name="video" type="text" id="video" required />
-                  <div class="invalid-feedback"></div>
+                  <textarea data-provide="summernote" data-toolbar="full" data-min-height="150" class="form-control" name="contenido" id="contenido"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="tipo">Tipo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <div class="custom-controls-stacked">
+                    <label class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" name="tipo" value="0">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Experiencia</span>
+                    </label>
+
+                    <label class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input" name="tipo" value="1">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Estudio</span>
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -139,11 +134,11 @@ if($proceso == "Registrar"){
             </div>
 
             <footer class="card-footer">
-              <a href="galeria-videos.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar V&iacute;deo</button>
+              <a href="banners.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar</button>
               <input type="hidden" name="proceso">
             </footer>
-            
+
           </div>
         </form>
       </div><!--/.main-content -->

@@ -1,0 +1,20 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !-d 
+RewriteCond %{REQUEST_URI} !-f 
+RewriteCond %{REQUEST_URI} !^/servicios/(.*) [OR]
+RewriteCond %{REQUEST_URI} !^/categorias/(.*) [OR]
+RewriteCond %{REQUEST_URI} !^/blog/(.*) [OR]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^servicios/([^/]*) servicio.php?slug=$1
+RewriteRule ^categorias/([^/]*) categorias.php?slug=$1
+RewriteRule ^categorias/([^/]*) categorias.php?slug=$1&p=2
+RewriteRule ^blog/([^/]*) noticia.php?slug=$1
+RewriteCond %{HTTP_HOST} ^jopacoaching\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.jopacoaching\.com$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?$ "https\:\/\/jopacoaching\.com\/index\.php" [R=301,L]

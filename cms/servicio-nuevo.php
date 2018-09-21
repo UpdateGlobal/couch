@@ -9,6 +9,16 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
+  $slug           = $titulo;
+  $slug           = preg_replace('~[^\pL\d]+~u', '-', $slug);
+  $slug           = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+  $slug           = preg_replace('~[^-\w]+~', '', $slug);
+  $slug           = trim($slug, '-');
+  $slug           = preg_replace('~-+~', '-', $slug);
+  $slug           = strtolower($slug);
+  if (empty($slug)){
+      return 'n-a';
+  }
   $imagen       = $_POST['imagen'];
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
   $dirige       = mysqli_real_escape_string($enlaces, $_POST['dirige']);
@@ -16,7 +26,7 @@ if($proceso == "Registrar"){
   if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
   if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
-  $insertarServicio = "INSERT INTO servicios(titulo, imagen, descripcion, dirige, beneficios, orden, estado)VALUE('$titulo', '$imagen', '$descripcion', '$dirige', '$beneficios', '$orden', '$estado')";
+  $insertarServicio = "INSERT INTO servicios(titulo, slug, imagen, descripcion, dirige, beneficios, orden, estado)VALUE('$titulo', '$slug', '$imagen', '$descripcion', '$dirige', '$beneficios', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarServicio);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -73,16 +83,16 @@ if($proceso == "Registrar"){
         </div>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Servicio Nuevo</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Servicio Nuevo</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
                   <label class="col-form-label" for="imagen">Imagen:</label><br>
-                  <small>(-px x -px)</small>
+                  <small>(528px x 352px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text">
@@ -155,8 +165,8 @@ if($proceso == "Registrar"){
               <input type="hidden" name="proceso">
             </footer>
 
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

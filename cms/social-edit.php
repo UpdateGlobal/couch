@@ -72,9 +72,9 @@ if($proceso=="Actualizar"){
         </div>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Editar red social</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false"> 
+          <div class="card">
+            <h4 class="card-title"><strong>Editar red social</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
@@ -132,8 +132,8 @@ if($proceso=="Actualizar"){
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_social" value="<?php echo $cod_social; ?>">
             </footer>
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

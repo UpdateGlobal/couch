@@ -11,16 +11,16 @@
 						    	$filaMet = mysqli_fetch_array($resultadoMet);
 						    		$xLogo = $filaMet['logo'];
 					    	?>
-							<a href="index.php">
-								<img src="cms/assets/img/meta/<?php echo $xLogo; ?>" width="150">
+							<a href="/index.php">
+								<img src="/cms/assets/img/meta/<?php echo $xLogo; ?>" width="150">
 							</a>
 						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
-								<li class="active"><a href="index.php">Inicio</a></li>
-								<li><a href="joel.php">Sobre Joel</a></li>
+								<li class="<?php echo ($menu == "inicio" ? "active" : "")?>"><a href="/index.php">Inicio</a></li>
+								<li class="<?php echo ($menu == "nosotros" ? "active" : "")?>"><a href="/joel.php">Sobre Joel</a></li>
 								<li>
-									<a href="#">Servicios <i class="fas fa-angle-down"></i></a>
+									<a class="<?php echo ($menu == "servicios" ? "active" : "")?>" href="#">Servicios <i class="fas fa-angle-down"></i></a>
 									<ul class="fh5co-sub-menu">
 										<?php
 	                                        $consultarservicio = "SELECT * FROM servicios WHERE estado='1' ORDER BY orden";
@@ -30,17 +30,17 @@
 	                                            $xTitulo = $filaSer['titulo'];
 	                                            $xSlug   = $filaSer['slug'];
 	                                    ?>
-	                                	<li><a href="servicio.php?cod_servicio=<?php echo $xCodigo; ?>"><?php echo $xTitulo; ?></a></li>
+	                                	<li><a href="/servicios/<?php echo $xSlug; ?>"><?php echo $xTitulo; ?></a></li>
 		                                <?php
 		                                    }
 		                                    mysqli_free_result($resultadoservicio);
 		                                ?>
 									</ul>
 								</li>
-								<li><a href="blog.php">Blog</a></li>
-								<li><a href="galeria.php">Galer&iacute;a</a></li>
-								<li><a href="videos.php">V&iacute;deos</a></li>
-								<li><a href="contacto.php">Contacto</a></li>
+								<li class="<?php echo ($menu == "blog" ? "active" : "")?>"><a href="/blog.php">Blog</a></li>
+								<li class="<?php echo ($menu == "galeria" ? "active" : "")?>"><a href="/galeria.php">Galer&iacute;a</a></li>
+								<li class="<?php echo ($menu == "videos" ? "active" : "")?>"><a href="/videos.php">V&iacute;deos</a></li>
+								<li class="<?php echo ($menu == "contacto" ? "active" : "")?>"><a href="/contacto.php">Contacto</a></li>
 							</ul>
 						</nav>
 					</div>

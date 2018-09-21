@@ -64,9 +64,9 @@ if($proceso == "Registrar"){
         </div>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Registrar red social</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Registrar red social</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
@@ -118,12 +118,12 @@ if($proceso == "Registrar"){
               </div>
             </div>
             <footer class="card-footer">
-              <a href="carrusel.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+              <a href="sociales.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
               <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();"><i class="fa fa-chevron-circle-right"></i> Registrar red social</button>
               <input type="hidden" name="proceso">
             </footer>
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

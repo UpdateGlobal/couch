@@ -11,16 +11,16 @@
     	?>
 		<title><?php echo $xTitulo; ?> | Servicios</title>
 		<?php include('module/head.php'); ?>
-		<link href="jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
-		<link href="jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
+		<link href="/jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
+		<link href="/jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
-				<?php include('module/menu.php'); ?>
+				<?php $menu="galeria"; include('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
+					background-image: url(/img/big-header-2.jpeg);
 					}
 				</style>
 				<!-- servicioshead -->
@@ -44,7 +44,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / Galer&iacute;a de Im&aacute;genes</li>
+									<li><a href="/index.php"><i class="fas fa-home"></i> Inicio</a> / Galer&iacute;a de Im&aacute;genes</li>
 								</ul>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 							  <button class="button" data-filter=".<?php echo $xSlug; ?>"><?php echo $xCategoria; ?></button>
 							  <?php
 							  	}
-							  	mysqli_free_result($resultadoCategoria); 
+							  	mysqli_free_result($resultadoCategoria);
 							  ?>
 							</div>
 							<div class="grid">
@@ -78,17 +78,30 @@
 					            $consultarGal = "SELECT gc.cod_categoria, gc.categoria, gc.slug, g.* FROM galerias_categorias as gc, galerias as g WHERE g.cod_categoria=gc.cod_categoria AND g.estado='1' ORDER BY orden ASC";
 					            $resultadoGal = mysqli_query($enlaces,$consultarGal) or die('Consulta fallida: ' . mysqli_error($enlaces));
 					            while($filaGal = mysqli_fetch_array($resultadoGal)){
-					              $xCodigo        = $filaGal['cod_galeria'];
+					              $xCodigoG       = $filaGal['cod_galeria'];
 					              $xCategoria     = utf8_encode($filaGal['categoria']);
 					              $xSlug          = $filaGal['slug'];
-					              $xNomGal        = utf8_encode($filaGal['titulo']);
+					              $xNomGal        = $filaGal['titulo'];
 					              $xCategoria     = $filaGal['categoria'];
 					              $xImagen        = $filaGal['imagen'];
+					              $i = 0;
 					          ?>
 							  <div class="element-item <?php echo $xSlug; ?>" data-category="<?php echo $xSlug; ?>">
-							  	<a class="jackbox" data-group="img<?php echo $xCodigo; ?>" href="cms/assets/img/galerias/<?php echo $xImagen; ?>">
-							    	<img src="cms/assets/img/galerias/<?php echo $xImagen; ?>" class="img-thumbnail" />
+							  	<a class="jackbox" data-group="img<?php echo $xCodigoG; ?>" href="/cms/assets/img/galerias/<?php echo $xImagen; ?>">
+							    	<img src="/cms/assets/img/galerias/<?php echo $xImagen; ?>" class="img-thumbnail" />
 							    </a>
+							    <?php 
+						            $galeriaF="SELECT * FROM galerias_fotos WHERE cod_galeria='$xCodigoG'";
+						            $fotosGf=mysqli_query($enlaces,$galeriaF);
+						            while($filaGalf=mysqli_fetch_array($fotosGf)){
+							        	$xCodigoGF  = $filaGalf['cod_foto'];
+							        	$xImgGn     = $filaGalf['imagen'];
+						        ?>
+							    <a class="jackbox" data-group="img<?php echo $xCodigoG; ?>" style="display:none;" href="/cms/assets/img/galerias/fotos/<?php echo $xImgGn; ?>"></a>
+							    <?php 
+						        	}
+						        	mysqli_free_result($fotosGf);
+						        ?>
 							    <h3 class="name"><?php echo $xNomGal; ?></h3>
 							  </div>
 							  <?php
@@ -104,8 +117,8 @@
 					include ('module/footer.php');
 					include ('module/script.php');
 				?>
-				<script src="js/jquery.min.js"></script>
-				<script src="js/isotope.pkgd.js"></script>
+				<script src="/js/jquery.min.js"></script>
+				<script src="/js/isotope.pkgd.js"></script>
 				<script type="text/javascript">
 					$('#myModal').on('shown.bs.modal', function () {
 					  $('#myInput').focus()
@@ -166,11 +179,11 @@
 					});
 					  
 				</script>
-				<script type="text/javascript" src="jackbox/js/libs/jquery.address-1.5.min.js"></script>
-				<script type="text/javascript" src="jackbox/js/libs/Jacked.js"></script>
-				<script type="text/javascript" src="jackbox/js/jackbox-swipe.js"></script>
-				<script type="text/javascript" src="jackbox/js/jackbox.js"></script>
-				<script type="text/javascript" src="jackbox/js/libs/StackBlur.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/jquery.address-1.5.min.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/Jacked.js"></script>
+				<script type="text/javascript" src="/jackbox/js/jackbox-swipe.js"></script>
+				<script type="text/javascript" src="/jackbox/js/jackbox.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/StackBlur.js"></script>
 				<script type="text/javascript">
 					jQuery(document).ready(function() {
 		//				jQuery(".jackbox[data-group]").jackBox("init");

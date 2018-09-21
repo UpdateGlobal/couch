@@ -12,9 +12,9 @@ if($proceso == ""){
   $ejecutarCategoria = mysqli_query($enlaces,$consultaCategoria) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $filaCat = mysqli_fetch_array($ejecutarCategoria);
   $cod_categoria  = $filaCat['cod_categoria'];
-  $categoria    = htmlspecialchars($filaCat['categoria']);
-  $orden      = $filaCat['orden'];
-  $estado     = $filaCat['estado'];
+  $categoria      = htmlspecialchars($filaCat['categoria']);
+  $orden          = $filaCat['orden'];
+  $estado         = $filaCat['estado'];
 }
 
 if($proceso=="Actualizar"){
@@ -87,9 +87,9 @@ if($proceso=="Actualizar"){
         <?php $page="galeria-categorias"; include("module/menu-galeria.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Editar Categor&iacute;a</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Editar Categor&iacute;a</strong></h4>
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
 
@@ -129,8 +129,8 @@ if($proceso=="Actualizar"){
               <input type="hidden" name="cod_categoria" value="<?php echo $cod_categoria; ?>">
             </footer>
 
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

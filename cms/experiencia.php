@@ -1,32 +1,32 @@
 <?php include("module/conexion.php"); ?>
 <?php include("module/verificar.php"); ?>
 <?php
-$num = "";
+$num = ""; 
 if (isset($_REQUEST['eliminar'])) {
   $eliminar = $_POST['eliminar'];
 } else {
   $eliminar = "";
 }
 if ($eliminar == "true") {
-  $sqlEliminar = "SELECT cod_contacto FROM formulario ORDER BY fecha_ingreso";
-  $sqlResultado = mysqli_query($enlaces,$sqlEliminar) or die('Consulta fallida: ' . mysqli_error($enlaces));
+  $sqlEliminar = "SELECT cod_experiencia FROM experiencia ORDER BY orden";
+  $sqlResultado = mysqli_query($enlaces,$sqlEliminar);
   $x = 0;
   while($filaElim = mysqli_fetch_array($sqlResultado)){
-    $id_contacto = $filaElim["cod_contacto"];
-    if ($_REQUEST["chk" . $id_contacto] == "on"){
+    $id_experiencia = $filaElim["cod_experiencia"];
+    if ($_REQUEST["chk" . $id_experiencia] == "on") {
       $x++;
       if ($x == 1) {
-          $sql = "DELETE FROM formulario WHERE cod_contacto=$id_contacto";
-        } else {
-          $sql = $sql . " OR cod_contacto=$id_contacto";
-        }
+        $sql = "DELETE FROM experiencia WHERE cod_experiencia=$id_experiencia";
+      } else { 
+        $sql = $sql . " OR cod_experiencia=$id_experiencia";
+      }
     }
   }
   mysqli_free_result($sqlResultado);
-  if ($x > 0) {
+  if ($x > 0) { 
     $rs = mysqli_query($enlaces,$sql);
   }
-  header ("Location:mensajes.php");
+  header ("Location:experiencia.php");
 }
 ?>
 <!DOCTYPE html>
@@ -34,10 +34,11 @@ if ($eliminar == "true") {
   <head>
     <?php include("module/head.php"); ?>
     <style>
-      @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px){
-        td:nth-of-type(1):before { content: "Nombres"; }
-        td:nth-of-type(2):before { content: "De:"; }
-        td:nth-of-type(4):before { content: "Fecha"; }
+      @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+        td:nth-of-type(1):before { content: "Título"; }
+        td:nth-of-type(2):before { content: "Típo"; }
+        td:nth-of-type(3):before { content: "Orden"; }
+        td:nth-of-type(4):before { content: "Estado"; }
         td:nth-of-type(5):before { content: ""; }
         td:nth-of-type(6):before { content: ""; }
         td:nth-of-type(7):before { content: ""; }
@@ -52,13 +53,13 @@ if ($eliminar == "true") {
           if(document.fcms.elements[i].checked == true){
             estado = 1
           }
-        }
+        } 
         if (estado == 0) {
           if (seccion == "N"){
-            alert("Debes de seleccionar un mensaje.")
+            alert("Debes de seleccionar un banner.")
           }
           return
-        } 
+        }
         procedimiento = "document.fcms." + proceso + ".value = true"
         eval(procedimiento)
         document.fcms.submit()
@@ -75,55 +76,67 @@ if ($eliminar == "true") {
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="contacto"; include("module/menu.php"); ?>
+    <?php $menu="experiencia"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Contacto</strong>
-            <small>Listado de mensajes recibidos por el formulario de su empresa</small>
+            <strong>Experiencia y Estudios</strong>
+            <small></small>
           </h1>
         </div>
-        <?php $page="mensajes"; include("module/menu-contacto.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">
           <div class="col-md-12">
             <div class="card card-bordered">
-              <h4 class="card-title"><strong>Lista de Mensajes</strong></h4>
+              <h4 class="card-title"><strong>Lista de Experiencia y Estudios</strong></h4>
               <div class="card-body">
+                <a class="btn btn-info" href="<?php if($xVisitante=="0"){ ?>experiencia-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus"></i> A&ntilde;adir nuevo</a>
+                <hr>
                 <form name="fcms" method="post" action="">
-                  <table class="table" data-provide="datatables">
+                  <table class="table">
                     <thead>
                       <tr>
-                        <th width="40%" scope="col">Nombres
+                        <th width="45%" scope="col">T&iacute;tulo
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
                         </th>
-                        <th width="30%" scope="col">De:</th>
-                        <th width="20%" scope="col">Fecha</th>
-                        <th width="5%" scope="col">&nbsp;</th>
+                        <th width="20%" scope="col">Tipo</th>
+                        <th width="10%" scope="col">Orden</th>
+                        <th width="10%" scope="col">Estado</th>
+                        <th width="5%" scope="col"></th>
+                        <th width="5%" scope="col"></th>
                         <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                        $consultarContacto = "SELECT * FROM formulario ORDER BY fecha_ingreso";
-                        $resultadoContacto = mysqli_query($enlaces,$consultarContacto) or die('Consulta fallida: ' . mysqli_error($enlaces));
-                        while($filaCon = mysqli_fetch_array($resultadoContacto)){
-                          $xCodigo    = $filaCon['cod_contacto'];
-                          $xNombres   = $filaCon['nombres'];
-                          $xEmail     = $filaCon['email'];
-                          $xFecha     = $filaCon['fecha_ingreso'];
-                          $num++;
+                        $consultarExperiencia = "SELECT * FROM experiencia ORDER BY orden";
+                        $resultadoExperiencia = mysqli_query($enlaces,$consultarExperiencia) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaExp = mysqli_fetch_array($resultadoExperiencia)){
+                          $xCodigo    = $filaExp['cod_experiencia'];
+                          $xTitulo    = $filaExp['titulo'];
+                          $xTipo      = $filaExp['tipo'];
+                          $xOrden     = $filaExp['orden'];
+                          $xEstado    = $filaExp['estado'];
                       ?>
                       <tr>
-                        <td><?php echo $xNombres; ?></td>
-                        <td><?php echo $xEmail; ?></td>
-                        <td><?php echo $xFecha; ?></td>
-                        <td><a class="boton-editar" href="mensajes-edit.php?cod_contacto=<?php echo $xCodigo; ?>"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+                        <td><?php echo $xTitulo; ?></td>
+                        <td><?php if($xTipo=="1"){ echo "[Estudio]"; }else{ echo "[Experiencia]";} ?></td>
+                        <td><?php echo $xOrden; ?></td>
+                        <td><strong>
+                          <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?>
+                          </strong>
+                        </td>
+                        <td>
+                          <a class="boton-eliminar <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="0"){ ?>experiencia-delete.php?cod_experiencia=<?php echo $xCodigo; ?><?php }else{ ?>javascript:visitante();<?php } ?>">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                        <td><a class="boton-editar" href="experiencia-edit.php?cod_experiencia=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         <td>
                           <?php if($xVisitante=="0"){ ?>
                           <div class="hidden">
@@ -137,7 +150,7 @@ if ($eliminar == "true") {
                       </tr>
                       <?php
                         }
-                        mysqli_free_result($resultadoContacto);
+                        mysqli_free_result($resultadoExperiencia);
                       ?>
                     </tbody>
                   </table>

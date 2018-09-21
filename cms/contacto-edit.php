@@ -17,6 +17,7 @@ if($proceso==""){
   $xMobile    = htmlspecialchars($filaCot['mobile']);
   $xEmail     = htmlspecialchars($filaCot['email']);
   $xMap       = htmlspecialchars($filaCot['map']);
+  $xMaps      = $filaCot['map'];
   $xFormem    = $filaCot['form_mail'];
 }
 
@@ -81,9 +82,9 @@ if($proceso == "Actualizar"){
         <?php $page="contacto"; include("module/menu-contacto.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
-        <div class="card">
-          <h4 class="card-title"><strong>Editar Contacto</strong></h4>
-          <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+        <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
+          <div class="card">
+            <h4 class="card-title"><strong>Editar Contacto</strong></h4>
             <div class="card-body">
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
@@ -130,7 +131,7 @@ if($proceso == "Actualizar"){
                   <input class="form-control" id="map" type="<?php if($xVisitante=="1"){ ?>hidden<?php }else{ ?>text<?php } ?>" name="map" value="<?php echo $xMap; ?>" />
                   <div class="separador-10"></div>
                   <?php if($xMap!=""){ ?>
-                  <iframe src="<?php echo $xMap; ?>" width="100%" frameborder="1" height="250"></iframe>
+                  <?php echo $xMaps; ?>
                   <?php }else{ ?>
                   <?php } ?>
                 </div>
@@ -151,8 +152,8 @@ if($proceso == "Actualizar"){
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_contact" value="<?php echo $xCodigo; ?>">
             </footer>
-          </form>
-        </div>
+          </div>
+        </form>
       </div><!--/.main-content -->
       <?php include("module/footer_int.php"); ?>
     </main>

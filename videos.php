@@ -11,16 +11,16 @@
     	?>
 		<title><?php echo $xTitulo; ?> | V&iacute;deos</title>
 		<?php include('module/head.php'); ?>
-		<link href="jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
-		<link href="jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
+		<link href="/jackbox/css/jackbox.css" rel="stylesheet" type="text/css" />
+		<link href="/jackbox/css/jackbox_hovers.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
-				<?php include('module/menu.php'); ?>
+				<?php $menu="videos"; include('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-					background-image: url(img/big-header-2.jpeg);
+					background-image: url(/img/big-header-2.jpeg);
 					}
 				</style>
 				<!-- servicioshead -->
@@ -44,7 +44,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / Galer&iacute;a de V&iacute;deos</li>
+									<li><a href="/index.php"><i class="fas fa-home"></i> Inicio</a> / Galer&iacute;a de V&iacute;deos</li>
 								</ul>
 							</div>
 						</div>
@@ -69,7 +69,7 @@
 		                    ?>
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center video-gal">
 								<a class="jackbox" data-group="video" href="<?php echo $xVideo; ?>">
-							  		<img src="cms/assets/img/videos/<?php echo $xImagen; ?>" />
+							  		<img src="/cms/assets/img/videos/<?php echo $xImagen; ?>" />
 							    </a>
 								<h4 class="video-titulo"><?php echo $xTitulo; ?></h4>
 							</div>
@@ -91,11 +91,11 @@
 						$('#myInput').focus()
 					})
 				</script>
-				<script type="text/javascript" src="jackbox/js/libs/jquery.address-1.5.min.js"></script>
-				<script type="text/javascript" src="jackbox/js/libs/Jacked.js"></script>
-				<script type="text/javascript" src="jackbox/js/jackbox-swipe.js"></script>
-				<script type="text/javascript" src="jackbox/js/jackbox.js"></script>
-				<script type="text/javascript" src="jackbox/js/libs/StackBlur.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/jquery.address-1.5.min.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/Jacked.js"></script>
+				<script type="text/javascript" src="/jackbox/js/jackbox-swipe.js"></script>
+				<script type="text/javascript" src="/jackbox/js/jackbox.js"></script>
+				<script type="text/javascript" src="/jackbox/js/libs/StackBlur.js"></script>
 				<script type="text/javascript">
 					jQuery(document).ready(function() {
 		//				jQuery(".jackbox[data-group]").jackBox("init");

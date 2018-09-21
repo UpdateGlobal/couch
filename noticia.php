@@ -1,5 +1,11 @@
 <?php include("cms/module/conexion.php"); ?>
-<?php $cod_noticia   = $_REQUEST['cod_noticia']; ?>
+<?php $slug = $_REQUEST["slug"]; ?>
+<?php 
+$conNoticias = "SELECT * FROM noticias WHERE slug='$slug'";
+$resNoticias = mysqli_query($enlaces,$conNoticias) or die('Consulta fallida: ' . mysqli_error($enlaces));
+$filNos = mysqli_fetch_array($resNoticias);
+    $cod_noticia = $filNos['cod_noticia'];
+?>
 <!DOCTYPE html>
 <html class="no-js">
 	<!--<![endif]-->
@@ -18,21 +24,21 @@
 		<?php include('module/head.php'); ?>
 		<!-- Facebook and Twitter integration -->
 		<meta property="og:title" content="<?php echo $xTitulo; ?>" />
-		<meta property="og:image" content="cms/assets/img/meta/<?php echo $xFace1; ?>" />
-		<meta property="og:image" content="cms/assets/img/meta/<?php echo $xFace2; ?>" />
+		<meta property="og:image" content="/cms/assets/img/meta/<?php echo $xFace1; ?>" />
+		<meta property="og:image" content="/cms/assets/img/meta/<?php echo $xFace2; ?>" />
 		<meta property="og:description" content="<?php echo $xDes; ?>" />
 		<meta name="twitter:title" content="<?php echo $xTitulo; ?>" />
-		<meta name="twitter:image" content="cms/assets/img/meta/<?php echo $xFace1; ?>" />
-		<meta name="twitter:image" content="cms/assets/img/meta/<?php echo $xFace2; ?>" />
+		<meta name="twitter:image" content="/cms/assets/img/meta/<?php echo $xFace1; ?>" />
+		<meta name="twitter:image" content="/cms/assets/img/meta/<?php echo $xFace2; ?>" />
 		<meta name="twitter:descripcion" content="<?php echo $xDes; ?>" />
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
 			<div id="fh5co-page">
-				<?php include ('module/menu.php'); ?>
+				<?php $menu="blog"; include ('module/menu.php'); ?>
 				<style type="text/css">
 					.back_intro{
-						background-image: url(img/big-header-2.jpeg);
+						background-image: url(/img/big-header-2.jpeg);
 					}
 					h1, h2, h3, h4, h5, h6 {
 						font-family: helvetica !important;
@@ -71,7 +77,7 @@
 						<div class="row">
 							<div class="col-md-8 offset-md-4">
 								<ul class="breadcrumb">
-									<li><a href="index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="blog.php">Blog</a> / <?php echo $xTitulo; ?></li>
+									<li><a href="/index.php"><i class="fas fa-home"></i> Inicio</a> / <a href="/blog.php">Blog</a> / <?php echo $xTitulo; ?></li>
 								</ul>
 							</div>
 						</div>
@@ -90,7 +96,7 @@
 								</div>
 								<!--ietmblog-->
 								<div class="col-md-12">
-									<img class="img-responsive" style="width: 100%;" src="cms/assets/img/noticias/<?php echo $xImagen; ?>" alt="" />
+									<img class="img-responsive" style="width: 100%;" src="/cms/assets/img/noticias/<?php echo $xImagen; ?>" alt="" />
 									<div class="desc" style="padding-top:20px;">
 										<h3><?php echo $xTitulo; ?></h3>
 										<span class="posted_by">Publicado por: <?php echo $xAutor; ?></span>
@@ -98,7 +104,7 @@
 											<?php echo $xDescripcion; ?>
 										</div>
 									</div>
-									<a class="btn btn-primary" href="blog.php">&lt; Volver</a>
+									<a class="btn btn-primary" href="/blog.php">&lt; Volver</a>
 								</div>
 								<!--ietmblog-->
 							</div>
