@@ -2,7 +2,7 @@
  * VERSION: 1.3
  * DATE: 2011-08-02
  * AS3 
- * UPDATES AND DOCS AT: http://www.TweenMax.com
+ * UPDATES AND DOCS AT: https://www.TweenMax.com
  **/
 package com.greensock.plugins {
 	import com.greensock.*;
@@ -34,7 +34,7 @@ package com.greensock.plugins {
  * 		TweenLite.to(mc, 1, {shortRotation:{rotationX:-170, rotationY:35, rotationZ:10}}); <br /><br />
  * </code>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */

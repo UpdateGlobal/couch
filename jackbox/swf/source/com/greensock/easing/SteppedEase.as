@@ -2,7 +2,7 @@
  * VERSION: 0.5
  * DATE: 2010-11-30
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/
+ * UPDATES AND DOCS AT: https://www.greensock.com/
  **/
 package com.greensock.easing {
 /**
@@ -26,7 +26,7 @@ package com.greensock.easing {
  * Note: SteppedEase is optimized for use with the GreenSock tweenining platform, so it isn't intended to be used with other engines. 
  * Specifically, its easing equation always returns values between 0 and 1.<br /><br />
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	 

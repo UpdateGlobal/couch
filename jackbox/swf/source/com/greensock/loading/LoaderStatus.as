@@ -2,13 +2,13 @@
  * VERSION: 1.0
  * DATE: 2010-06-16
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading {
 /**
  * Defines status values for loaders. <br /><br />
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	

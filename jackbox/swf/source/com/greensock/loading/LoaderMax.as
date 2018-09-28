@@ -2,7 +2,7 @@
  * VERSION: 1.899
  * DATE: 2012-01-25
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading {
 	import com.greensock.events.LoaderEvent;
@@ -27,8 +27,8 @@ package com.greensock.loading {
 	[Event(name="childCancel", 			type="com.greensock.events.LoaderEvent")]
 	/** Dispatched when any child of the LoaderMax instance dispatches a SCRIPT_ACCESS_DENIED event. This can occur even if the LoaderMax itself isn't in the process of loading (because load() or prioritize() could have been called directly on a child loader) **/
 	[Event(name="scriptAccessDenied", 	type="com.greensock.events.LoaderEvent")]
-	/** Dispatched when any child of the LoaderMax instance dispatches an HTTP_STATUS event. This can occur even if the LoaderMax itself isn't in the process of loading (because load() or prioritize() could have been called directly on a child loader) **/
-	[Event(name="httpStatus", 			type="com.greensock.events.LoaderEvent")]
+	/** Dispatched when any child of the LoaderMax instance dispatches an https_STATUS event. This can occur even if the LoaderMax itself isn't in the process of loading (because load() or prioritize() could have been called directly on a child loader) **/
+	[Event(name="httpstatus", 			type="com.greensock.events.LoaderEvent")]
 	/** Dispatched when any child of the LoaderMax instance dispatches an IO_ERROR event. This can occur even if the LoaderMax itself isn't in the process of loading (because load() or prioritize() could have been called directly on a child loader) **/
 	[Event(name="ioError", 				type="com.greensock.events.LoaderEvent")]
 	/** Dispatched when any child of the LoaderMax instance dispatches a SECURITY_ERROR event. This can occur even if the LoaderMax itself isn't in the process of loading (because load() or prioritize() could have been called directly on a child loader) **/
@@ -68,7 +68,7 @@ import com.greensock.loading.display.~~;
 var queue:LoaderMax = new LoaderMax({name:"mainQueue", onProgress:progressHandler, onComplete:completeHandler, onError:errorHandler});
 
 //append several loaders
-queue.append( new XMLLoader("xml/data.xml", {name:"xmlDoc", alternateURL:"http://otherserver.com/data.xml"}) );
+queue.append( new XMLLoader("xml/data.xml", {name:"xmlDoc", alternateURL:"https://otherserver.com/data.xml"}) );
 queue.append( new ImageLoader("img/photo1.jpg", {name:"photo1", estimatedBytes:2400, container:this, alpha:0, width:250, height:150, scaleMode:"proportionalInside"}) );
 queue.append( new SWFLoader("swf/main.swf", {name:"mainClip", estimatedBytes:3000, container:this, x:250, autoPlay:false}) );
 
@@ -127,7 +127,7 @@ function errorHandler(event:LoaderEvent):void {
  * 		<li><strong> onChildCancel : Function</strong> - A handler function for <code>LoaderEvent.CHILD_CANCEL</code> events which are dispatched each time loading is aborted on one of the loader's children (or any descendant) due to either an error or because another loader was prioritized in the queue or because <code>cancel()</code> was manually called on the child loader. Make sure your onChildCancel function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
  * 		<li><strong> onChildFail : Function</strong> - A handler function for <code>LoaderEvent.CHILD_FAIL</code> events which are dispatched each time one of the loader's children (or any descendant) fails (and its <code>status</code> chances to <code>LoaderStatus.FAILED</code>). Make sure your onChildFail function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
  * 		<li><strong> onIOError : Function</strong> - A handler function for <code>LoaderEvent.IO_ERROR</code> events which will also call the onError handler, so you can use that as more of a catch-all whereas <code>onIOError</code> is specifically for LoaderEvent.IO_ERROR events. Make sure your onIOError function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
- * 		<li><strong> onHTTPStatus : Function</strong> - A handler function for <code>LoaderEvent.HTTP_STATUS</code> events. Make sure your onHTTPStatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
+ * 		<li><strong> onhttpstatus : Function</strong> - A handler function for <code>LoaderEvent.https_STATUS</code> events. Make sure your onhttpstatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
  * 		<li><strong> onScriptAccessDenied : Function</strong> - A handler function for <code>LoaderEvent.SCRIPT_ACCESS_DENIED</code> events which are dispatched when one of the LoaderMax's children (or any descendant) is loaded from another domain and no crossdomain.xml is in place to grant full script access for things like smoothing or BitmapData manipulation. Make sure your function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
  * </ul><br /><br />
  * 
@@ -135,7 +135,7 @@ function errorHandler(event:LoaderEvent):void {
  * instead of a generic object to define your <code>vars</code> is a bit more verbose but provides 
  * code hinting and improved debugging because it enforces strict data typing. Use whichever one you prefer.<br /><br />
  * 
- * <b>Copyright 2010-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2010-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @see com.greensock.loading.data.LoaderMaxVars
  * 
@@ -197,7 +197,7 @@ function errorHandler(event:LoaderEvent):void {
 		 * 		<li><strong> onChildCancel : Function</strong> - A handler function for <code>LoaderEvent.CHILD_CANCEL</code> events which are dispatched each time loading is aborted on one of the loader's children (or any descendant) due to either an error or because another loader was prioritized in the queue or because <code>cancel()</code> was manually called on the child loader. Make sure your onChildCancel function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
 		 * 		<li><strong> onChildFail : Function</strong> - A handler function for <code>LoaderEvent.CHILD_FAIL</code> events which are dispatched each time one of the loader's children (or any descendant) fails (and its <code>status</code> chances to <code>LoaderStatus.FAILED</code>). Make sure your onChildFail function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
 		 * 		<li><strong> onIOError : Function</strong> - A handler function for <code>LoaderEvent.IO_ERROR</code> events which will also call the onError handler, so you can use that as more of a catch-all whereas <code>onIOError</code> is specifically for LoaderEvent.IO_ERROR events. Make sure your onIOError function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
-		 * 		<li><strong> onHTTPStatus : Function</strong> - A handler function for <code>LoaderEvent.HTTP_STATUS</code> events. Make sure your onHTTPStatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
+		 * 		<li><strong> onhttpstatus : Function</strong> - A handler function for <code>LoaderEvent.https_STATUS</code> events. Make sure your onhttpstatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
 		 * 		<li><strong> onScriptAccessDenied : Function</strong> - A handler function for <code>LoaderEvent.SCRIPT_ACCESS_DENIED</code> events which are dispatched when one of the LoaderMax's children (or any descendant) is loaded from another domain and no crossdomain.xml is in place to grant full script access for things like smoothing or BitmapData manipulation. Make sure your function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>).</li>
 		 * </ul>
 		 * @see com.greensock.loading.data.LoaderMaxVars
@@ -251,7 +251,7 @@ import com.greensock.events.LoaderEvent;
 //activate the necessary loaders so that their file extensions can be recognized (do this once)
 LoaderMax.activate([ImageLoader, SWFLoader, XMLLoader, MP3Loader]);
  
-var urls:Array = ["img/photo1.jpg","../../xml/data.xml","swf/main.swf","http://www.greensock.com/audio/music.mp3"];
+var urls:Array = ["img/photo1.jpg","../../xml/data.xml","swf/main.swf","https://www.greensock.com/audio/music.mp3"];
 
 //now parse all of the urls, creating a LoaderMax that contains the correct type of loaders (an ImageLoader, XMLLoader, SWFLoader, and MP3Loader respectively)
 var loader:LoaderMax = LoaderMax.parse(urls, {name:"mainQueue", onComplete:completeHandler}) as LoaderMax;
@@ -578,16 +578,16 @@ function completeHandler(event:LoaderEvent):void {
 		/**
 		 * Immediately prepends a value to the beginning of each child loader's <code>url</code>. For example,
 		 * if the "myLoaderMax" instance contains 3 ImageLoaders with the urls "image1.jpg", "image2.jpg", and "image3.jpg"
-		 * and you'd like to add "http://www.greensock.com/images/" to the beginning of them all, you'd do:<br /><br /><code>
+		 * and you'd like to add "https://www.greensock.com/images/" to the beginning of them all, you'd do:<br /><br /><code>
 		 * 
-		 * myLoaderMax.prependURLs("http://www.greensock.com/images/", false);<br /><br /></code>
+		 * myLoaderMax.prependURLs("https://www.greensock.com/images/", false);<br /><br /></code>
 		 * 
-		 * Now the ImageLoader urls would be "http://www.greensock.com/images/image1.jpg", "http://www.greensock.com/images/image2.jpg",
-		 * and "http://www.greensock.com/images/image3.jpg" respectively. <br /><br />
+		 * Now the ImageLoader urls would be "https://www.greensock.com/images/image1.jpg", "https://www.greensock.com/images/image2.jpg",
+		 * and "https://www.greensock.com/images/image3.jpg" respectively. <br /><br />
 		 * 
 		 * <code>prependURLs()</code> permanently affects each child loader's url meaning that
 		 * <code>LoaderMax.getContent("image1.jpg")</code> would not find the loader whose <code>url</code>
-		 * is now "http://www.greensock.com/images/image1.jpg" (although you could simply use its <code>name</code> 
+		 * is now "https://www.greensock.com/images/image1.jpg" (although you could simply use its <code>name</code> 
 		 * instead of its <code>url</code> to find it). It also means that if a single loader has been
 		 * inserted into multiple LoaderMax instances, its <code>url</code> change affects them all. <br /><br />
 		 * 
@@ -612,20 +612,20 @@ function completeHandler(event:LoaderEvent):void {
 		/**
 		 * Immediately replaces a certain substring in each child loader's <code>url</code> with another string,
 		 * making it simple to do something like change <code>"{imageDirectory}image1.jpg"</code> to 
-		 * <code>"http://www.greensock.com/images/image1.jpg"</code>. For example,
+		 * <code>"https://www.greensock.com/images/image1.jpg"</code>. For example,
 		 * if the "myLoaderMax" instance contains 3 ImageLoaders with the urls <code>"{imageDirectory}image1.jpg", 
 		 * "{imageDirectory}image2.jpg",</code> and <code>"{imageDirectory}image3.jpg"</code>
-		 * and you'd like to replace <code>{imageDirectory}</code> with <code>http://www.greensock.com/images/</code>
+		 * and you'd like to replace <code>{imageDirectory}</code> with <code>https://www.greensock.com/images/</code>
 		 * you'd do:<br /><br /><code>
 		 * 
-		 * myLoaderMax.replaceURLText("{imageDirectory}", "http://www.greensock.com/images/", false);<br /><br /></code>
+		 * myLoaderMax.replaceURLText("{imageDirectory}", "https://www.greensock.com/images/", false);<br /><br /></code>
 		 * 
-		 * Now the ImageLoader urls would be "http://www.greensock.com/images/image1.jpg", "http://www.greensock.com/images/image2.jpg",
-		 * and "http://www.greensock.com/images/image3.jpg" respectively. <br /><br />
+		 * Now the ImageLoader urls would be "https://www.greensock.com/images/image1.jpg", "https://www.greensock.com/images/image2.jpg",
+		 * and "https://www.greensock.com/images/image3.jpg" respectively. <br /><br />
 		 * 
 		 * <code>replaceURLText()</code> permanently affects each child loader's <code>url</code> meaning that
 		 * <code>LoaderMax.getContent("image1.jpg")</code> would not find the loader whose <code>url</code>
-		 * is now "http://www.greensock.com/images/image1.jpg" (although you could simply use its <code>name</code> 
+		 * is now "https://www.greensock.com/images/image1.jpg" (although you could simply use its <code>name</code> 
 		 * instead of its <code>url</code> to find it). It also means that if a single loader has been
 		 * inserted into multiple LoaderMax instances, its <code>url</code> change affects them all. <br /><br />
 		 * 

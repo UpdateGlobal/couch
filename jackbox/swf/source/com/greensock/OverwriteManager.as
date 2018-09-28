@@ -2,7 +2,7 @@
  * VERSION: 6.1
  * DATE: 2010-12-20
  * AS3 (AS2 is also available)
- * UPDATES AND DOCS AT: http://www.greensock.com/overwritemanager/
+ * UPDATES AND DOCS AT: https://www.greensock.com/overwritemanager/
  **/
 package com.greensock {
 	import com.greensock.core.*;
@@ -153,7 +153,7 @@ package com.greensock {
  * 		
  * 		OverwriteManager.mode = OverwriteManager.CONCURRENT;<br /><br /></code>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	 
@@ -266,7 +266,7 @@ package com.greensock {
 		 **/
 		public static function init(defaultMode:int=2):int {
 			if (TweenLite.version < 11.6) {
-				throw new Error("Warning: Your TweenLite class needs to be updated to work with OverwriteManager (or you may need to clear your ASO files). Please download and install the latest version from http://www.tweenlite.com.");
+				throw new Error("Warning: Your TweenLite class needs to be updated to work with OverwriteManager (or you may need to clear your ASO files). Please download and install the latest version from https://www.tweenlite.com.");
 			}
 			TweenLite.overwriteManager = OverwriteManager;
 			mode = defaultMode;

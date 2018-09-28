@@ -28,6 +28,7 @@
             while($filaNot = mysqli_fetch_array($resultadoNoticias)){
                 $xTitulo    = $filaNot['titulo'];
                 $xSlug      = $filaNot['slug'];
+                $xDescripcion = $filaNot['noticia'];
                 $xImagen    = $filaNot['imagen'];
                 $xFecha     = $filaNot['fecha'];
         ?>

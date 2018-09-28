@@ -182,6 +182,12 @@ a.active.sf-with-ul {
     z-index: 99;
 }
 
+.cat-lista {
+    margin: 0px;
+    list-style-type: square;
+    padding-left: 23px;
+}
+
 @media screen and (max-width: 1199px) {
 	.element-item {
 	    max-width: 48%;

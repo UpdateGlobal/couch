@@ -191,7 +191,7 @@
 			$google = '<div id="google" class="container"><span id="google-mask"></span><div class="g-plusone" data-size="medium" data-annotation="none" data-href="{googleToShare}"></div></div>';
 			
 			/* PINTEREST */
-			$pinterest = '<div id="pinterest" class="container"><span id="pinterest-mask"></span><div class="absolute"><a href="http://pinterest.com/pin/create/button/?url={urlToShare}&media={imgPoster}&description={contentTitle}" class="pin-it-button" count-layout="none" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div></div>';
+			$pinterest = '<div id="pinterest" class="container"><span id="pinterest-mask"></span><div class="absolute"><a href="https://pinterest.com/pin/create/button/?url={urlToShare}&media={imgPoster}&description={contentTitle}" class="pin-it-button" count-layout="none" target="_blank"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div></div>';
 			
 			/* ************************ */
 			/* END SOCIAL BUTTON MARKUP */

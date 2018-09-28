@@ -2,7 +2,7 @@
  * VERSION: 5.2
  * DATE: 2011-12-23
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/tweenvars/
+ * UPDATES AND DOCS AT: https://www.greensock.com/tweenvars/
  **/
 package com.greensock.data {
 	import com.greensock.TweenLite;
@@ -45,7 +45,7 @@ package com.greensock.data {
  *	  	 free to use it. The purpose of this utility is simply to enable code hinting and to allow for strict datatyping.</li>
  * </ul>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	 
@@ -68,7 +68,7 @@ package com.greensock.data {
 				}
 			}
 			if (TweenMax.version < 11.4) {
-				trace("WARNING: it is suggested that you update to at least version 11.4 of TweenMax in order for TweenMaxVars to work properly. http://www.greensock.com/tweenmax/"); 
+				trace("WARNING: it is suggested that you update to at least version 11.4 of TweenMax in order for TweenMaxVars to work properly. https://www.greensock.com/tweenmax/"); 
 			}
 		}
 		
@@ -80,7 +80,7 @@ package com.greensock.data {
 				_vars[property] = value;
 			}
 			if (requirePlugin && !(property in TweenLite.plugins)) {
-				trace("WARNING: you must activate() the " + property + " plugin in order for the feature to work in TweenMax. See http://www.greensock.com/tweenlite/#plugins for details.");
+				trace("WARNING: you must activate() the " + property + " plugin in order for the feature to work in TweenMax. See https://www.greensock.com/tweenlite/#plugins for details.");
 			}
 			return this;
 		}
@@ -607,9 +607,9 @@ package com.greensock.data {
 		 * 		return object[propName];<br />
 		 * 	}<br /><br /></code>
 		 * 
-		 * DynamicPropsPlugin is a <a href="http://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
+		 * DynamicPropsPlugin is a <a href="https://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
 		 * You must have a valid membership to use this class without violating the terms of use. 
-		 * Visit <a href="http://www.greensock.com/club/">http://www.greensock.com/club/</a> to sign up or get 
+		 * Visit <a href="https://www.greensock.com/club/">https://www.greensock.com/club/</a> to sign up or get 
 		 * more details. <br /><br />
 		 * 
 		 * <b>USAGE:</b><br /><br />
@@ -831,7 +831,7 @@ package com.greensock.data {
 		 * </code>
 		 * 
 		 * Physics2DPlugin is a Club GreenSock membership benefit. You must have a valid membership to use this class
-		 * without violating the terms of use. Visit http://www.greensock.com/club/ to sign up or get more details.<br /><br />
+		 * without violating the terms of use. Visit https://www.greensock.com/club/ to sign up or get more details.<br /><br />
 		 * 
 		 * @param velocity The initial velocity of the object measured in pixels per time unit (usually seconds, but for tweens where useFrames is true, it would be measured in frames). The default is zero.
 		 * @param angle The initial angle (in degrees) at which the object is traveling. Only pertinent when a velocity is defined. For example, if the object should start out traveling at -60 degrees (towards the upper right), the angle would be -60. The default is zero.
@@ -886,7 +886,7 @@ package com.greensock.data {
 		 *  </code>
 		 * 
 		 * PhysicsPropsPlugin is a Club GreenSock membership benefit. You must have a valid membership to use this class
-		 * without violating the terms of use. Visit http://www.greensock.com/club/ to sign up or get more details.<br /><br />
+		 * without violating the terms of use. Visit https://www.greensock.com/club/ to sign up or get more details.<br /><br />
 		 * 
 		 * @see #physics2D()
 		 **/
@@ -1084,9 +1084,9 @@ package com.greensock.data {
 		* lets go and you want it to continue increasing the <code>rotation</code> at that velocity, 
 		* decelerating smoothly until it stops.<br /><br />
 		* 
-		* ThrowPropsPlugin is a <a href="http://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
+		* ThrowPropsPlugin is a <a href="https://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
 		* You must have a valid membership to use this class without violating the terms of use. Visit 
-		* <a href="http://www.greensock.com/club/">http://www.greensock.com/club/</a> to sign up or get more details.<br /><br />
+		* <a href="https://www.greensock.com/club/">https://www.greensock.com/club/</a> to sign up or get more details.<br /><br />
 		**/
 		public function throwProps(props:Object):TweenMaxVars {
 			return _set("throwProps", props, true);
@@ -1116,9 +1116,9 @@ package com.greensock.data {
 		 * 
 		 * TweenMax.to(mc, 3, new TweenMaxVars().prop("x", 50).prop("y", 40).transformAroundCenter({scale:0.5, rotation:30}));<br /><br /></code>
 		 * 
-		 * TransformAroundCenterPlugin is a <a href="http://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
+		 * TransformAroundCenterPlugin is a <a href="https://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
 		 * You must have a valid membership to use this class without violating the terms of use. Visit 
-		 * <a href="http://blog.greensock.com/club/">http://www.greensock.com/club/</a> to sign up or get more details. <br /><br />
+		 * <a href="https://blog.greensock.com/club/">https://www.greensock.com/club/</a> to sign up or get more details. <br /><br />
 		 * 
 		 * <b>USAGE:</b><br /><br />
 		 * <code>
@@ -1149,9 +1149,9 @@ package com.greensock.data {
 		 * 
 		 * TweenMax.to(mc, 3, new TweenMaxVars().prop("x", 50).prop("y", 40).transformAroundPoint(new Point(200, 300), {scale:0.5, rotation:30}));<br /><br /></code>
 		 * 
-		 * TransformAroundPointPlugin is a <a href="http://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
+		 * TransformAroundPointPlugin is a <a href="https://www.greensock.com/club/">Club GreenSock</a> membership benefit. 
 		 * You must have a valid membership to use this class without violating the terms of use. Visit 
-		 * <a href="http://www.greensock.com/club/">http://www.greensock.com/club/</a> to sign up or get more details. <br /><br />
+		 * <a href="https://www.greensock.com/club/">https://www.greensock.com/club/</a> to sign up or get more details. <br /><br />
 		 * 
 		 * <b>USAGE:</b><br /><br />
 		 * <code>

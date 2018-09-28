@@ -1,5 +1,5 @@
 /* --------------------------------------------- */
-/* Author: http://codecanyon.net/user/CodingJack */
+/* Author: https://codecanyon.net/user/CodingJack */
 /* --------------------------------------------- */
 
 (function($) {

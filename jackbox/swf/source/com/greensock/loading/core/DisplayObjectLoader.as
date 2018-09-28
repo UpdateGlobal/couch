@@ -2,7 +2,7 @@
  * VERSION: 1.898
  * DATE: 2012-01-19
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading.core {
 	import com.greensock.events.LoaderEvent;
@@ -29,7 +29,7 @@ package com.greensock.loading.core {
  * Please refer to the documentation for the other classes.
  * <br /><br />
  * 
- * <b>Copyright 2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	
@@ -143,7 +143,7 @@ package com.greensock.loading.core {
 					var request:URLRequest = new URLRequest();
 					request.data = _request.data;
 					request.method = _request.method;
-					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "http") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
+					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "https") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
 					if (Capabilities.playerType != "Desktop") { //AIR apps will choke on Security.allowDomain()
 						Security.allowDomain(_url); 
 					}
@@ -171,7 +171,7 @@ package com.greensock.loading.core {
 				_loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, _completeHandler);
 				_loader.contentLoaderInfo.removeEventListener("ioError", _failHandler);
 				_loader.contentLoaderInfo.removeEventListener("securityError", _securityErrorHandler);
-				_loader.contentLoaderInfo.removeEventListener("httpStatus", _httpStatusHandler);
+				_loader.contentLoaderInfo.removeEventListener("httpstatus", _httpstatusHandler);
 				_loader.contentLoaderInfo.removeEventListener(Event.INIT, _initHandler);
 				if (_loader.hasOwnProperty("uncaughtErrorEvents")) { //not available when published to FP9, so we reference things this way to avoid compiler errors
 					Object(_loader).uncaughtErrorEvents.removeEventListener("uncaughtError", _errorHandler);
@@ -204,7 +204,7 @@ package com.greensock.loading.core {
 			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE, _completeHandler, false, 0, true);
 			_loader.contentLoaderInfo.addEventListener("ioError", _failHandler, false, 0, true);
 			_loader.contentLoaderInfo.addEventListener("securityError", _securityErrorHandler, false, 0, true);
-			_loader.contentLoaderInfo.addEventListener("httpStatus", _httpStatusHandler, false, 0, true);
+			_loader.contentLoaderInfo.addEventListener("httpstatus", _httpstatusHandler, false, 0, true);
 			_loader.contentLoaderInfo.addEventListener(Event.INIT, _initHandler, false, 0, true);
 			if (_loader.hasOwnProperty("uncaughtErrorEvents")) { //not available when published to FP9, so we reference things this way to avoid compiler errors
 				Object(_loader).uncaughtErrorEvents.addEventListener("uncaughtError", _errorHandler, false, 0, true);

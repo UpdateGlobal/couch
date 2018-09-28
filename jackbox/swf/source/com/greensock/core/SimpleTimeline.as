@@ -2,7 +2,7 @@
  * VERSION: 1.672
  * DATE: 2011-08-29
  * AS3 (AS2 version is also available)
- * UPDATES AND DOCS AT: http://www.greensock.com
+ * UPDATES AND DOCS AT: https://www.greensock.com
  **/
 package com.greensock.core {
 /**
@@ -10,7 +10,7 @@ package com.greensock.core {
  * most basic timeline functionality and is used for the root timelines in TweenLite. It is meant
  * to be very fast and lightweight. <br /><br />
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	

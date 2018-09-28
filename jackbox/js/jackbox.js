@@ -1,5 +1,5 @@
 /* --------------------------------------------- */
-/* Author: http://codecanyon.net/user/CodingJack */
+/* Author: https://codecanyon.net/user/CodingJack */
 /* --------------------------------------------- */
 
 ;(function($) {
@@ -66,10 +66,10 @@
 	socialbuttons = "jackbox/modules/jackbox_social.php",
 	
 	// The Vimeo video iframe to be used (edit with caution)
-	vimeoMarkup = "http://player.vimeo.com/video{url}?title=0&byline=0&portrait=0&autoplay={autoplay}&color=FFFFFF&wmode=transparent",
+	vimeoMarkup = "https://player.vimeo.com/video{url}?title=0&byline=0&portrait=0&autoplay={autoplay}&color=FFFFFF&wmode=transparent",
 	
 	// The Youtube video iframe to be used (edit with caution)
-	youTubeMarkup = "http://www.youtube.com/embed/{url}?autoplay={autoplay}&autohide=1&hd=1&iv_load_policy=3&showinfo=0&showsearch=0&wmode=transparent",
+	youTubeMarkup = "https://www.youtube.com/embed/{url}?autoplay={autoplay}&autohide=1&hd=1&iv_load_policy=3&showinfo=0&showsearch=0&wmode=transparent",
 	
 	// The markup or "header" that will be placed above the item's content
 	topMarkup = 
@@ -761,7 +761,7 @@
 				
 			}
 			
-			if(poster.search("http") === -1) poster = poster.charAt(0) !== "/" ? domain + "/" + poster : domain + poster;
+			if(poster.search("https") === -1) poster = poster.charAt(0) !== "/" ? domain + "/" + poster : domain + poster;
 			
 			obj.width = socialFrameWidth;
 			obj.height = socialFrameHeight;
@@ -1397,7 +1397,7 @@
 				}
 				else if(video === "youtube") {
 					
-					$this.attr("data-thumbnail", "http://img.youtube.com/vi/" + url.split("http://www.youtube.com/watch?v=")[1] + "/1.jpg");
+					$this.attr("data-thumbnail", "https://img.youtube.com/vi/" + url.split("https://www.youtube.com/watch?v=")[1] + "/1.jpg");
 					
 				}
 				
@@ -1973,7 +1973,7 @@
 	
 	function fullPath() {
 		
-		if(url.search("http") !== -1) return;
+		if(url.search("https") !== -1) return;
 					
 		var root = doc.URL.split("#")[0];
 		
@@ -2680,7 +2680,7 @@
 	
 	function getVimeoThumb($video, url) {
 						
-		$.getJSON("http://vimeo.com/api/v2/video/" + url.split("http://vimeo.com/")[1] + ".json?callback=?", {format: "json"}, function(data) {
+		$.getJSON("https://vimeo.com/api/v2/video/" + url.split("https://vimeo.com/")[1] + ".json?callback=?", {format: "json"}, function(data) {
 			
 			$video.attr("data-thumbnail", data[0].thumbnail_small);
 			

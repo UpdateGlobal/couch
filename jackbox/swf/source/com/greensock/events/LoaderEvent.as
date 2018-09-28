@@ -2,7 +2,7 @@
  * VERSION: 1.87
  * DATE: 2011-07-30
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.events {
 	
@@ -11,7 +11,7 @@ package com.greensock.events {
  * An Event dispatched by one of the loaders in the LoaderMax system.
  * <br /><br />
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */
@@ -38,8 +38,8 @@ package com.greensock.events {
 		public static const INIT:String="init";
 		/** Dispatched when the loader finishes loading. **/
 		public static const COMPLETE:String="complete";
-		/** Dispatched when the loader (or one of its children) receives an HTTP_STATUS event (see Adobe docs for specifics). **/
-		public static const HTTP_STATUS:String="httpStatus";
+		/** Dispatched when the loader (or one of its children) receives an https_STATUS event (see Adobe docs for specifics). **/
+		public static const https_STATUS:String="httpstatus";
 		/** When script access is denied for a particular loader (like if an ImageLoader or SWFLoader tries loading from another domain and the crossdomain.xml file is missing or doesn't grant permission properly), a SCRIPT_ACCESS_DENIED LoaderEvent will be dispatched. **/
 		public static const SCRIPT_ACCESS_DENIED:String="scriptAccessDenied";
 		/** Dispatched when the loader (or one of its children) throws any error, like an IO_ERROR or SECURITY_ERROR. **/

@@ -2,7 +2,7 @@
  * VERSION: 2.01
  * DATE: 2010-12-24
  * AS3
- * UPDATES AND DOCS AT: http://www.TweenMax.com
+ * UPDATES AND DOCS AT: https://www.TweenMax.com
  **/
 package com.greensock.plugins {
 	import com.greensock.TweenLite;
@@ -25,7 +25,7 @@ package com.greensock.plugins {
  * 		TweenMax.to(mc, 2, {x:300, y:200, alpha:0.5, roundProps:["x","y"]}); <br /><br />
  * </code>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */

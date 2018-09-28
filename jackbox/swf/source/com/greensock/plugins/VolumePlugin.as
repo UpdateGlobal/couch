@@ -2,7 +2,7 @@
  * VERSION: 1.1
  * DATE: 2010-09-16
  * ACTIONSCRIPT VERSION: 3.0 
- * UPDATES AND DOCUMENTATION AT: http://www.GreenSock.com
+ * UPDATES AND DOCUMENTATION AT: https://www.GreenSock.com
  **/
 package com.greensock.plugins {
 	import flash.media.SoundTransform;
@@ -21,7 +21,7 @@ package com.greensock.plugins {
  * 		TweenLite.to(mc, 1, {volume:0}); <br /><br />
  * </code>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */

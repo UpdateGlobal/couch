@@ -170,7 +170,7 @@ VideoLoader			1.853
 -------------------------------------------
 LoaderMax			1.852
 VideoLoader			1.852
-	- Worked around a Flash bug/inconsistency that could cause a VideoLoader's file size audit to fail (only for relative URLs, not absolute). Unlike all other loaders (URLLoader, Loader, URLStream), Adobe's NetStream loads relative URLs as though they are relative to the swf file's location rather than the HTML page in which it is embedded. Another workaround is to set the "base" attribute in the object/embed code (http://kb2.adobe.com/cps/041/tn_04157.html) 
+	- Worked around a Flash bug/inconsistency that could cause a VideoLoader's file size audit to fail (only for relative URLs, not absolute). Unlike all other loaders (URLLoader, Loader, URLStream), Adobe's NetStream loads relative URLs as though they are relative to the swf file's location rather than the HTML page in which it is embedded. Another workaround is to set the "base" attribute in the object/embed code (https://kb2.adobe.com/cps/041/tn_04157.html) 
 
 2011-05-05
 --------------------------------------------
@@ -261,7 +261,7 @@ LoaderMax			1.8
 XMLLoader			1.8
 SWFLoader			1.8
 LoaderCore			1.8
-	- Added new feature to XMLLoader that causes it to attach a "rawXML" property to the vars object of any loader parsed in the XML document. For example, if this node is found in the XML: <VideoLoader url="video.flv" name="video1" description="Hidden dangers of steel wool" autoPlay="false"><link url="http://www.greensock.com" /></VideoLoader>, you could get the "description" data in the resulting VideoLoader's vars like this: myVideoLoader.vars.description. And the full XML node (including children) could be accessed with myVideoLoader.vars.rawXML. 
+	- Added new feature to XMLLoader that causes it to attach a "rawXML" property to the vars object of any loader parsed in the XML document. For example, if this node is found in the XML: <VideoLoader url="video.flv" name="video1" description="Hidden dangers of steel wool" autoPlay="false"><link url="https://www.greensock.com" /></VideoLoader>, you could get the "description" data in the resulting VideoLoader's vars like this: myVideoLoader.vars.description. And the full XML node (including children) could be accessed with myVideoLoader.vars.rawXML. 
 	- Fixed a few issues with the order of bubbling events and one particular scenario that could cause an extra FAIL event to be dispatched (two in a row).
 	- Fixed issue that could cause a loader with requireWithRoot not to be integrated a parent SWFLoader's progress if that loader was nested inside another LoaderMax instance in the child swf. 
 	- Altered SWFLoader's behavior so that if the swf loads fine but a child loader inside that swf fails (one that has their requireWithRoot set to that swf's root), it will dispatch a FAIL event but it will not reset the progress to 0 or clear the subloading queue. This way, it's still possible to getChildren() on the SWFLoader.
@@ -302,7 +302,7 @@ LoaderCore			1.78
 --------------------------------------------
 LoaderMax			1.777
 LoaderItem			1.777
-	- Fixed issue that could cause part of the URL query string to be lost if more than one "=" sign was used in a single value pair (extremely rare), like http://www.greensock.com/?prop1=value1=extraValue&prop2=value2 - the extraValue would be dropped in some previous versions (that's fixed now obviously). 
+	- Fixed issue that could cause part of the URL query string to be lost if more than one "=" sign was used in a single value pair (extremely rare), like https://www.greensock.com/?prop1=value1=extraValue&prop2=value2 - the extraValue would be dropped in some previous versions (that's fixed now obviously). 
 	- Fixed typo in ASDocs that mentioned LoaderStatus.COMPLETE instead of LoaderStatus.COMPLETED (missing the "D").
 	
 2011-01-11
@@ -866,7 +866,7 @@ VideoLoader		1.01
 	- Revamped most of the event architecture in the system, making it more robust
 	- Introduced FAIL, CHILD_OPEN, CHILD_PROGRESS, CHILD_COMPLETE, CHILD_CANCEL, and CHILD_FAIL events.
 	- You can listen for CHILD_* events on XMLLoaders and SWFLoaders too in order to get information about any nested loaders that are discovered in the XML/SWF. 
-	- Added "httpStatus" property to LoaderItems
+	- Added "httpstatus" property to LoaderItems
 	- Changed VideoLoader's resumeVideo() to playVideo()
 	- Changed VideoLoader's seekVideo() to gotoVideoTime()
 
@@ -983,7 +983,7 @@ VideoLoader		1.01
 	- Added LoaderMax.SCRIPT_ACCESS_DENIED event dispatching along with an onScriptAccessDenied special vars property
 	- Added a new scriptAccessDenied property that you can check in order to determine whether or not you can perform operations like BitmapData.draw() on ImageLoader/SWFLoader content.
 	- Tweaked error handling so that unhandled errors aren't thrown.
-	- Added dispatching of IOErrorEvents, SecurityErrorEvents, and HTTPStatusEvents (you can set them up normally or with onIOError, onSecurityError, and onHTTPStatus special vars properties)
+	- Added dispatching of IOErrorEvents, SecurityErrorEvents, and httpstatusEvents (you can set them up normally or with onIOError, onSecurityError, and onhttpstatus special vars properties)
 
 2010-05-25
 ----------------------------------------------

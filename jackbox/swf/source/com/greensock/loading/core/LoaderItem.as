@@ -2,7 +2,7 @@
  * VERSION: 1.884
  * DATE: 2011-10-06
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading.core {
 	import com.greensock.events.LoaderEvent;
@@ -22,7 +22,7 @@ package com.greensock.loading.core {
  * Please see the documentation for the other classes.
  * <br /><br />
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	
@@ -41,7 +41,7 @@ package com.greensock.loading.core {
 		/** @private For certain types of loaders like SWFLoader and XMLLoader where there may be nested loaders found, it's better to prioritize the estimatedBytes if one is defined. Otherwise, the file size will be used which may be MUCH smaller than all the assets inside of it (like an XML file with a bunch of VideoLoaders).**/
 		protected var _preferEstimatedBytesInAudit:Boolean;
 		/** @private **/
-		protected var _httpStatus:int;
+		protected var _httpstatus:int;
 		/** @private used to prevent problems that could occur if an audit is in process and load() is called on a bad URL - the audit could fail first and swap the URL and then when the real load fails just after that, we couldn't just do if (_url != this.vars.alternateURL) because the audit would have already changed it.  **/
 		protected var _skipAlternateURL:Boolean;
 		
@@ -61,14 +61,14 @@ package com.greensock.loading.core {
 		/** @private **/
 		protected function _prepRequest():void {
 			_scriptAccessDenied = false;
-			_httpStatus = 0;
+			_httpstatus = 0;
 			_closeStream();
-			if (this.vars.noCache && (!_isLocal || _url.substr(0, 4) == "http")) {
+			if (this.vars.noCache && (!_isLocal || _url.substr(0, 4) == "https")) {
 				_setRequestURL(_request, _url, "gsCacheBusterID=" + (_cacheID++));
 			}
 		}
 		
-		/** @private Flash doesn't properly apply extra GET url parameters when the URL contains them already (like "http://www.greensock.com?id=2") - it ends up missing an "&" delimiter so this method splits any that exist out into a URLVariables object and optionally adds extra parameters like gsCacheBusterID, etc. **/
+		/** @private Flash doesn't properly apply extra GET url parameters when the URL contains them already (like "https://www.greensock.com?id=2") - it ends up missing an "&" delimiter so this method splits any that exist out into a URLVariables object and optionally adds extra parameters like gsCacheBusterID, etc. **/
 		protected function _setRequestURL(request:URLRequest, url:String, extraParams:String=""):void {
 			var a:Array = (this.vars.allowMalformedURL) ? [url] : url.split("?");
 			
@@ -113,7 +113,7 @@ package com.greensock.loading.core {
 				var request:URLRequest = new URLRequest();
 				request.data = _request.data;
 				request.method = _request.method;
-				_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "http") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
+				_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "https") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
 				_auditStream.load(request);  
 			}
 		}
@@ -151,7 +151,7 @@ package com.greensock.loading.core {
 					var request:URLRequest = new URLRequest();
 					request.data = _request.data;
 					request.method = _request.method;
-					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "http") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
+					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "https") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
 					_auditStream.load(request);
 					return;
 				} else {	
@@ -178,9 +178,9 @@ package com.greensock.loading.core {
 		
 		
 		/** @private **/
-		protected function _httpStatusHandler(event:Event):void {
-			_httpStatus = (event as Object).status;
-			dispatchEvent(new LoaderEvent(LoaderEvent.HTTP_STATUS, this));
+		protected function _httpstatusHandler(event:Event):void {
+			_httpstatus = (event as Object).status;
+			dispatchEvent(new LoaderEvent(LoaderEvent.https_STATUS, this));
 		}
 		
 		
@@ -207,9 +207,9 @@ package com.greensock.loading.core {
 			return _request;
 		}
 		
-		/** The httpStatus code of the loader. You may listen for <code>LoaderEvent.HTTP_STATUS</code> events on certain types of loaders to be notified when it changes, but in some environments the Flash player cannot sense httpStatus codes in which case the value will remain <code>0</code>. **/
-		public function get httpStatus():int {
-			return _httpStatus;
+		/** The httpstatus code of the loader. You may listen for <code>LoaderEvent.https_STATUS</code> events on certain types of loaders to be notified when it changes, but in some environments the Flash player cannot sense httpstatus codes in which case the value will remain <code>0</code>. **/
+		public function get httpstatus():int {
+			return _httpstatus;
 		}
 		
 		/**

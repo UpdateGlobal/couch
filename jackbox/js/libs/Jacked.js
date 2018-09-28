@@ -1,5 +1,5 @@
 // © CodingJack www.codingjack.com
-// License: http://creativecommons.org/licenses/by-sa/3.0/
+// License: https://creativecommons.org/licenses/by-sa/3.0/
 // www.codingjack.com/playground/jacked/
 // 16kb minified: www.codingjack.com/playground/jacked/js/codingjack/Jacked.min.js
 
@@ -45,7 +45,7 @@
 	
 	positions = /(right|bottom|center)/,
 	
-	// credit: http://www.bitstorm.org/jquery/color-animation/
+	// credit: https://www.bitstorm.org/jquery/color-animation/
 	color2 = /#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])/,
 	color1 = /#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})/,
 	
@@ -1579,7 +1579,7 @@
 	}
 	
 	// parse hex color
-	// credit: http://www.bitstorm.org/jquery/color-animation/
+	// credit: https://www.bitstorm.org/jquery/color-animation/
 	function getColor(color) {
 			
 		var matched;
@@ -1931,7 +1931,7 @@
 		
 	},
 	
-	// credit: http://matthewlein.com/ceaser/
+	// credit: https://matthewlein.com/ceaser/
 	
 	CeaserEasing = {
 		

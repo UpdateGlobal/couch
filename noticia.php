@@ -64,7 +64,7 @@ $filNos = mysqli_fetch_array($resNoticias);
 							<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 								<div class="fh5co-intro fh5co-table-cell animate-box">
 									<h1 class="text-center"><?php echo $xTitulo; ?></h1>
-									<p class="text_p">Descripcion corta de la noticia</p>
+									<p class="text_p">Blog de noticias</p>
 								</div>
 							</div>
 						</div>

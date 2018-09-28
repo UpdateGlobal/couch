@@ -2,7 +2,7 @@
  * VERSION: 1.899
  * DATE: 2012-01-25
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading {
 	import com.greensock.events.LoaderEvent;
@@ -23,8 +23,8 @@ package com.greensock.loading {
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	
-	/** Dispatched when the loader's <code>httpStatus</code> value changes. **/
-	[Event(name="httpStatus", 	type="com.greensock.events.LoaderEvent")]
+	/** Dispatched when the loader's <code>httpstatus</code> value changes. **/
+	[Event(name="httpstatus", 	type="com.greensock.events.LoaderEvent")]
 	/** Dispatched when the <code>netStream</code> dispatches a NET_STATUS event. **/
 	[Event(name="netStatus", 	type="com.greensock.events.LoaderEvent")]
 /**
@@ -102,7 +102,7 @@ package com.greensock.loading {
  * 		<li><strong> noCache : Boolean</strong> - If <code>noCache</code> is <code>true</code>, a "gsCacheBusterID" parameter will be appended to the url with a random set of numbers to prevent caching (don't worry, this info is ignored when you <code>getLoader()</code> or <code>getContent()</code> by url and when you're running locally)</li>
  * 		<li><strong> estimatedBytes : uint</strong> - Initially, the loader's <code>bytesTotal</code> is set to the <code>estimatedBytes</code> value (or <code>LoaderMax.defaultEstimatedBytes</code> if one isn't defined). Then, when the loader begins loading and it can accurately determine the bytesTotal, it will do so. Setting <code>estimatedBytes</code> is optional, but the more accurate the value, the more accurate your loaders' overall progress will be initially. If the loader will be inserted into a LoaderMax instance (for queue management), its <code>auditSize</code> feature can attempt to automatically determine the <code>bytesTotal</code> at runtime (there is a slight performance penalty for this, however - see LoaderMax's documentation for details).</li>
  * 		<li><strong> requireWithRoot : DisplayObject</strong> - LoaderMax supports <i>subloading</i>, where an object can be factored into a parent's loading progress. If you want LoaderMax to require this VideoLoader as part of its parent SWFLoader's progress, you must set the <code>requireWithRoot</code> property to your swf's <code>root</code>. For example, <code>var loader:VideoLoader = new VideoLoader("myScript.php", {name:"textData", requireWithRoot:this.root});</code></li>
- * 		<li><strong> allowMalformedURL : Boolean</strong> - Normally, the URL will be parsed and any variables in the query string (like "?name=test&amp;state=il&amp;gender=m") will be placed into a URLVariables object which is added to the URLRequest. This avoids a few bugs in Flash, but if you need to keep the entire URL intact (no parsing into URLVariables), set <code>allowMalformedURL:true</code>. For example, if your URL has duplicate variables in the query string like <code>http://www.greensock.com/?c=S&amp;c=SE&amp;c=SW</code>, it is technically considered a malformed URL and a URLVariables object can't properly contain all the duplicates, so in this case you'd want to set <code>allowMalformedURL</code> to <code>true</code>.</li>
+ * 		<li><strong> allowMalformedURL : Boolean</strong> - Normally, the URL will be parsed and any variables in the query string (like "?name=test&amp;state=il&amp;gender=m") will be placed into a URLVariables object which is added to the URLRequest. This avoids a few bugs in Flash, but if you need to keep the entire URL intact (no parsing into URLVariables), set <code>allowMalformedURL:true</code>. For example, if your URL has duplicate variables in the query string like <code>https://www.greensock.com/?c=S&amp;c=SE&amp;c=SW</code>, it is technically considered a malformed URL and a URLVariables object can't properly contain all the duplicates, so in this case you'd want to set <code>allowMalformedURL</code> to <code>true</code>.</li>
  * 		<li><strong> autoDispose : Boolean</strong> - When <code>autoDispose</code> is <code>true</code>, the loader will be disposed immediately after it completes (it calls the <code>dispose()</code> method internally after dispatching its <code>COMPLETE</code> event). This will remove any listeners that were defined in the vars object (like onComplete, onProgress, onError, onInit). Once a loader is disposed, it can no longer be found with <code>LoaderMax.getLoader()</code> or <code>LoaderMax.getContent()</code> - it is essentially destroyed but its content is not unloaded (you must call <code>unload()</code> or <code>dispose(true)</code> to unload its content). The default <code>autoDispose</code> value is <code>false</code>.
  * 		
  * 		<br /><br />----EVENT HANDLER SHORTCUTS----</li>
@@ -130,7 +130,7 @@ package com.greensock.loading {
  * <strong>Note:</strong> There is a bug/inconsistency in Adobe's NetStream class that causes relative URLs 
  * to use the swf's location as the base path instead of the HTML page's location like all other loaders. Therefore,
  * it would be wise to use the "base" attribute of the &lt;OBJECT&gt; and &lt;EMBED&gt; tags in the HTML to 
- * make sure all relative paths are consistent. See <a href="http://kb2.adobe.com/cps/041/tn_04157.html" target="_blank">http://kb2.adobe.com/cps/041/tn_04157.html</a>
+ * make sure all relative paths are consistent. See <a href="https://kb2.adobe.com/cps/041/tn_04157.html" target="_blank">https://kb2.adobe.com/cps/041/tn_04157.html</a>
  * for details.<br /><br />
  * 
  * <strong>Note:</strong> In order to minimize memory usage, VideoLoader doesn't attach the NetStream to its Video
@@ -186,7 +186,7 @@ function errorHandler(event:LoaderEvent):void {
 }
  </listing>
  * 
- * <b>Copyright 2010-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2010-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @see com.greensock.loading.data.VideoLoaderVars
  * 
@@ -324,7 +324,7 @@ function errorHandler(event:LoaderEvent):void {
 		 * 		<li><strong> noCache : Boolean</strong> - If <code>noCache</code> is <code>true</code>, a "gsCacheBusterID" parameter will be appended to the url with a random set of numbers to prevent caching (don't worry, this info is ignored when you <code>getLoader()</code> or <code>getContent()</code> by url and when you're running locally)</li>
 		 * 		<li><strong> estimatedBytes : uint</strong> - Initially, the loader's <code>bytesTotal</code> is set to the <code>estimatedBytes</code> value (or <code>LoaderMax.defaultEstimatedBytes</code> if one isn't defined). Then, when the loader begins loading and it can accurately determine the bytesTotal, it will do so. Setting <code>estimatedBytes</code> is optional, but the more accurate the value, the more accurate your loaders' overall progress will be initially. If the loader will be inserted into a LoaderMax instance (for queue management), its <code>auditSize</code> feature can attempt to automatically determine the <code>bytesTotal</code> at runtime (there is a slight performance penalty for this, however - see LoaderMax's documentation for details).</li>
 		 * 		<li><strong> requireWithRoot : DisplayObject</strong> - LoaderMax supports <i>subloading</i>, where an object can be factored into a parent's loading progress. If you want LoaderMax to require this VideoLoader as part of its parent SWFLoader's progress, you must set the <code>requireWithRoot</code> property to your swf's <code>root</code>. For example, <code>var loader:VideoLoader = new VideoLoader("myScript.php", {name:"textData", requireWithRoot:this.root});</code></li>
-		 * 		<li><strong> allowMalformedURL : Boolean</strong> - Normally, the URL will be parsed and any variables in the query string (like "?name=test&amp;state=il&amp;gender=m") will be placed into a URLVariables object which is added to the URLRequest. This avoids a few bugs in Flash, but if you need to keep the entire URL intact (no parsing into URLVariables), set <code>allowMalformedURL:true</code>. For example, if your URL has duplicate variables in the query string like <code>http://www.greensock.com/?c=S&amp;c=SE&amp;c=SW</code>, it is technically considered a malformed URL and a URLVariables object can't properly contain all the duplicates, so in this case you'd want to set <code>allowMalformedURL</code> to <code>true</code>.</li>
+		 * 		<li><strong> allowMalformedURL : Boolean</strong> - Normally, the URL will be parsed and any variables in the query string (like "?name=test&amp;state=il&amp;gender=m") will be placed into a URLVariables object which is added to the URLRequest. This avoids a few bugs in Flash, but if you need to keep the entire URL intact (no parsing into URLVariables), set <code>allowMalformedURL:true</code>. For example, if your URL has duplicate variables in the query string like <code>https://www.greensock.com/?c=S&amp;c=SE&amp;c=SW</code>, it is technically considered a malformed URL and a URLVariables object can't properly contain all the duplicates, so in this case you'd want to set <code>allowMalformedURL</code> to <code>true</code>.</li>
 		 * 		<li><strong> autoDispose : Boolean</strong> - When <code>autoDispose</code> is <code>true</code>, the loader will be disposed immediately after it completes (it calls the <code>dispose()</code> method internally after dispatching its <code>COMPLETE</code> event). This will remove any listeners that were defined in the vars object (like onComplete, onProgress, onError, onInit). Once a loader is disposed, it can no longer be found with <code>LoaderMax.getLoader()</code> or <code>LoaderMax.getContent()</code> - it is essentially destroyed but its content is not unloaded (you must call <code>unload()</code> or <code>dispose(true)</code> to unload its content). The default <code>autoDispose</code> value is <code>false</code>.
 		 * 		
 		 * 		<br /><br />----EVENT HANDLER SHORTCUTS----</li>
@@ -436,7 +436,7 @@ function errorHandler(event:LoaderEvent):void {
 			_sprite.addEventListener(Event.ENTER_FRAME, _loadingProgressCheck);
 			_waitForRender();
 			_videoComplete = _initted = false;
-			if (this.vars.noCache && (!_isLocal || _url.substr(0, 4) == "http") && _request.data != null) {
+			if (this.vars.noCache && (!_isLocal || _url.substr(0, 4) == "https") && _request.data != null) {
 				var concatChar:String = (_request.url.indexOf("?") != -1) ? "&" : "?";
 				_ns.play( _request.url + concatChar + _request.data.toString() );
 			} else {
@@ -934,7 +934,7 @@ function errorHandler(event:LoaderEvent):void {
 		 * we need to make sure the audits use NetStreams instead of URLStreams (for relative urls at least). 
 		 **/
 		override public function auditSize():void {
-			if (_url.substr(0, 4) == "http" && _url.indexOf("://") != -1) { //if the url isn't relative, use the regular URLStream to do the audit because it's faster/more efficient. 
+			if (_url.substr(0, 4) == "https" && _url.indexOf("://") != -1) { //if the url isn't relative, use the regular URLStream to do the audit because it's faster/more efficient. 
 				super.auditSize();
 			} else if (_auditNS == null) {
 				_auditNS = new NetStream(_nc);
@@ -946,7 +946,7 @@ function errorHandler(event:LoaderEvent):void {
 				_auditNS.soundTransform = new SoundTransform(0);
 				var request:URLRequest = new URLRequest();
 				request.data = _request.data;
-				_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "http") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
+				_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "https") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
 				_auditNS.play(request.url);
 			}
 		}
@@ -976,7 +976,7 @@ function errorHandler(event:LoaderEvent):void {
 					_setRequestURL(_request, _url);
 					var request:URLRequest = new URLRequest();
 					request.data = _request.data;
-					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "http") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
+					_setRequestURL(request, _url, (!_isLocal || _url.substr(0, 4) == "https") ? "gsCacheBusterID=" + (_cacheID++) + "&purpose=audit" : "");
 					_auditNS.play(request.url);
 					_errorHandler(new LoaderEvent(LoaderEvent.ERROR, this, code));
 					return;

@@ -2,7 +2,7 @@
  * VERSION: 1.2
  * DATE: 2011-04-26
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/loadermax/
+ * UPDATES AND DOCS AT: https://www.greensock.com/loadermax/
  **/
 package com.greensock.loading.data {
 	import flash.display.DisplayObject;
@@ -35,7 +35,7 @@ package com.greensock.loading.data {
  * 		 free to use it. The purpose of this class is simply to enable code hinting and to allow for strict data typing.</li>
  * </ul>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	 
@@ -124,9 +124,9 @@ package com.greensock.loading.data {
 			return _set("onFail", value);
 		}
 		
-		/** A handler function for <code>LoaderEvent.HTTP_STATUS</code> events. Make sure your onHTTPStatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>). You can determine the httpStatus code using the LoaderEvent's <code>target.httpStatus</code> (LoaderItems keep track of their <code>httpStatus</code> when possible, although certain environments prevent Flash from getting httpStatus information).**/
-		public function onHTTPStatus(value:Function):LoaderMaxVars {
-			return _set("onHTTPStatus", value);
+		/** A handler function for <code>LoaderEvent.https_STATUS</code> events. Make sure your onhttpstatus function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>). You can determine the httpstatus code using the LoaderEvent's <code>target.httpstatus</code> (LoaderItems keep track of their <code>httpstatus</code> when possible, although certain environments prevent Flash from getting httpstatus information).**/
+		public function onhttpstatus(value:Function):LoaderMaxVars {
+			return _set("onhttpstatus", value);
 		}
 		
 		/** A handler function for <code>LoaderEvent.IO_ERROR</code> events which will also call the onError handler, so you can use that as more of a catch-all whereas <code>onIOError</code> is specifically for LoaderEvent.IO_ERROR events. Make sure your onIOError function accepts a single parameter of type <code>LoaderEvent</code> (<code>com.greensock.events.LoaderEvent</code>). **/

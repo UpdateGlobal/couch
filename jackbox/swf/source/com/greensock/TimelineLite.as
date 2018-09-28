@@ -2,7 +2,7 @@
  * VERSION: 1.695
  * DATE: 2011-12-08
  * AS3 (AS2 version is also available)
- * UPDATES AND DOCS AT: http://www.greensock.com/timelinelite/
+ * UPDATES AND DOCS AT: https://www.greensock.com/timelinelite/
  **/
 package com.greensock {
 	import com.greensock.core.*;
@@ -103,11 +103,11 @@ package com.greensock {
  * <ul>
  * 	<li> TimelineLite automatically inits the OverwriteManager class to prevent unexpected overwriting behavior in sequences.
  * 	  The default mode is <code>AUTO</code>, but you can set it to whatever you want with <code>OverwriteManager.init()</code>
- * 	 (see <a href="http://www.greensock.com/overwritemanager/">http://www.greensock.com/overwritemanager/</a>)</li>
+ * 	 (see <a href="https://www.greensock.com/overwritemanager/">https://www.greensock.com/overwritemanager/</a>)</li>
  * 	<li> TimelineLite adds about 2.6k to your SWF (3.3kb including OverwriteManager).</li>
  * </ul>
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  **/

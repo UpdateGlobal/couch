@@ -2,7 +2,7 @@
  * VERSION: 2.54
  * DATE: 2011-04-26
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com/autofitarea/
+ * UPDATES AND DOCS AT: https://www.greensock.com/autofitarea/
  **/
 package com.greensock.layout {
 	import flash.display.BitmapData;
@@ -39,7 +39,7 @@ package com.greensock.layout {
  * directly so that accurate stretching/skewing can be accomplished. <br /><br />
  * 
  * There is also a <code>LiquidArea</code> class that extends AutoFitArea and integrates with 
- * <a href="http://www.greensock.com/liquidstage/">LiquidStage</a> so that it automatically 
+ * <a href="https://www.greensock.com/liquidstage/">LiquidStage</a> so that it automatically 
  * adjusts its size whenever the stage is resized. This makes it simple to create things like 
  * a background that proportionally fills the stage or a bar that always stretches horizontally 
  * to fill the stage but stays stuck to the bottom, etc.<br /><br />
@@ -68,7 +68,7 @@ var area:AutoFitArea = AutoFitArea.createAround(myImage);
 </listing>
  *
  * 
- * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the license that came with your Club GreenSock membership and is <b>ONLY</b> to be used by corporate or "Shockingly Green" Club GreenSock members. To learn more about Club GreenSock, visit <a href="http://www.greensock.com/club/">http://www.greensock.com/club/</a>.
+ * <b>Copyright 2011, GreenSock. All rights reserved.</b> This work is subject to the license that came with your Club GreenSock membership and is <b>ONLY</b> to be used by corporate or "Shockingly Green" Club GreenSock members. To learn more about Club GreenSock, visit <a href="https://www.greensock.com/club/">https://www.greensock.com/club/</a>.
  * 
  * @author Jack Doyle, jack@greensock.com
  */	 

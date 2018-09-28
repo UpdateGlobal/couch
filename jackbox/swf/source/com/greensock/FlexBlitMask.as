@@ -2,7 +2,7 @@
  * VERSION: 0.6
  * DATE: 2012-01-20
  * AS3
- * UPDATES AND DOCS AT: http://www.greensock.com
+ * UPDATES AND DOCS AT: https://www.greensock.com
  **/
 package com.greensock {	
 	import flash.display.BitmapData;
@@ -51,7 +51,7 @@ package com.greensock {
  * 
  * @example Example AS3 code:<listing version="3.0">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" frameRate="60" layout="absolute" xmlns:greensock="com.greensock.~~" creationComplete="tween()"&gt;
+&lt;mx:Application xmlns:mx="https://www.adobe.com/2006/mxml" frameRate="60" layout="absolute" xmlns:greensock="com.greensock.~~" creationComplete="tween()"&gt;
 	&lt;mx:Script&gt;
 		&lt;![CDATA[
 			import com.greensock.TweenLite;
@@ -82,7 +82,7 @@ package com.greensock {
  * 			be better off just turning off bitmapMode during that animation sequence.</li>
  * </ul><br /><br />
  * 
- * <b>Copyright 2011-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ * <b>Copyright 2011-2012, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="https://www.greensock.com/terms_of_use.html">https://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
  * 
  * @author Jack Doyle, jack@greensock.com
  **/
